@@ -1,0 +1,40 @@
+É um espaço matemático invisível onde a IA representa informações de forma compacta.
+Em vez de trabalhar diretamente com palavras, imagens ou sons, o modelo transforma 
+tudo em vetores numéricos (listas de números).
+Esses vetores ficam organizados em um “mapa” multidimensional — o espaço latente.
+
+- Codificação (embedding)
+- A IA pega um dado (ex.: uma imagem de gato) e transforma em um vetor de números.
+- Esse vetor ocupa uma posição no espaço latente.
+- Organização por semelhança
+- Objetos parecidos ficam próximos no espaço latente.
+- Exemplo: “cachorro” e “lobo” ficam mais perto entre si do que “cachorro” e “carro”.
+
+- Manipulação criativa
+- Para gerar novos conteúdos, a IA “navega” nesse espaço.
+- Exemplo: se você pedir “um gato astronauta”, o modelo combina regiões do espaço 
+latente associadas a “gato” e “astronauta”.
+
+- Decodificação
+- Depois de escolher uma posição no espaço latente, a IA traduz de volta para 
+palavras, imagens ou sons.
+- Assim nasce o conteúdo gerado.
+
+Mapa de ideias 
+
+Passo 1 escolher palavras
+
+Animais:
+
+Meio de Transporte:
+
+Lugares:
+
+Passo 2 desenhe círculos ou regiões e coloquem as palavras semelhantes próximas
+Isso é como o espaço latente
+
+Passo 3 - Combinação criativa
+gato (animais) + foguete (meios de transporte) -> Um gato astronauta
+
+
+
