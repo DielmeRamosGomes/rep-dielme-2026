@@ -1,0 +1,14 @@
+O DSDM (Dynamic Systems Development Method) - é uma metodologia ágil que combina 
+princípios rígidos com flexibilidade prática, focando em entregas rápidas e 
+valor de negócio. Ele se diferencia por ter papéis bem definidos, ciclos 
+iterativos e uma forte ênfase na colaboração entre usuários e desenvolvedores.
+
+Scrum - Um framework leve para organizar projetos complexos, com foco em 
+colaboração e adaptação ele funciona como um “jogo em equipe” onde todos têm 
+papéis claros e trabalham juntos em ciclos curtos para alcançar metas.
+
+o XP busca colaboração intensa, simplicidade e adaptação rápida, garantindo que
+o software evolua de acordo com as necessidades reais do cliente.
+
+o FDD é mais estruturado e orientado a funcionalidades, enquanto o XP é mais 
+flexível e orientado à colaboração e adaptação.
