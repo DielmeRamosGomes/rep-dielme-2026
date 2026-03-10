@@ -1,0 +1,36 @@
+O que é o Token Ring?
+O token funciona como uma ficha que passa de mão em mão.
+- Só quem tem a ficha pode falar (enviar mensagem).
+- Quando termina, passa a ficha para o próximo.
+Assim, ninguém fala ao mesmo tempo e a comunicação fica organizada.
+
+🧩 Simulação prática
+Monte uma roda com os colegas e use um objeto (caneta, papel, etc.) como token.
+Cenário normal
+- O token passa de aluno para aluno sem problemas.
+- Quem recebe pode "falar" (mandar uma mensagem simulada).
+Cenários com falhas
+- Estação não responde
+- Um aluno recebe o token, mas não fala nada.
+- O monitor percebe que houve falha porque o token não foi usado.
+- Token se perde
+- O objeto não chega ao próximo aluno (alguém esquece de passar).
+- O monitor precisa criar um novo token para continuar a comunicação.
+- Dois tokens circulando
+- Alguém cria outro token sem querer.
+- Agora duas pessoas podem falar ao mesmo tempo, gerando confusão.
+- O monitor deve identificar e corrigir, deixando só um token válido.
+
+💬 Discussão final
+- Qual falha foi mais difícil?
+Normalmente, quando o token se perde ou aparecem dois tokens, porque atrapalha 
+toda a ordem.
+- Como o monitor ajudou?
+Ele organiza, identifica os problemas e garante que o fluxo continue.
+- Qual a importância da redundância?
+Ter formas de recuperar o token ou criar outro garante que a rede não pare de 
+funcionar.
+
+👉 Em resumo: o Token Ring é como uma roda de conversa organizada por uma ficha.
+ Os problemas simulados mostram por que é importante ter controle e redundância 
+ para manter a comunicação funcionando.
