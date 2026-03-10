@@ -5,7 +5,7 @@ else:
     if  numero == 0:
         print("O número é zero portando não é positivo nem negativo e sim neutro.")
     else:
-        print("O número não é positivo.")
+        print("O número não é positivo!")
 
 
 
