@@ -1,0 +1,19 @@
+algoritmo "Sistema_Saque_Dinheiro"
+
+var
+   saldoBanco: real
+   saque: real
+
+inicio
+   escreva("Digite o saldo que está guardado no banco: ")
+   leia(saldoBanco)
+   escreva(" Digite o valor a ser sacado: ")
+   leia(saque)
+   se (saque <= saldoBanco) entao
+      saldoBanco <- saldoBanco - saque
+      escreva(" Você sacou R$", saque)
+      escreva(" Seu saldo atual é R$ ", saldoBanco)      
+   senao
+      escreva(" O valor do saque é maior que o valor da conta tente outra vez!")
+   fimse
+fimalgoritmo
