@@ -1,0 +1,18 @@
+algoritmo "Sistema_Login"
+
+var
+   usuario: caractere
+   senha: caractere
+
+inicio
+   escreva("Digite o usuario (admin, gerente, funcionario): ")
+   leia(usuario)
+   escreva("Digite a senha: ")
+   leia(senha)
+   se (usuario = "admin" E senha = "admin123") entao
+      escreva("Bem-vindo ao sistema! ")
+      escreva("Último acesso: ontem às 15h30")
+   senao
+      escreva("Usuário ou senha incorretos!")
+   fimse
+fimalgoritmo

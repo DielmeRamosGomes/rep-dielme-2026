@@ -1,0 +1,18 @@
+algoritmo "Verifica_Numero_Positivo_Negativo"
+
+var
+   x: real
+
+inicio
+   escreva("Digite o valor de x: ")
+   leia(x)
+   se (x > 0) entao
+      escreva("O número é positivo")
+   senao
+      se (x = 0) entao
+         escreva("O número é zero portanto ele é neutro")
+      senao
+         escreva("O número é não positivo")
+      fimse
+   fimse
+fimalgoritmo
