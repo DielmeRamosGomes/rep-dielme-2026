@@ -12,11 +12,13 @@ inicio
     se (idade >= 11) entao
       se (idade <= 13) entao
         escreva(" Aluno: Ensino Fundamental 2")
+      senao
+        se (idade <= 17) entao
+          escreva(" Aluno: Ensino Médio")
+        senao
+          escreva(" Aluno: EJA")
+        fimse
       fimse
-      se (idade <= 17) entao
-        escreva(" Aluno: Ensino Médio")
-      fimse
-      escreva(" Aluno: EJA")
     senao
       escreva(" Aluno não pode ser classificado!")
     fimse
@@ -24,19 +26,21 @@ inicio
       se (media <= 10) entao
         se (media >= 8.5) entao
           escreva(" Desenpenho de Excelência")
-        fimse
-        se (media >= 7.0) entao
-          escreva(" Desenpenho Satisfatório")
-        fimse
-        se (media >= 5.0) entao
-          escreva(" Desenpenho de Recuperação")
         senao
-          escreva(" Desempenho de Reforço intensivo")
+          se (media >= 7.0) entao
+          escreva(" Desenpenho Satisfatório")
+          senao
+            se (media >= 5.0) entao
+              escreva(" Desenpenho de Recuperação")
+            senao
+              escreva(" Desempenho de Reforço intensivo")
+            fimse
+          fimse
         fimse
       senao
-        escreva(" A Média não pode ser classificada")
+        escreva(" A Média  maior que 10 não pode ser classificada")
       fimse
     senao
-      escreva(" A Média não pode ser classificada")
+      escreva(" A Média menor que 0 não pode ser classificada")
     fimse     
 fimalgoritmo
