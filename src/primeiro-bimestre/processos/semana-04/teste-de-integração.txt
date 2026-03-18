@@ -1,0 +1,13 @@
+Exemplo prático: Cadastro de Usuário (API + Banco de Dados)
+
+Cenário: Testar se o endpoint POST /usuarios salva os dados 
+no banco de dados e envia um e-mail de boas-vindas.
+Ação: O teste envia uma requisição JSON com dados de um novo
+usuário para a API.
+
+Verificação (Asserções):
+Status Code: Verifica se retornou 201 Created.
+Banco de Dados: Consulta o banco para confirmar se o usuário
+foi persistido.
+Serviço de E-mail: Verifica se a função de envio de e-mail 
+foi chamada (ou usa mocks para simular o serviço de e-mail)
