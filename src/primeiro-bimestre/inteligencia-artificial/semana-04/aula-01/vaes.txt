@@ -50,4 +50,4 @@ GANs.
 
 Resumo:
 VAEs são como máquinas que aprendem a resumir informações e depois inventar
- novas variações criativas, mantendo a essência dos dados originais.
+novas variações criativas, mantendo a essência dos dados originais.

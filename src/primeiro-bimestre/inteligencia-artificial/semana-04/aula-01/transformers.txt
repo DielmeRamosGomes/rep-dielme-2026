@@ -1,0 +1,36 @@
+Transformers em Redes Neurais
+
+🌟 Conceito Básico
+Transformers são arquiteturas de redes neurais criadas em 2017 no artigo 
+"Attention is All You Need".
+Eles trabalham com atenção: uma técnica que permite ao modelo identificar 
+quais partes de uma sequência são mais relevantes para entender ou gerar a 
+saída.
+Exemplo: na frase “O céu é azul”, o modelo entende que “céu” está 
+relacionado a “azul”.
+
+🔑 Diferença em relação a modelos antigos
+- Modelos antigos (RNN/LSTM): processam palavra por palavra, em ordem, e 
+têm dificuldade com frases longas.
+- Transformers: processam todas as palavras da frase ao mesmo tempo, 
+mantêm contexto em textos grandes e são mais rápidos para treinar.
+
+📚 Como funciona a atenção
+O mecanismo de atenção cria pontes matemáticas entre palavras importantes.
+Isso permite que o modelo entenda relações complexas, como 
+sujeito-verbo-objeto, mesmo em frases longas.
+
+🚀 Aplicações práticas
+- Tradução automática (Google Translate).
+- Modelos de linguagem (GPT, BERT, etc.).
+- Resumo de textos, geração de código, análise de sentimentos.
+
+⚠️ Pontos importantes
+- Vantagem: rapidez, precisão e capacidade de lidar com grandes volumes de 
+dados.
+- Limitação: precisam de muito poder computacional e grandes quantidades de 
+dados para treinar.
+
+👉 Em resumo: Transformers são como leitores inteligentes que conseguem 
+olhar para uma frase inteira de uma vez, identificar as partes mais 
+importantes e usar isso para gerar respostas precisas.
