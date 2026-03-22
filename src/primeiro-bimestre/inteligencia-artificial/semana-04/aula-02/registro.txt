@@ -1,0 +1,52 @@
+resposta parte 2
+
+A – Um modelo para tudo
+
+vantagens
+Mais simples de gerenciar; custo menor de manutenção
+
+desvantagens
+Qualidade inferior em tarefas específicas; risco de baixa 
+performance
+
+Adequação ao caso (MegaStore)
+Não ideal, pois as necessidades são bem distintas (texto, imagem,
+chatbot, e-mail)
+
+B – Modelos especializados para cada tarefa
+
+vantagens
+Alta qualidade em cada função; melhor adaptação
+
+desvantagens
+Maior complexidade de integração; manutenção mais cara
+
+Adequação ao caso (MegaStore)
+Garante resultados superiores, mas pode ultrapassar orçamento e 
+prazo
+
+C – Híbrido (combinação)
+
+vantagens
+Equilíbrio entre custo e qualidade; flexibilidade
+
+desvantagens
+Exige planejamento inicial mais detalhado
+
+Adequação ao caso (MegaStore)
+Melhor opção: usar modelos especializados em tarefas críticas 
+(descrições e chatbot) e soluções mais simples para imagens e 
+e-mails
+
+A Opção C – Híbrida é a mais adequada.
+- Orçamento (R$ 50.000/mês): permite investir em modelos 
+especializados para tarefas que impactam diretamente a 
+experiência do cliente (descrições e chatbot), enquanto se usam 
+soluções mais acessíveis para imagens e e-mails.
+- Complexidade de manutenção: reduzida em comparação com a opção 
+B, pois não exige integração de muitos modelos diferentes.
+- Qualidade esperada: mantém alta qualidade nas áreas críticas 
+sem comprometer o restante.
+- Prazo de implementação: mais viável que a opção B, já que parte
+das soluções pode ser implementada rapidamente com ferramentas 
+prontas.
