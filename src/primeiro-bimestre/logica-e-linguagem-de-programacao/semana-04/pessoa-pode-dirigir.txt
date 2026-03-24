@@ -1,0 +1,28 @@
+algoritmo "A pessoa pode dirigir?"
+
+var
+  idade: inteiro
+  possui_cnh: logico
+  pode_dirigir_sozinho: logico
+  tem_permissao: logico
+  acompanhado: logico
+  pode_dirigir: logico
+  pode_dirigir_acompanhado: logico
+
+inicio
+  idade <- 19
+  possui_cnh <- falso
+  tem_permissao <- falso
+  acompanhado <- falso
+
+  //pode_dirigir <- (idade >= 18 E possui_cnh) OU (idade >= 16 E tem_permissao E acompanhado)
+  
+  pode_dirigir_sozinho <- idade >= 18 E possui_cnh
+
+  pode_dirigir_acompanhado <- idade >= 16 E tem_permissao E acompanhado
+  
+  pode_dirigir <- pode_dirigir_sozinho OU pode_dirigir_acompanhado
+  
+  escreva("A pessoa pode dirigir? ", pode_dirigir)
+
+fimalgoritmo

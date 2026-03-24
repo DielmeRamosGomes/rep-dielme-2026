@@ -1,0 +1,26 @@
+1) Faça um algoritmo para verificar se um aluno pode entrar na piscina da 
+escola.
+Condição1: idade maior ou igual a 13
+Condição2: media maior ou igual 6.0
+Condição3: Aluno deve estar acompanhado do Professor
+
+algoritmo "verifica_aluno_piscina"
+
+var
+    idade: inteiro
+    media: real
+    professor_acompanha: logico
+
+inicio
+    escreva("Digite a idade: ")
+    leia(idade)
+    escreva("Digite a média: ")
+    leia(media)
+    escreva("Professor está acompanhando? (verdadeiro/falso): ")
+    leia(professor_acompanha)
+    se (idade >= 13 E media >= 6.0 E professor_acompanha) entao
+        escreva("Aluno pode entrar na piscina")
+    senao
+        escreva("Aluno não pode entrar na piscina")
+    fimse
+fimalgoritmo

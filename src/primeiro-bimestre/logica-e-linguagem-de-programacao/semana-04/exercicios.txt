@@ -1,0 +1,12 @@
+1) Faça um algoritmo para verificar se um aluno pode entrar na piscina da 
+escola.
+Condição1: idade maior ou igual a 13
+Condição2: media maior ou igual 6.0
+Condição3: Aluno deve estar acompanhado do Professor
+
+2) Verificar se uma pessoa pode entrar em uma festa
+Condição: A pessoa pode entrar se for maior de idade OU se estiver 
+acompanhada de um responsável.
+ 
+
+
