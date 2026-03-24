@@ -1,0 +1,20 @@
+3) Verifica se uma lâmpada está apagada ou ligada 
+Condição: A lâmpada está apagada se NÂO estiver ligada
+
+algoritmo "Verificar lâmpada"
+
+var
+  ligada: logico
+  apagada: logico
+
+inicio
+  escreva("A lâmpada está ligada? (verdadeiro/falso): ")
+  leia(ligada)
+
+  se (NAO ligada) entao
+     escreva("A lâmpada está APAGADA.")
+  senao
+     escreva("A lâmpada está LIGADA.")
+  fimse
+
+fimalgoritmo
