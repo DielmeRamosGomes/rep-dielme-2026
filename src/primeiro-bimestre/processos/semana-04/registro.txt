@@ -1,0 +1,71 @@
+Plano de Testes – Mensagem que desaparece após 24h
+
+Parte 1 – Mapeamento
+
+Teste Unitário
+
+Descrição: Verificar se a função definirExpiracao(mensagem, 24) é chamada corretamente ao criar uma mensagem temporária.
+
+Objetivo: Garantir que o tempo de expiração seja configurado exatamente em 24 horas.
+
+Teste de Integração
+
+Descrição: Enviar uma mensagem temporária e verificar se o banco de dados registra corretamente o campo expiracao = 24h.
+
+Objetivo: Confirmar que backend e banco de dados trabalham juntos para armazenar e remover a mensagem após o prazo.
+
+Teste E2E (Sistema)
+
+Descrição: Usuário A envia uma mensagem temporária para Usuário B. Após 24 horas, verificar se a mensagem desaparece da conversa de ambos.
+
+Objetivo: Validar o fluxo completo da funcionalidade no sistema real.
+
+Teste Manual (Aceitação)
+
+Descrição: QA humano envia mensagens temporárias e observa se elas desaparecem após 24 horas, comparando com mensagens normais que permanecem.
+
+Objetivo: Confirmar a experiência do usuário e validar requisitos funcionais.
+
+Parte 2 – Priorização
+
+Distribuição de recursos para 10 testes:
+
+Tipo de Teste
+
+Exemplos de Testes
+
+Recursos Prioritários
+
+Unitário
+
+Função de expiração, cálculo de tempo, remoção automática
+
+3
+
+Integração
+
+Banco de dados, API de envio, sincronização entre dispositivos
+
+3
+
+E2E (Sistema)
+
+Fluxo completo entre usuários, desaparecimento em grupo, notificações
+
+3
+
+Manual
+
+Teste de aceitação, experiência do usuário
+
+1
+
+Justificativa:
+
+Unitários e Integração recebem mais recursos porque garantem a base técnica da funcionalidade.
+
+E2E é essencial para validar o comportamento real do sistema.
+
+Manual é importante, mas pode ser feito com menos recursos, já que serve como validação final.
+
+
