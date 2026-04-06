@@ -1,16 +1,21 @@
 O QUE SÃO REQUISITOS FUNCIONAIS
 
-Requisitos funcionais descrevem o que o sistema deve fazer. Eles definem as funcionalidades, comportamentos e serviços que o sistema oferece aos usuários, atendendo às suas necessidades.
+Requisitos funcionais descrevem o que o sistema deve fazer. 
+Eles definem as funcionalidades, comportamentos e serviços que o 
+sistema oferece aos usuários, atendendo às suas necessidades.
 
 O QUE SÃO REQUISITOS NÃO FUNCIONAIS
 
-Requisitos não funcionais descrevem como o sistema deve funcionar. Eles estão relacionados à qualidade, desempenho, segurança, usabilidade e outras restrições do sistema.
+Requisitos não funcionais descrevem como o sistema deve funcionar.
+Eles estão relacionados à qualidade, desempenho, segurança, 
+usabilidade e outras restrições do sistema.
 
 EXEMPLOS DE REQUISITOS PARA UM SISTEMA E-COMMERCE
 
 Requisitos Funcionais:
 1. O sistema deve permitir que o usuário se cadastre.
-2. O sistema deve permitir que o cliente realize compras e pagamentos online.
+2. O sistema deve permitir que o cliente realize compras e 
+pagamentos online.
 
 Requisitos Não Funcionais:
 1. O sistema deve carregar as páginas em até 3 segundos.
@@ -18,8 +23,10 @@ Requisitos Não Funcionais:
 
 DIFERENÇA ENTRE ELICITAÇÃO E DOCUMENTAÇÃO DE REQUISITOS
 
-Elicitação de requisitos é o processo de levantar e compreender as necessidades dos stakeholders por meio de entrevistas, reuniões e questionários.
-Documentação de requisitos é o processo de registrar essas necessidades de forma clara e organizada.
+Elicitação de requisitos é o processo de levantar e compreender as
+necessidades dos stakeholders por meio de entrevistas, reuniões e
+questionários. Documentação de requisitos é o processo de registrar essas 
+necessidades de forma clara e organizada.
 
 OS QUATRO VALORES DO MANIFESTO ÁGIL
 
@@ -30,7 +37,8 @@ OS QUATRO VALORES DO MANIFESTO ÁGIL
 
 PRINCÍPIOS DO MANIFESTO ÁGIL RELACIONADOS À ENTREGA DE VALOR
 
-- Satisfazer o cliente por meio da entrega contínua de software com valor.
+- Satisfazer o cliente por meio da entrega contínua de software 
+com valor.
 - Entregar software funcionando com frequência.
 - Software funcionando é a principal medida de progresso.
 - Mudanças nos requisitos são bem-vindas.
@@ -38,9 +46,13 @@ PRINCÍPIOS DO MANIFESTO ÁGIL RELACIONADOS À ENTREGA DE VALOR
 DIFERENÇA ENTRE ERRO, DEFEITO E FALHA
 
 Erro é um engano humano cometido durante o desenvolvimento.
-Defeito é um problema inserido no sistema como consequência de um erro.
-Falha é quando o sistema apresenta um comportamento incorreto durante a execução.
+Defeito é um problema inserido no sistema como consequência de um
+erro.
+Falha é quando o sistema apresenta um comportamento incorreto 
+durante a execução.
 
 O QUE SÃO TESTES UNITÁRIOS
 
-Testes unitários são testes realizados para verificar o funcionamento correto de pequenas partes do sistema, como funções ou métodos, de forma isolada.
+Testes unitários são testes realizados para verificar o 
+funcionamento correto de pequenas partes do sistema, como funções 
+ou métodos, de forma isolada.
