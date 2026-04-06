@@ -37,11 +37,16 @@ OS QUATRO VALORES DO MANIFESTO ÁGIL
 
 PRINCÍPIOS DO MANIFESTO ÁGIL RELACIONADOS À ENTREGA DE VALOR
 
-- Satisfazer o cliente por meio da entrega contínua de software 
-com valor.
-- Entregar software funcionando com frequência.
-- Software funcionando é a principal medida de progresso.
-- Mudanças nos requisitos são bem-vindas.
+Princípio 1: “Nossa maior prioridade é satisfazer o cliente
+através da entrega contínua e adiantada de software com valor
+agregado.”
+
+Princípio 3: “Entregar frequentemente software funcionando,
+de poucas semanas a poucos meses, com preferência à menor
+escala de tempo.”
+
+Princípio 7: “Software funcionando é a medida primária
+do progresso.”
 
 DIFERENÇA ENTRE ERRO, DEFEITO E FALHA
 
