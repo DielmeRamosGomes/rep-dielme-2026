@@ -1,0 +1,74 @@
+O que é uma topologia de rede?
+
+A topologia de rede é a estrutura física ou lógica pela qual os dispositivos 
+(computadores, impressoras, servidores) estão conectados entre si. Ela define 
+como os nós se organizam e como os dados são transmitidos dentro da rede.
+
+Qual a definição da topologia em estrela?
+
+Na topologia em estrela, todos os dispositivos estão conectados individualmente
+a um ponto central comum, geralmente um hub ou um switch. Toda a comunicação 
+entre os nós da rede obrigatoriamente passa por esse concentrador central.
+
+O que acontece com a topologia em estrela se um cabo de um dispositivo 
+apresentar falhas?
+
+Se apenas um cabo de um dispositivo falhar, apenas esse dispositivo específico 
+ficará fora da rede. O restante da rede continuará funcionando normalmente, 
+pois cada conexão é independente em relação ao nó central.
+
+Por que a topologia de barramento precisa obrigatoriamente de terminadores nas 
+suas extremidades? 
+
+Os terminadores são necessários para absorver os sinais elétricos quando eles 
+chegam ao fim do cabo. Sem eles, o sinal bateria no fim do percurso e 
+"ricochetearia" de volta (reflexão de sinal), causando interferência e colisões
+que impediriam a comunicação na rede.
+
+Cite duas vantagens e duas desvantagens sobre a topologia de barramento.
+
+Vantagens:
+1. Facilidade de instalação e economia de cabeamento, já que utiliza apenas um 
+cabo central.
+2. Ideal para redes pequenas e temporárias devido à sua simplicidade.
+
+Desvantagens:
+1. Se o cabo central (barramento) romper, toda a rede para de funcionar.
+
+2. O desempenho cai drasticamente à medida que mais dispositivos são adicionados
+(excesso de colisões).
+
+Qual a definição da topologia em anel?
+
+Na topologia em anel, os dispositivos são conectados em série, formando um 
+circuito fechado (um círculo). Cada dispositivo está conectado a dois vizinhos,
+e os dados viajam em uma única direção, passando de máquina em máquina até 
+atingirem o destino.
+
+O que é o protocolo Token Ring? 
+
+É um protocolo de rede que utiliza um sinal eletrônico chamado "token" (ficha) 
+para evitar colisões de dados. Apenas o dispositivo que detém o "token" tem 
+permissão para transmitir dados no anel. Quando termina, ele passa o token para
+o próximo computador.
+
+Cite duas principais funções na comunicação em relação aos meios de transmissão.
+
+1. Transporte de sinal: Levar a informação física (pulsos elétricos, luz ou 
+ondas de rádio) de um ponto a outro.
+2. Proteção contra interferências: Garantir a integridade dos dados contra 
+ruídos externos (como o uso de blindagem em cabos).
+
+Qual a diferença entre os meios de transmissão guiados e os não guiados?
+
+Meios Guiados: Utilizam um meio físico sólido (cabos) para conduzir os sinais.
+Exemplos: Cabo de par trançado, fibra óptica e cabo coaxial.
+Meios Não Guiados: Utilizam o ar ou o vácuo como meio de propagação, sem a 
+necessidade de um condutor físico. Exemplos: Wi-Fi, Bluetooth, satélite e 
+infravermelho.
+
+
+
+
+
+
