@@ -17,6 +17,12 @@ create table db_amazon.telefones(
 insert into db_amazon.clientes(nome, email)
     values("Carlos miguel", "carlos@exemplo.com");
 
+insert into db_amazon.clientes(nome, email)
+    values("Lingard", "lingard@exemplo.com"),
+          ("Hugo Souza", "hugo@exemplo.com"),
+          ("Ronaldo", "ronaldo@exemplo.com");
+
+
 insert into db_amazon.telefones(numero, ddd, cod_cliente)
     values("98834-7648", "12", 1);
 
@@ -32,7 +38,11 @@ insert into db_amazon.telefones(numero, ddd, cod_cliente)
 insert into db_amazon.telefones(numero, ddd, cod_cliente)
     values("98834-1415", "10", 2);
 
+
+
 select * from db_amazon.clientes;
+
+select cod_cliente, nome from db_amazon.clientes;
 
 select * from db_amazon.telefones;
 
