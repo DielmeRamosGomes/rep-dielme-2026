@@ -38,7 +38,8 @@ insert into db_amazon.telefones(numero, ddd, cod_cliente)
 insert into db_amazon.telefones(numero, ddd, cod_cliente)
     values("98834-1415", "10", 2);
 
-
+update db_amazon.clientes 
+    set nome = "Romário" where cod_cliente = 1;
 
 select * from db_amazon.clientes;
 
