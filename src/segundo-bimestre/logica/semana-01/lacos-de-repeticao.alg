@@ -1,8 +1,9 @@
+// extensão design liquido
 algoritmo "Laço de repetição"
 
 var
   mensagem: caractere
-
+  
 inicio
   escreva("Mensagem: ")
   leia(mensagem)
