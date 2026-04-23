@@ -1,0 +1,34 @@
+1. Usando a analogia da aula, explique com suas palavras a diferença 
+entre o processo direto e o processo inverso.
+
+Resposta: 
+O processo direto é como a "destruição" controlada. Imagine uma 
+fotografia nítida onde, passo a passo, adicionamos "poeira" ou ruído até 
+que ela se torne apenas um borrão cinza sem forma. 
+Já o processo inverso é o caminho da "criação". A IA olha para esse 
+borrão cinza (caos) e, passo a passo, tenta remover a poeira para 
+"limpar" a imagem, fazendo com que algo novo e nítido surja a partir do 
+nada.
+
+2. Qual é a única tarefa que a IA precisa realizar em cada passo do 
+processo inverso para conseguir reconstruir uma imagem?
+
+Resposta: 
+A única tarefa da IA é prever o ruído. Em cada etapa, ela analisa a 
+imagem ruidosa e tenta identificar o que ali é "lixo" (ruído) para poder
+ subtraí-lo. Ao remover o ruído que ela previu, a imagem torna-se um 
+ pouco mais clara para o próximo passo.
+
+3. Por que o step scheduler é tão importante? O que aconteceria se o 
+"plano" do escultor fosse ruim?
+
+Resposta: 
+O step scheduler é importante porque ele é o "mestre de obras" que 
+define quanto ruído deve ser removido em cada momento. No início, as 
+mudanças são grandes para definir as formas gerais; no fim, as mudanças 
+são pequenas para os detalhes finos. 
+Se o plano (scheduler) fosse ruim, a IA poderia "limpar" demais e 
+apagar detalhes importantes ou "limpar" de menos e entregar uma imagem 
+borrada e sem sentido, tal como um escultor que retira lascas grandes 
+demais e acaba quebrando o nariz da estátua que está a tentar criar.
+
