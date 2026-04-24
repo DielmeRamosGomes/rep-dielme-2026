@@ -10,5 +10,5 @@ inicio
     escreva(" Próxima mensagem [s para sair]: ")
     leia(mensagem)
   fimenquanto
-  escreva("Saiu do laço!")
+  escreva(" Saiu do laço!")
 fimalgoritmo
