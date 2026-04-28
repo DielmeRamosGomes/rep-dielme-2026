@@ -8,10 +8,10 @@ create table db_semana08.Clientes(
     senha varchar(100) not null 
 );
 
-insert into db_semana08.Clientes(email, senha, nome)
-    values("dielme@exemplo.com", "dielme123", "Dielme"),
-          ("carlos@exemplo.com", "carlos123", "Carlos"),
-          ("roberto@exemplo.com", "roberto123", "Roberto");
+insert into db_semana08.Clientes(nome, idade, email, senha)
+    values("Dielme", 32, "dielme@exemplo.com", "dielme123"),
+          ("Carlos", 28, "carlos@exemplo.com", "carlos123"),
+          ("Roberto", 35, "roberto@exemplo.com", "roberto123");
 
 select * from db_semana08.Clientes;
 
@@ -19,3 +19,4 @@ select * from db_semana08.Clientes order by nome asc;
 
 select * from db_semana08.Clientes order by nome desc;
 
+select * from db_semana08.Clientes order by email asc;
