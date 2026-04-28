@@ -1,0 +1,79 @@
+Basicamente, o HTTPS (Hyper Text Transfer Protocol 
+Secure) é a versão segura do protocolo HTTP, que é o 
+"idioma" básico usado para enviar dados entre o seu 
+navegador e um site.
+
+Pense no HTTP como enviar um cartão-postal pelos 
+correios: qualquer um que o segurar no caminho pode 
+ler o que está escrito. Já o HTTPS é como colocar esse 
+cartão em uma caixa blindada com cadeado, onde apenas 
+você e o destinatário têm a chave.
+
+Como ele funciona?
+O HTTPS utiliza um protocolo de segurança chamado TLS 
+(Transport Layer Security) — antigamente conhecido como
+SSL — para proteger a comunicação. Ele se baseia em 
+três pilares fundamentais:
+
+Criptografia: Codifica os dados trocados para que, se 
+alguém interceptá-los, veja apenas um amontoado de 
+caracteres sem sentido.
+
+Integridade dos dados: Garante que as informações não 
+foram alteradas ou corrompidas durante a transferência, seja por acidente ou por intenção maliciosa.
+
+Autenticação: Prova que você está realmente se 
+comunicando com o site que deseja (ex: o site do seu 
+banco e não uma cópia falsa), através de Certificados 
+Digitais.
+
+Protocolo DHCP
+
+O DHCP (Dynamic Host Configuration Protocol) é o 
+"gerente de recepção" de uma rede. Ele é o responsável 
+por automatizar a configuração de dispositivos 
+(celulares, notebooks, TVs) para que eles possam se 
+comunicar na internet ou na rede local sem que você 
+precise configurar nada manualmente.
+
+Sem o DHCP, toda vez que você chegasse na casa de um 
+amigo ou em um café, teria que pedir o "número de IP" 
+disponível e digitar várias configurações técnicas nas 
+propriedades do seu Wi-Fi.
+
+Como ele funciona? (O Processo DORA)
+Quando você liga o Wi-Fi do celular, acontece uma 
+"conversa" rápida entre o seu aparelho e o roteador 
+(que geralmente atua como o servidor DHCP). Esse 
+processo é conhecido pela sigla DORA:
+
+Discovery (Descoberta): O seu aparelho grita na rede: 
+"Ei, tem algum servidor DHCP por aí? Preciso de um 
+endereço!"
+
+Offer (Oferta): O servidor responde: "Opa, eu estou 
+aqui! Tenho o endereço IP 192.168.1.15 livre para você.
+Aceita?"
+
+Request (Solicitação): O seu aparelho diz: "Beleza, eu 
+quero esse endereço aí mesmo, pode reservar para mim."
+
+Acknowledgement (Reconhecimento): O servidor finaliza:
+"Fechado! O endereço é seu por tempo determinado. Aqui 
+estão as outras configurações (DNS, Máscara de rede, 
+etc)."
+
+Protocolo DNS
+O DNS (Domain Name System) é frequentemente chamado de 
+a "lista de contatos" da internet. Sua função é 
+traduzir nomes de domínios que nós, humanos, 
+conseguimos memorizar (como www.google.com) em 
+endereços IP que as máquinas entendem 
+(como 142.250.190.46).
+
+Sem o DNS, você teria que decorar sequências numéricas 
+complexas para acessar qualquer site, o que tornaria a 
+web praticamente impossível de navegar.
+
+
+
