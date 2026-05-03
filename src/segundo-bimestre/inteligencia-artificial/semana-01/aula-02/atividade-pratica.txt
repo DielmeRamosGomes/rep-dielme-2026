@@ -16,7 +16,7 @@ plt.ylabel('Beta (Força do Vento / Ruído)')
 plt.legend()
 plt.show()
 
-
+https://colab.research.google.com/drive/1FnjFroSsq56wNsJoQHEnSn5-IiD3h84c?usp=sharing
 
 
 
