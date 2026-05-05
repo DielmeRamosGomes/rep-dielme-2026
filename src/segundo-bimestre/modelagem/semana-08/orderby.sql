@@ -13,14 +13,26 @@ insert into db_semana08.Clientes(nome, idade, email, senha)
           ("Carlos", 28, "carlos@exemplo.com", "carlos123"),
           ("Roberto", 35, "roberto@exemplo.com", "roberto123");
 
+insert into db_semana08.Clientes(nome, idade, email, senha)
+    values("João Silva", 17, "joao@exemplo.com", "joao123"),
+          ("Lucas Silva", 17, "lucas@exemplo.com", "lucas123");
+
 select * from db_semana08.Clientes 
     where cliente_id = 1;
 
 select * from db_semana08.Clientes 
     where email = "roberto@exemplo.com";
 
+select * from db_semana08.Clientes;
+
 select * from db_semana08.Clientes order by nome asc;
 
 select * from db_semana08.Clientes order by nome desc;
 
 select * from db_semana08.Clientes order by email asc;
+
+select * from db_semana08.Clientes
+    order by idade asc;
+
+select * from db_semana08.Clientes
+    where nome like '%silva%';
