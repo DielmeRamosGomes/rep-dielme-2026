@@ -1,7 +1,7 @@
 algoritmo "ContadorDeItens"
-Var
+var
   contador: inteiro
-Inicio
+inicio
 para contador de 1 ate 10 faca
   escreva("Item: ", contador)
 fimpara
