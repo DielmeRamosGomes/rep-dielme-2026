@@ -14,7 +14,7 @@ inicio
   escreva(" A soma dos produtos é R$ ", total_acumulado)
 fimalgoritmo
 
-
+//
 
 
 
