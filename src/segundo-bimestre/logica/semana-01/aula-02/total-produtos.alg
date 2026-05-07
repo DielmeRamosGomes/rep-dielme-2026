@@ -1,5 +1,4 @@
 algoritmo "total_produtos"
-
 var
   total_acumulado: real
   valor_produto:real
