@@ -12,7 +12,29 @@ insert into db_dielmeloja.vendas(produto, quantidade, valor_unitario, data_venda
     values("computador", 2, 3000, "2026-04-10"),
     ("mesa gamer", 3, 2000, "2026-04-11");
 
+insert into db_dielmeloja.vendas(produto, quantidade, valor_unitario, data_venda) 
+    values("Fone Gamer", 3, 100, "2026-04-11"),
+    ("Mouse gamer", 4, 500, "2026-04-13"),
+    ("TV Gamer", 1, 5000, "2026-04-15");
 
+select * from db_dielmeloja.vendas;
 
+--1.Quantas vendas foram realizadas no mês passado?
+SELECT COUNT(*) AS total_vendas
+    FROM db_dielmeloja.vendas as v
+        WHERE v.data_venda 
+            BETWEEN DATE_SUB(CURDATE(), INTERVAL 1 MONTH) 
+                AND LAST_DAY(DATE_SUB(CURDATE(), INTERVAL 1 MONTH));
+
+--2.Qual foi o valor total de vendas de cada produto?
+
+SELECT v.produto, SUM(quantidade * valor_unitario) AS valor_total
+    FROM db_dielmeloja.vendas as v 
+        GROUP BY v.produto;
+
+--3.Qual foi o produto mais vendido em quantidade?
+
+select v.produto, max(quantidade) as maior_quantidade
+    from db_dielmeloja.vendas as v;
 
 
