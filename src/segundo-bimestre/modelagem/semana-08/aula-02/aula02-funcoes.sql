@@ -37,4 +37,18 @@ SELECT v.produto, SUM(quantidade * valor_unitario) AS valor_total
 select v.produto, max(quantidade) as maior_quantidade
     from db_dielmeloja.vendas as v;
 
+-- 4.Qual foi o valor médio das vendas por dia no mês passado?
+
+select avg(faturamento_diario) as media_de_vendas
+    from (
+        select sum(v.quantidade * v.valor_unitario) as faturamento_diario
+            from db_dielmeloja.vendas as v
+                where v.data_venda 
+                    between date_sub(curdate(), interval 1 month)
+                        and last_day(date_sub(curdate(), interval 1 month))
+                           group by v.data_venda) as resumo_mensal;
+
+
+
+
 
