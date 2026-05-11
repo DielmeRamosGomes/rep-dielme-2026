@@ -1,0 +1,20 @@
+RESUMO TÉCNICO: MODELO INCEPTION-V3
+
+O Inception-v3 é uma arquitetura de rede neural convolucional (CNN) desenvolvida pela Google, otimizada para tarefas de visão computacional, como a classificação de imagens.
+
+PRINCIPAIS CARACTERÍSTICAS:
+- Profundidade: 42 camadas.
+- Tamanho de entrada: Imagens de 299x299 pixels.
+- Foco: Eficiência computacional e redução de parâmetros.
+
+INOVAÇÕES TÉCNICAS:
+1. Módulos Inception: Executa filtros de diferentes tamanhos (1x1, 3x3, 5x5) em paralelo no mesmo nível para capturar padrões em diversas escalas.
+2. Fatoração de Convoluções: Divide convoluções grandes em menores (ex: uma 5x5 vira duas 3x3) e utiliza fatoração asimétrica (ex: 1x3 seguida de 3x1) para economizar processamento.
+3. Classificadores Auxiliares: Utilizados durante o treino para melhorar a convergência e evitar o desaparecimento do gradiente.
+4. RMSProp: Uso de otimizadores avançados para melhor ajuste dos pesos.
+
+VANTAGENS:
+- Excelente para Transfer Learning (ajuste de modelos pré-treinados).
+- Equilíbrio ideal entre precisão (acurácia) e uso de memória/CPU.
+- Amplamente utilizado na indústria e em pesquisas acadêmicas.
+
