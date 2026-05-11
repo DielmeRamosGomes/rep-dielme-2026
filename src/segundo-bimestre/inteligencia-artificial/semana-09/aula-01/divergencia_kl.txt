@@ -1,0 +1,16 @@
+DIVERGÊNCIA DE KULLBACK-LEIBLER (KL)
+
+A Divergência KL é uma medida de quão diferente uma distribuição de probabilidade P (geralmente os dados reais) é de uma distribuição Q (geralmente o modelo ou aproximação).
+
+CONCEITOS CHAVE:
+1. Perda de Informação: Mede a quantidade de informação perdida quando usamos Q para aproximar P.
+2. Assimetria: D_KL(P || Q) não é igual a D_KL(Q || P). A ordem importa porque P é a referência.
+3. Não-Negatividade: O valor é sempre >= 0. É zero apenas se P e Q forem idênticas.
+
+APLICAÇÕES EM MACHINE LEARNING:
+- VAEs (Variational Autoencoders): Utilizada para regularizar o espaço latente.
+- T-SNE: Algoritmo de redução de dimensionalidade que minimiza a KL para manter pontos próximos no espaço original também próximos no reduzido.
+- Reinforcement Learning (PPO): Para garantir que a nova política não mude drasticamente em relação à política antiga.
+
+FÓRMULA (DISCRETA):
+D_KL(P || Q) = Σ P(x) * log( P(x) / Q(x) )
