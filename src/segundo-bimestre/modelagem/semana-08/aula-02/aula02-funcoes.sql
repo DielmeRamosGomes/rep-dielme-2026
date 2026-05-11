@@ -19,6 +19,8 @@ insert into db_dielmeloja.vendas(produto, quantidade, valor_unitario, data_venda
 
 select * from db_dielmeloja.vendas;
 
+select v.id_venda, v.produto, v.quantidade from db_dielmeloja.vendas as v;  
+
 --1.Quantas vendas foram realizadas no mês passado?
 SELECT COUNT(*) AS total_vendas
     FROM db_dielmeloja.vendas as v
@@ -28,7 +30,7 @@ SELECT COUNT(*) AS total_vendas
 
 --2.Qual foi o valor total de vendas de cada produto?
 
-SELECT v.produto, SUM(quantidade * valor_unitario) AS valor_total
+SELECT v.produto, SUM(v.quantidade * v.valor_unitario) AS valor_total
     FROM db_dielmeloja.vendas as v 
         GROUP BY v.produto;
 
