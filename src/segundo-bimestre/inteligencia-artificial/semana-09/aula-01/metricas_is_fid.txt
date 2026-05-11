@@ -1,0 +1,27 @@
+MÉTRICAS DE AVALIAÇÃO PARA MODELOS GENERATIVOS: IS E FID
+
+Na inteligência artificial generativa (como GANs e VAEs), não basta apenas criar uma imagem; é preciso medir sua qualidade. As duas métricas mais utilizadas são o Inception Score (IS) e a Frechet Inception Distance (FID). Ambas utilizam a rede pré-treinada Inception-v3 como base.
+
+1. INCEPTION SCORE (IS)
+O IS foca em dois aspectos principais das imagens geradas:
+- Qualidade Individual (Saliência): A imagem parece um objeto reconhecível? Se o modelo gera um "cachorro", a rede Inception-v3 deve ter alta confiança de que é um cachorro.
+- Diversidade (Entropia): O modelo gera muitos tipos diferentes de objetos ou apenas o mesmo repetidamente?
+
+Cálculo: Usa a Divergência KL entre a distribuição condicional (probabilidade da classe dada a imagem) e a distribuição marginal (probabilidade média das classes em todo o conjunto gerado).
+- Vantagem: Fácil de calcular sem precisar das imagens originais.
+- Limitação: Não compara as imagens geradas com as imagens reais do mundo. Um modelo pode ter um IS alto gerando imagens perfeitas que não têm nada a ver com o conjunto de treino.
+
+2. FRECHET INCEPTION DISTANCE (FID)
+O FID é considerado superior ao IS porque compara a distribuição das imagens geradas com a distribuição das imagens reais.
+- Funcionamento: As imagens (reais e geradas) são passadas pela camada de pooling da Inception-v3 para extrair vetores de características (features). Assume-se que essas características seguem uma distribuição Gaussiana multidimensional.
+- Cálculo: Mede a "distância" entre as médias e as covariâncias das duas distribuições (Real vs. Gerada).
+
+Interpretação:
+- FID Baixo: As distribuições são similares. Significa que as imagens geradas são realistas e diversas comparadas ao original.
+- FID Alto: Grande discrepância entre o que foi gerado e o que é real.
+
+RESUMO COMPARATIVO:
+- Inception Score (IS): Quanto MAIOR, melhor. Foca em nitidez e diversidade interna.
+- Frechet Inception Distance (FID): Quanto MENOR, melhor. Foca na similaridade com o mundo real e é mais sensível a ruídos e distorções.
+
+
