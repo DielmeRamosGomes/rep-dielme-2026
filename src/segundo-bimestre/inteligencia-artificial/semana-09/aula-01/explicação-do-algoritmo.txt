@@ -74,5 +74,5 @@ Extrair as features de imagens geradas pela sua IA.
 Comparar as duas distribuições. Se as médias e desvios padrão forem 
 parecidos, sua IA está gerando imagens muito realistas!
 
-Ficou claro como o modelo foi "repurposed" (reutilizado) para análise 
-em vez de classificação?
+Fica claro como o modelo foi "repurposed" (reutilizado) para análise 
+em vez de classificação.
