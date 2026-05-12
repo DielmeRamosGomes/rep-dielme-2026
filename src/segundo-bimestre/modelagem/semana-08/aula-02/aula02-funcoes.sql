@@ -37,7 +37,8 @@ SELECT v.produto, SUM(v.quantidade * v.valor_unitario) AS valor_total
 --3.Qual foi o produto mais vendido em quantidade?
 
 select v.produto, max(quantidade) as maior_quantidade
-    from db_dielmeloja.vendas as v;
+    from db_dielmeloja.vendas as v 
+        group by v.quantidade desc limit 1;
 
 -- 4.Qual foi o valor médio das vendas por dia no mês passado?
 
