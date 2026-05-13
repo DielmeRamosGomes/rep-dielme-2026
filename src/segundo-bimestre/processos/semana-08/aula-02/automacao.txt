@@ -1,0 +1,51 @@
+ATIVIDADE PRÁTICA: O ROBÔ COZINHEIRO
+--------------------------------------------------
+Respostas das Perguntas de Consolidação
+
+1. Qual é a função do conceito de Assert em um teste 
+automatizado e a qual parte de um caso de teste manual ele 
+corresponde?
+
+A função do Assert é servir como uma instrução de 
+verificação explícita, funcionando como o "teste do paladar"
+do robô. Ele é uma afirmação que, se for falsa, faz o teste 
+falhar imediatamente, garantindo que o resultado saiu como o
+esperado. Na estrutura de um caso de teste manual, o Assert 
+corresponde ao "Resultado Esperado".
+
+2. Por que um robô de teste precisa de comandos separados 
+para “encontrar” um elemento e depois “interagir” com ele 
+(como TYPE ou CLICK)?
+
+O robô não possui a capacidade humana de interpretar a tela 
+visualmente ou de forma intuitiva. Ele funciona através de 
+comandos primitivos, como um "braço mecânico". Por isso, a 
+ação precisa ser decomposta: primeiro o robô deve localizar 
+o elemento específico na interface (encontrar o campo ou 
+botão) para que, em seguida, possa executar a interação de 
+digitar (TYPE) ou clicar (CLICK).
+
+3. Por que a automação de testes é tão importante para as 
+empresas, mesmo que uma pessoa possa executar os mesmos 
+passos manualmente?
+
+A automação é fundamental porque transforma ações humanas 
+em comandos lógicos e repetíveis. Enquanto um humano 
+realiza o processo manualmente, o robô garante que a 
+verificação (Assert) seja feita de forma sistemática e sem 
+falhas de percepção, o que realmente dá valor ao processo 
+de teste ao confirmar se o produto final está correto de 
+forma rápida e precisa.
+
+--------------------------------------------------
+EXEMPLO DE PSEUDOCÓDIGO (Script do Robô):
+
+OPEN "www.compra-tudo.com/login"
+ASSERT verifica se o campo e-mail existe na tela de login
+ASSERT verifica se o campo senha existe na tela de login
+ASSERT verifica se o botão entrar existe na tela 
+TYPE "teste@email.com" no campo "E-mail"
+TYPE "Senha123" no campo "Senha"
+CLICK no botão "Entrar"
+ASSERT que a URL agora é "www.compra-tudo.com/minha-conta"
+ASSERT que o texto "Bem-vindo de volta!" está visível

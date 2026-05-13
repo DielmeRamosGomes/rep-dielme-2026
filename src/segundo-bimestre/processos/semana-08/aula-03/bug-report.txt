@@ -1,0 +1,72 @@
+Modelo de Bug Report (Baseado na Atividade)
+Título: Lista de "Meus Pedidos" aparece em branco para 
+usuário com histórico de compras.
+
+ID do Usuário: cliente@email.com.
+
+Passos para Reproduzir: 
+1. Fazer login com o e-mail cliente@email.com.
+2. Navegar até a página "Meus Pedidos".
+
+Resultado Atual: A página carrega o título, mas a lista
+de pedidos fica totalmente vazia.
+
+Resultado Esperado: A página deve exibir a lista com os 
+três pedidos realizados (data, valor e status).
+
+Evidências Esperadas: Screenshot da tela inteira com nome do 
+usuário e área da lista vazia circulada; Log de erro 404 ou 
+falha de processamento no console.
+
+Severidade: Alta (funcionalidade principal quebrada).
+
+Prioridade: Alta (gera insatisfação e chamados no suporte).
+
+1. Diferença entre Severidade e Prioridade
+
+Severidade: Refere-se ao impacto técnico do defeito no 
+funcionamento do software. É a "gravidade da doença", 
+indicando o quanto uma funcionalidade está quebrada ou 
+impedida de funcionar.
+
+Prioridade: Refere-se à urgência do negócio para que o 
+erro seja corrigido. Está ligada ao impacto na 
+experiência do cliente, custos de suporte e confiança 
+na marca.
+
+2. Exemplo de Severidade Baixa e Prioridade Alta
+Sim, é possível. Um exemplo clássico é um erro de digitação 
+(typo) no nome da empresa ou no logotipo da página inicial.
+
+Severidade Baixa: Não impede o funcionamento do site; o 
+usuário ainda pode comprar.
+
+Prioridade Alta: Causa uma péssima impressão estética e 
+passa falta de profissionalismo, por isso precisa ser 
+corrigido imediatamente para preservar a imagem da marca.
+
+3. Por que descrever a evidência ideal é útil?
+Mesmo sem o registro real, descrever a 
+evidência fortalece o raciocínio analítico 
+do testador. Isso ajuda o desenvolvedor a 
+saber exatamente para onde olhar (como o 
+nome do usuário logado ou o título da página)
+ e o que esperar encontrar (como um erro 404 
+ no console). Essa clareza direciona a 
+ investigação e economiza tempo no processo 
+ de correção.
+
+4. Informação mais útil para o Desenvolvedor
+Como desenvolvedor, a informação mais útil seria os 
+Passos 
+para Reproduzir e a Hipótese dos Logs do Console.
+
+Por quê? Os passos permitem que o desenvolvedor recrie o 
+erro em seu próprio ambiente. Já os logs (como o erro 404 
+sugerido) indicam a causa provável — se o problema é uma 
+falha na comunicação com o banco de dados ou um erro de 
+processamento de dados do usuário.
+
+
+
+
