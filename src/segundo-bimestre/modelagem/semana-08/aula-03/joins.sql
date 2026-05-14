@@ -46,12 +46,31 @@ select p.nome, count(v.id_produto) as produto_mais_vendido
 
 -- 2.Qual foi o valor total de vendas por categoria no mês passado?
 
-select p.categoria, sum(p.preco * v.quantidade) as valor_total_por_categoria
-    from db_join.produtos as p join db_join.vendas as v
-        on p.id_produto = v.id_produto
-            where v.data_venda >= date_sub(curdate(), interval 1 month)
-                group by p.categoria 
-                    order by valor_total_por_categoria desc;
+select 
+    p.categoria, sum(p.preco * v.quantidade) as valor_total_por_categoria
+from db_join.produtos as p join db_join.vendas as v
+on p.id_produto = v.id_produto
+where v.data_venda >= date_sub(curdate(), interval 1 month)
+group by p.categoria 
+order by valor_total_por_categoria desc;
 
--- 3.Qual foi a média de produtos vendidos por pedido nos últimos três meses?
+-- 3.Qual foi a média de produtos vendidos nos últimos três meses?
+
+select 
+    avg(soma_total_produtos) as media_produtos from 
+    (select 
+        sum(p.preco * v.quantidade) as soma_total_produtos 
+        from db_join.produtos as p join db_join.vendas as v
+        on p.id_produto = v.id_produto 
+        where v.data_venda 
+        between "2026-03-01" and curdate()
+    ) as soma;
+
+
 -- 4.Qual foi o valor da venda mais alta e da mais baixa nos últimos três meses?
+SELECT 
+    MAX(p.preco * v.quantidade) AS venda_mais_alta,
+    MIN(p.preco * v.quantidade) AS venda_mais_baixa
+FROM db_join.produtos AS p
+JOIN db_join.vendas AS v ON p.id_produto = v.id_produto
+WHERE v.data_venda >= "2026-03-01";
