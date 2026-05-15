@@ -51,7 +51,7 @@ select
     p.categoria, sum(p.preco * v.quantidade) as valor_total_por_categoria
 from db_join.produtos as p join db_join.vendas as v
 on p.id_produto = v.id_produto
-where v.data_venda >= date_sub(curdate(), interval 1 month)
+where v.data_venda >= "2026-03-01"
 group by p.categoria 
 order by valor_total_por_categoria desc;
 
