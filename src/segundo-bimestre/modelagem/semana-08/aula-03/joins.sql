@@ -37,14 +37,15 @@ select * from db_join.vendas;
 -- 1.Qual foi o produto mais vendido nos últimos três meses?
 
 select p.nome, count(v.id_produto) as produto_mais_vendido 
-    from db_join.produtos as p join db_join.vendas as v
-        on p.id_produto = v.id_produto 
-            where v.data_venda >= date_sub(curdate(), interval 3 month)
-                group by p.nome 
-                    order by produto_mais_vendido desc 
-                        limit 1;
+from db_join.produtos as p join db_join.vendas as v
+on p.id_produto = v.id_produto 
+where v.data_venda >= "2026-03-01"
+group by p.nome 
+order by produto_mais_vendido desc 
+limit 1;
 
--- 2.Qual foi o valor total de vendas por categoria no mês passado?
+-- 2.Qual foi o valor total de vendas por categoria 
+--no mês passado?
 
 select 
     p.categoria, sum(p.preco * v.quantidade) as valor_total_por_categoria
