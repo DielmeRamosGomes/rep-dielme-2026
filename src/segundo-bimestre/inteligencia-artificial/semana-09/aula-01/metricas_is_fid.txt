@@ -5,7 +5,8 @@ Na inteligência artificial generativa (como GANs e VAEs), não basta apenas cri
 1. INCEPTION SCORE (IS)
 O IS foca em dois aspectos principais das imagens geradas:
 - Qualidade Individual (Saliência): A imagem parece um objeto reconhecível? Se o modelo gera um "cachorro", a rede Inception-v3 deve ter alta confiança de que é um cachorro.
-- Diversidade (Entropia): O modelo gera muitos tipos diferentes de objetos ou apenas o mesmo repetidamente?
+- Diversidade (Entropia): O modelo gera muitos tipos 
+diferentes de objetos ou apenas o mesmo repetidamente?
 
 Cálculo: Usa a Divergência KL entre a distribuição condicional (probabilidade da classe dada a imagem) e a distribuição marginal (probabilidade média das classes em todo o conjunto gerado).
 - Vantagem: Fácil de calcular sem precisar das imagens originais.
