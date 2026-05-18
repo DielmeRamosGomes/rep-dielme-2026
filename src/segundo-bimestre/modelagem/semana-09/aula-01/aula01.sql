@@ -50,3 +50,6 @@ select nome, email, cidade from db_livraria.clientes_online
 EXCEPT
 select nome, email, cidade from db_livraria.clientes_fisicos;
 
+
+
+
