@@ -1,0 +1,28 @@
+As ondas de rádio AM (Modulação em Amplitude) e FM (Modulação 
+em Frequência) são as duas formas mais clássicas de transmitir
+ áudio pelo ar. Embora ambas usem ondas eletromagnéticas, a 
+ maneira como elas "carregam" a informação (a música ou a voz 
+ do locutor) é completamente diferente.
+
+O que significa AM e FM?
+
+Para enviar um som pelo ar, as emissoras usam uma onda 
+portadora de alta frequência. O sinal de áudio original (que 
+tem frequência baixa) é "misturado" a essa portadora. É aí que
+entra a modulação:
+
+1. AM (Modulação em Amplitude)
+No rádio AM, a frequência da onda permanece constante, mas a 
+sua amplitude (a altura ou força da onda) varia de acordo com 
+o ritmo e o volume do som.
+
+Pense assim: A onda pisca mais forte ou mais fraca para 
+transmitir a informação.
+
+2. FM (Modulação em Frequência)
+No rádio FM, a amplitude permanece constante, mas a frequência
+(a velocidade com que a onda oscila) varia de acordo com o 
+som.
+
+Pense assim: A onda acelera ou desacelera para transmitir a 
+informação.
