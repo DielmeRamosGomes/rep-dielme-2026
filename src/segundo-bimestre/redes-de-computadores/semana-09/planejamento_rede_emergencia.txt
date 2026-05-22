@@ -1,0 +1,44 @@
+PLANEJAMENTO DE UMA REDE DE EMERGÊNCIA
+====================================
+
+Este documento apresenta a análise logística de entrega de internet para uma situação de emergência humanitária (ONG), conforme as diretrizes solicitadas.
+
+-------------------------------------------------------------------------------
+1. CONEXÃO ENTRE HOSPITAL DE CAMPANHA E CENTRO DE DISTRIBUIÇÃO
+-------------------------------------------------------------------------------
+* Tecnologia Recomendada: FSO (Free Space Optics / Óptica do Espaço Livre)
+
+* Por que usar?
+  Os locais estão muito próximos (apenas 2 km de distância), situados em uma 
+  área plana e possuem linha de visão direta. A tecnologia FSO utiliza feixes 
+  de laser transmitidos pelo ar, oferecendo a altíssima velocidade exigida 
+  para a troca rápida de arquivos médicos pesados e dados de logística, sem a 
+  necessidade de implantar cabos físicos após o desastre.
+
+* Risco Principal:
+  Neblina frequente na região costeira/plana. A neblina é composta por 
+  gotículas de água suspensas que dispersam o feixe de laser, causando 
+  atenuação severa ou queda total do sinal óptico.
+
+* Mitigação do Risco:
+  Implementar um sistema de failover (backup) híbrido utilizando um link de 
+  rádio por micro-ondas (RF) de alta frequência. Caso a neblina comprometa 
+  o sinal do FSO, o tráfego é automaticamente desviado para o rádio, que não 
+  sofre o mesmo tipo de atenuação por neblina, mantendo a comunicação estável.
+
+-------------------------------------------------------------------------------
+2. CONEXÃO COM A EQUIPE DE RESGATE NA MONTANHA
+-------------------------------------------------------------------------------
+* Tecnologia Recomendada: LEO (Low Earth Orbit / Satélite de Órbita Baixa)
+
+* Por que essa é a melhor opção?
+  - Isolamento e Distância: A equipe encontra-se a 500 km de distância em uma 
+    região montanhosa remota e sem nenhuma infraestrutura terrestre prévia. Isso 
+    elimina o uso de FSO ou cabos.
+  - Requisito de Latência: A coordenação exige chamadas de vídeo em tempo real 
+    e alta estabilidade, tornando a baixa latência um fator essencial.
+  - Vantagem sobre GEO: Os satélites LEO orbitam a altitudes muito menores 
+    (500 km a 1.200 km) do que os satélites GEO (aproximadamente 36.000 km). 
+    Isso resulta em uma latência drasticamente menor (cerca de 25-40 ms no LEO, 
+    contra mais de 600 ms no GEO), viabilizando videoconferências fluidas e 
+    comunicação instantânea sem atrasos prejudiciais à operação de resgate.
