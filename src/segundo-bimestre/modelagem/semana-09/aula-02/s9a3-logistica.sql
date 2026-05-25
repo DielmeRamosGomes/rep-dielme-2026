@@ -51,5 +51,10 @@ select cidade, sum(peso_entrega) as total_peso
 
 -- HAVING é usado para filtrar grupos de dados após a agregação.
 
-
+-- 4. Identificar veículos com entregas acima de 10 toneladas no total (usando HAVING)
+SELECT v.modelo, SUM(e.peso_entrega) AS total_peso_entregas
+    FROM db_logistica.veiculos as v
+        JOIN db_logistica.entregas as e ON v.id_veiculo = e.id_veiculo
+            GROUP BY v.modelo
+                HAVING total_peso_entregas > 10.0;
 
