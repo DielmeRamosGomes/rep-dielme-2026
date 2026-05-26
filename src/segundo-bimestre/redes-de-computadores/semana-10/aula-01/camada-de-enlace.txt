@@ -1,0 +1,57 @@
+A camada de enlace de dados (ou simplesmente camada de enlace) é a 
+segunda camada do modelo OSI e fica logo acima da camada física.
+
+Para entender o papel dela de forma simples: enquanto a camada 
+física se preocupa em transmitir bits brutos (0s e 1s) através de 
+um fio ou sinal de rádio, a camada de enlace pega esses bits e os 
+organiza em um formato inteligente e estruturado, garantindo que a 
+comunicação entre dois dispositivos diretamente conectados aconteça
+sem erros.
+
+Principais Funções da Camada de Enlace
+
+Enquadramento (Framing): Ela pega os pacotes de dados recebidos da 
+camada de rede e os divide em unidades menores chamadas quadros 
+(frames). Cada quadro tem um cabeçalho (header) e um trailer que 
+ajudam o receptor a saber onde o dado começa e onde termina.
+
+Endereçamento Físico (Endereço MAC): É aqui que entra o famoso 
+endereço MAC (Media Access Control). Diferente do endereço IP (que é
+lógico e muda de rede para rede), o endereço MAC é o "RG" físico da 
+sua placa de rede, gravado de fábrica. A camada de enlace usa isso 
+para saber exatamente quem enviou e quem deve receber o quadro na 
+rede local.
+
+Controle de Fluxo: Evita que um transmissor muito rápido envie dados
+em uma velocidade maior do que um receptor lento consiga processar, 
+impedindo o congestionamento do dispositivo de destino.
+
+Controle de Erros: Ela adiciona bits de verificação (como o CRC - 
+Cyclic Redundancy Check) no trailer do quadro. Se o receptor 
+detectar que os dados foram corrompidos no meio do caminho, ela 
+descarta o quadro e, dependendo do protocolo, pode solicitar a 
+retransmissão.
+
+Controle de Acesso ao Meio (MAC): Quando vários dispositivos 
+compartilham o mesmo meio físico (como o Wi-Fi ou um cabo coaxial 
+antigo), a camada de enlace define as regras de "quem fala e quem 
+escuta" para evitar que dois dispositivos transmitam ao mesmo tempo 
+e causem colisões de sinal.
+
+As Duas Subcamadas
+Para organizar todas essas funções, a camada de enlace
+é dividida pelo padrão IEEE 802 em duas subcamadas:
+
+LLC (Logical Link Control - Controle de Link Lógico): 
+É a parte superior, que faz a ponte com a camada de 
+rede. Ela lida com o controle de fluxo, verificação de
+erros e permite que diferentes protocolos de rede 
+funcionem sobre a mesma camada física.
+
+MAC (Media Access Control - Controle de Acesso ao 
+Meio): É a parte inferior, que lida diretamente com o 
+hardware. Ela é responsável por colocar o endereço 
+físico nos quadros e gerenciar o acesso ao meio de 
+transmissão (como o protocolo CSMA/CD no Ethernet ou 
+CSMA/CA no Wi-Fi).
+
