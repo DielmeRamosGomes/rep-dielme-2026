@@ -1,0 +1,46 @@
+1. Endereçamento (MAC de Origem e Destino)
+Os endereços MAC são a "identidade física" de cada placa de rede na mesma rede 
+local.
+
+Por que são tão importantes? O MAC de Origem serve para que o destinatário (e os 
+switches no caminho) saibam quem enviou a mensagem e para onde responder. O MAC de 
+Destino diz exatamente qual dispositivo na rede local deve abrir e processar aquele 
+quadro.
+
+O que aconteceria se o MAC de destino estivesse errado? Se o MAC de destino estiver
+incorreto, o dispositivo correto nunca vai receber o pacote. O quadro será ignorado ou descartado pela placa de rede dos outros dispositivos que o receberem, pois eles vão olhar o campo de destino, ver que não é o MAC deles e simplesmente "jogar fora". A comunicação falharia logo na primeira camada de rede.
+
+2. Integridade (FCS - Frame Check Sequence)
+O FCS (geralmente calculado usando CRC) funciona como um selo de segurança que 
+garante que os dados não foram corrompidos no cabo.
+
+O FCS calculado bateu após o erro? Não. Se houve uma alteração de bits na 
+simulação (um erro de transmissão), o cálculo matemático do FCS feito pelo 
+destinatário resultará em um valor totalmente diferente daquele que foi enviado 
+originalmente no rodapé do quadro.
+
+O que o switch ou computador faz com essa inconsistência? Eles descartam o quadro 
+imediatamente. Na camada 2 (Ethernet), não existe tentativa de corrigir o erro ou 
+pedir reenvio automaticamente. O switch simplesmente joga o quadro corrompido no 
+lixo para evitar que dados estragados sobrecarreguem a rede. Quem vai perceber que 
+algo sumiu e pedir o reenvio será uma camada superior (como o protocolo TCP, lá na 
+camada de transporte).
+
+3. MTU e Dados (Maximum Transmission Unit)
+O MTU (geralmente de 1500 bytes no Ethernet padrão) dita o tamanho máximo que a 
+carga útil (dados) de um quadro pode ter.
+
+Por que existe um tamanho máximo? * Justiça na rede: Se um computador pudesse 
+enviar um quadro de tamanho infinito, ele "monopolizaria" o cabo físico, impedindo 
+que qualquer outro dispositivo transmitisse até que ele terminasse.
+
+Eficiência e Erros: Se um quadro gigantesco de 1 GB sofresse um único bit de erro 
+no final da transmissão, o FCS daria inválido e o arquivo inteiro teria que ser 
+descartado e reenviado. Com tamanhos menores, se houver um erro, perde-se apenas 
+um pedaço pequeno.
+
+O que acontece com um arquivo muito grande? Ele passa por um processo chamado 
+fragmentação. O arquivo é fatiado em pedaços menores (geralmente pelo protocolo IP 
+na camada de rede) para que cada pedaço caiba perfeitamente dentro do MTU de um 
+quadro Ethernet. Ao chegar no destino, esses pedaços são reagrupados para 
+reconstruir o arquivo original.

@@ -1,0 +1,20 @@
+Preâmbulo (Preamble)O que é: 
+É uma sequência de 7 bytes (56 bits) de dados binários
+que alterna continuamente entre uns e zeros (10101010 10101010 ...).
+Função: A sua principal função é a sincronização de relógio (clock). Quando um 
+dispositivo começa a transmitir, os circuitos receptores da outra placa de rede 
+precisam de tempo para se ajustar e sincronizar o seu ritmo de leitura com o sinal 
+que está a chegar. O preâmbulo avisa a rede: "Atenção, uma transmissão vai começar,
+preparem-se para contar os bits corretamente!".
+
+2. SFD (Start of Frame Delimiter)
+O que é: É um único byte (8 bits) que segue imediatamente o preâmbulo. A sua 
+sequência binária é quase igual à do preâmbulo, exceto pelo último bit: 10101011 
+(termina em dois bits 1 seguidos).Função: O SFD serve como um marcador de início 
+real. Ele avisa o receptor que a fase de sincronização terminou e que o próximo bit
+a chegar já fará parte do cabeçalho do quadro Ethernet real (especificamente, o 
+início do endereço MAC de Destino).  Uma Analogia PráticaImagine que o envio de um 
+quadro Ethernet é como uma corrida de atletismo:O Preâmbulo é o aviso do árbitro: 
+"Em seus lugares... Preparar...". Todos os atletas (placas de rede) prestam atenção
+e concentram-se.O SFD é o som do tiro de partida. No momento em que ele bate, a 
+contagem oficial e a corrida começam.

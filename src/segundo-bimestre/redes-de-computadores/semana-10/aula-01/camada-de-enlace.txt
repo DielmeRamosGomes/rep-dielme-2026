@@ -55,3 +55,5 @@ físico nos quadros e gerenciar o acesso ao meio de
 transmissão (como o protocolo CSMA/CD no Ethernet ou 
 CSMA/CA no Wi-Fi).
 
+Frame Check Sequence (FCS)
+serve para verificar se o quadro chegou sem erros.
