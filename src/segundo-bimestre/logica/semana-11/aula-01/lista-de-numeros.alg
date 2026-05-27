@@ -9,6 +9,6 @@ inicio
   numeros[4] <- 40
   numeros[5] <- 50
   para posicao de 1 ate 5 faca
-    escreval("numeros[", posicao, "] = ", numeros[contador])
+    escreval("numeros[", posicao, "] = ", numeros[posicao])
   fimpara
 fimalgoritmo
