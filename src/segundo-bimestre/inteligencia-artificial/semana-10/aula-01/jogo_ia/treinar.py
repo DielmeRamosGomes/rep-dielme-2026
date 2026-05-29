@@ -4,7 +4,6 @@ import torch.nn as nn
 import torch.optim as optim
 from torchvision import datasets, models, transforms
 from torch.utils.data import DataLoader
-import os
 
 # pip install -r requisitos.txt
 
