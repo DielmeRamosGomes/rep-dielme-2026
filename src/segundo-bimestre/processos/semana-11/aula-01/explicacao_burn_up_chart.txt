@@ -1,0 +1,53 @@
+GRÁFICO DE BURN-UP (BURN-UP CHART)
+
+Imagine que você está organizando uma campanha de arrecadação de agasalhos. O seu objetivo inicial é conseguir 100 cobertores. Conforme os dias passam, as pessoas vão doando e você vai empilhando os cobertores em uma sala.
+
+Um Burn-up Chart (Gráfico de Burn-up) é exatamente como essa pilha de cobertores: ele mostra o quanto de trabalho você já acumulou e concluiu em direção a uma meta, além de mostrar se o tamanho do seu desafio mudou no meio do caminho.
+
+===============================================================================
+1. PARA QUE SERVE UM BURN-UP CHART?
+===============================================================================
+O Burn-up serve para responder, de forma visual e rápida, a três perguntas clássicas de qualquer projeto:
+1. O quanto já fizemos até agora?
+2. O quanto ainda falta para terminar tudo?
+3. Quando vamos terminar o projeto, no ritmo atual?
+
+A palavra "Burn-up" vem de "queimar para cima". Ou seja, as linhas do gráfico vão subindo à medida que o tempo passa e o trabalho vai sendo feito.
+
+===============================================================================
+2. COMO INTERPRETAR OS EIXOS DO GRÁFICO?
+===============================================================================
+O gráfico é plano e possui duas linhas principais de coordenadas (os eixos):
+
+* Eixo Horizontal (Eixo X - em baixo): Representa o TEMPO. Pode ser dividido em dias, semanas ou, se você usa metodologias ágeis, em Sprints (ciclos de trabalho).
+* Eixo Vertical (Eixo Y - na esquerda): Representa a QUANTIDADE DE TRABALHO. Pode ser medido em número de tarefas, horas ou Story Points (uma unidade que mede a complexidade da tarefa).
+
+===============================================================================
+3. AS DUAS LINHAS MÁGICAS DO BURN-UP
+===============================================================================
+O grande segredo do Burn-up é que ele desenha duas linhas separadas que sobem pelo gráfico. É a relação entre elas que conta a história do projeto:
+
+A) A Linha de Escopo Total (A Meta):
+Fica na parte de cima do gráfico. Ela mostra a quantidade total de trabalho que precisa ser feita para o projeto ser considerado concluído. Se o projeto tem 50 tarefas no total, essa linha começa marcando o número 50.
+
+B) A Linha de Progresso (O Trabalho Concluído):
+Começa lá embaixo, no zero, e vai subindo conforme a equipe entrega as tarefas prontas. Se no primeiro dia a equipe entrega 5 tarefas, a linha sobe para o 5. Se no dia seguinte entrega mais 5, ela sobe para o 10.
+
+* O OBJETIVO DO JOGO: O projeto acaba quando a Linha de Progresso (que vem subindo lá de baixo) finalmente encosta na Linha de Escopo Total (que está lá em cima).
+
+===============================================================================
+4. POR QUE ELE EVIDENCIA MUDANÇAS DE ESCOPO?
+===============================================================================
+Aqui está a maior vantagem do Burn-up: ele não esconde a verdade se o cliente ou o gestor pedir para adicionar mais coisas no meio do projeto.
+
+Imagine que a equipe está trabalhando super bem e a Linha de Progresso está subindo rápido. De repente, o cliente pede 10 novas funcionalidades que não estavam planejadas.
+
+O que acontece no gráfico?
+* A Linha de Escopo Total dá um pulo para cima (sobe como um degrau de escada, indo de 50 para 60 tarefas, por exemplo).
+* A Linha de Progresso continua subindo normalmente, mostrando que a equipe não perdeu o ritmo.
+
+POR QUE FOCAR NO "CONCLUÍDO" AJUDA?
+Como o Burn-up mostra o trabalho que JÁ FOI CONCLUÍDO (em vez do que falta), fica perfeitamente visível o motivo de o projeto atrasar: não foi porque a equipe parou de trabalhar (a linha de progresso continua subindo), mas sim porque a meta se moveu para cima (o escopo aumentou).
+
+Isso traz uma clareza enorme para negociações: se a linha de escopo subiu e a data de entrega final se distanciou, o gráfico prova visualmente que o motivo foi o aumento de tarefas pedidas, e não a falta de produtividade do time.
+-------------------------------------------------------------------------------

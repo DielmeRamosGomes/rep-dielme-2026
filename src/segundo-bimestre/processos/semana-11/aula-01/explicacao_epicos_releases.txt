@@ -1,0 +1,60 @@
+ROADMAP DE PRODUTOS: ÉPICOS E RELEASES
+
+Imagine que você está planejando uma viagem de férias de um mês pela Europa. Tentar planejar cada minuto de uma vez só seria desesperador, certo? No desenvolvimento de produtos, o desafio é o mesmo. É por isso que usamos termos como Épicos e Releases no Roadmap para quebrar grandes visões em pedaços organizados.
+
+===============================================================================
+1. O QUE É UM ÉPICO?
+===============================================================================
+Um Épico é um grande bloco de trabalho que representa uma funcionalidade ou desejo importante do usuário. Ele é grande demais para ser entregue de uma só vez, por isso precisa ser dividido em tarefas menores (chamadas de User Stories ou Histórias de Usuário).
+
+* Foco: O "O quê" e o "Por que".
+* Pensamento central: Qual grande valor estamos entregando para o cliente?
+
+===============================================================================
+2. O QUE É UMA RELEASE?
+===============================================================================
+Uma Release (ou "Lançamento") é o momento em que entregamos algo pronto para o usuário. É uma data ou um marco no calendário onde um pacote de melhorias ou funcionalidades é liberado para o público usar.
+
+* Foco: O "Quando".
+* Pensamento central: O que já está pronto e faz sentido liberarmos para o mercado agora?
+
+===============================================================================
+3. A DIFERENÇA E COMO ELES SE RELACIONAM
+===============================================================================
+A forma mais fácil de entender a relação entre eles é pensar que ÉPICOS são sobre o escopo (o conteúdo) e RELEASES são sobre o tempo (a entrega).
+
+Eles se cruzam o tempo todo no seu Roadmap: uma única Release pode conter pedaços de vários Épicos diferentes.
+
+RESUMO DA COMPARAÇÃO:
+- Épico: Representa um grande objetivo ou funcionalidade. É medido pela conclusão das tarefas internas e pode ser dividido em partes menores.
+- Release: Representa um momento de lançamento no mercado. É medida por uma data-alvo ou versão (ex: Versão 1.0) e funciona como um evento único de entrega.
+
+===============================================================================
+4. EXEMPLO PRÁTICO: CRIANDO UM APP DE DELIVERY DE PIZZA (PIZZAZAP)
+===============================================================================
+
+OS ÉPICOS (O que queremos que o app faça):
+* Épico A: Sistema de Pagamento (para o cliente conseguir pagar).
+* Épico B: Rastreamento do Pedido (para diminuir a ansiedade do cliente).
+* Épico C: Perfil e Fidelidade (para o cliente acumular pontos).
+
+AS RELEASES (Como vamos entregar isso no tempo):
+
+* Release 1.0 (Lançamento Oficial - Janeiro):
+  - Do Épico A (Pagamento): Vamos entregar apenas o pagamento em Cartão de Crédito.
+  - Do Épico B (Rastreamento): Vamos entregar apenas um status simples ("Seu pedido saiu para entrega").
+  (O app já funciona! O usuário já compra e recebe a pizza).
+
+* Release 1.1 (Atualização - Março):
+  - Do Épico A (Pagamento): Adicionamos a opção de pagar com Pix.
+  - Do Épico B (Rastreamento): Adicionamos um mapa ao vivo com o motoboy se mexendo.
+
+* Release 2.0 (Grande Expansão - Junho):
+  - Do Épico C (Fidelidade): Liberamos o sistema de pontos e cupons de desconto.
+
+-------------------------------------------------------------------------------
+CONCLUSÃO:
+Os Épicos são as grandes ideias (Pagamento, Rastreamento). As Releases são as 
+caixas que enviamos aos clientes de tempos em tempos, contendo pedaços dessas 
+ideias que já estão maduros o suficiente para serem usados.
+-------------------------------------------------------------------------------
