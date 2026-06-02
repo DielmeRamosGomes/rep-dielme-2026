@@ -128,4 +128,23 @@ update db_s10a1.produtos
 set preco = 1600.00 
 where nome = 'Televisão';
 
+update db_s10a1.produtos
+set preco = 2000.00 
+where nome = 'Geladeira';
+
+select * from db_s10a1.produtos;
+
+update db_s10a1.produtos p
+    join db_s10a1.fornecedores_produtos fp on p.id_produto = fp.id_produto
+    join db_s10a1.fornecedores f on fp.id_fornecedor = f.id_fornecedor
+        set p.preco = p.preco - (p.preco * 0.05)
+            where f.nome_fornecedor = 'Fornecedor A';
+
+alter table db_s10a1.produtos
+add column data_entrada date not null default '2024-01-01';
+
+update db_s10a1.produtos p
+set p.preco = p.preco + (p.preco * 0.05)
+where p.data_entrada >= '2024-01-01';
+
 select * from db_s10a1.produtos;
