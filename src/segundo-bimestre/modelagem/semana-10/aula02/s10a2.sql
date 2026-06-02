@@ -129,6 +129,12 @@ set preco = 1600.00
 where nome = 'Televisão';
 
 update db_s10a1.produtos
+set preco = preco + (preco* 0.10);
+
+
+select * from db_s10a1.produtos;
+
+update db_s10a1.produtos
 set preco = 2000.00 
 where nome = 'Geladeira';
 
