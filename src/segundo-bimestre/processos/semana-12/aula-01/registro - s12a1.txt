@@ -1,0 +1,88 @@
+================================================================================
+          RESOLUÇÃO DA ATIVIDADE PRÁTICA: PRODUCT OWNER - A VOZ DO NEGÓCIO
+================================================================================
+
+PARTE 1 — REFINAMENTO DO BACKLOG (“BACKLOG GROOMING”)
+--------------------------------------------------------------------------------
+Transformação das necessidades brutas em Histórias de Usuário (User Stories) 
+e Critérios de Aceitação para garantir que sejam entregáveis.
+
+• História de Usuário 1 (Baseada em: "Tem que ter login seguro" e "funcionar no celular")
+  - User Story: Como vendedor externo, eu quero realizar um login seguro pelo meu celular, para acessar os dados de vendas no carro com proteção de dados.
+  - Critérios de Aceitação: 
+    * O layout da tela de login deve ser responsivo (funcionar em telas menores que 6 polegadas sem quebrar).
+    * O sistema deve exigir autenticação em duas etapas (Senha + código enviado por SMS).
+
+• História de Usuário 2 (Baseada em: "Quero um dashboard bonito" - Quebrada)
+  - User Story: Como diretor de operações, eu quero visualizar os 3 principais KPIs de vendas em formato de cards limpos e intuitivos, para entender a saúde do negócio em poucos segundos.
+  - Critérios de Aceitação:
+    * Os cards devem exibir: Faturamento Mensal, Metas Atingidas (%) e Novos Clientes.
+    * O design deve seguir a paleta de cores oficial da empresa (UI clean).
+
+• História de Usuário 3 (Baseada em: "Quero gráfico em tempo real")
+  - User Story: Como diretor de operações, eu quero que o gráfico do dashboard atualize automaticamente de forma periódica, para acompanhar o volume de vendas ao vivo sem precisar atualizar a página manualmente.
+  - Critérios de Aceitação:
+    * Os dados do gráfico devem ser atualizados automaticamente a cada 5 minutos.
+    * Deve haver um indicador visual discreto (ex: "Atualizado há x minutos").
+
+
+PARTE 2 — PRIORIZAÇÃO DE VALOR (ROI SIMPLIFICADO)
+--------------------------------------------------------------------------------
+Cálculo baseado na fórmula: ROI = Valor de Negócio (1-5) ÷ Esforço (1-5).
+Ordenado do maior ROI para o menor.
+
+[Item 1]: Login Seguro e Responsivo no Celular
+Valor = 5 (Crítico/Urgente - Segurança e acesso dos vendedores da rua)
+Esforço = 2 (Simples/Médio - Uso de bibliotecas de autenticação existentes)
+ROI = 2.5
+Ordem de prioridade: 1º lugar
+
+[Item 2]: Dashboard com os 3 Principais KPIs em Cards
+Valor = 4 (Alto valor - Traz a informação essencial que o diretor precisa)
+Esforço = 2 (Rápido/Simples - Componentes visuais estáticos)
+ROI = 2.0
+Ordem de prioridade: 2º lugar
+
+[Item 3]: Gráfico com Atualização em Tempo Real (5 min)
+Valor = 3 (Médio valor - É um desejo do diretor, mas os cards estáticos já resolvem a necessidade inicial)
+Esforço = 4 (Demorado/Complexo - Demanda requisições assíncronas e consumo de banco de dados constante)
+ROI = 0.75
+Ordem de prioridade: 3º lugar
+
+
+PARTE 3 — PRESSÃO DO STAKEHOLDER (DEFESA DO BACKLOG)
+--------------------------------------------------------------------------------
+Cenário: Stakeholder exigindo o dashboard COMPLETO até sexta-feira.
+
+• Resposta do Product Owner (Pessoa A) ao Stakeholder:
+"Entendo perfeitamente a importância dessa apresentação para o diretor e sei o quanto o impacto visual e a segurança são fundamentais para o sucesso do projeto. Para garantirmos uma entrega com alta qualidade e sem bugs na sexta-feira, nós priorizamos os itens pelo Retorno sobre o Investimento (ROI). 
+
+Nesta sexta-feira, entregaremos o sistema de Login Seguro funcionando perfeitamente no celular para os vendedores e a estrutura principal do Dashboard com os 3 KPIs mais importantes do negócio. 
+
+O gráfico com atualização em tempo real demanda uma complexidade técnica muito alta de banco de dados que comprometeria a estabilidade do sistema se feita às pressas. Por isso, ele está mapeado como o primeiro item da próxima sprint. Podemos alinhar com o diretor que os dados da apresentação serão os mais recentes coletados, e que o 'tempo real automatizado' entrará logo na sequência?"
+
+• Registro Individual de Respostas:
+a) O que eu prometi entregar agora?
+O Login Seguro via celular (responsivo) e a primeira parte do dashboard contendo os 3 principais KPIs em formato de cards.
+
+b) O que eu segurei para depois?
+A atualização do gráfico em tempo real (frequência de 5 minutos) e perfumarias visuais avançadas (como modo escuro).
+
+c) Como eu justifiquei sem entrar em briga?
+Usei critérios técnicos e de negócio (ROI). Mostrei que focar no essencial garante que o diretor terá dados reais e seguros na sexta-feira, enquanto tentar fazer tudo de uma vez colocaria em risco a qualidade e a segurança do que será apresentado.
+
+d) Onde eu senti estresse e como controlei?
+O estresse surgiu na fala impositiva de urgência do stakeholder ("é prioridade 1"). Controlei respirando fundo, demonstrando empatia com a necessidade dele (a apresentação de sexta) e mudando o foco da discussão de "opiniões" para "dados e capacidade de entrega do time".
+
+
+PERGUNTAS DE CONSOLIDAÇÃO
+--------------------------------------------------------------------------------
+1. O que faz um Product Owner dizer “isso agora/isso depois” sem parecer que está “barrando” o cliente?
+O uso de dados, métricas transparentes (como o cálculo de ROI) e foco no valor de negócio. Quando o PO barra algo mostrando que está protegendo a qualidade do produto e otimizando o tempo do time para entregar o que é mais vital primeiro, ele não está "barrando", está gerenciando riscos.
+
+2. Quando você sentiu mais pressão hoje? Você conseguiu explicar sua decisão usando valor de negócio em vez de opinião pessoal?
+A maior pressão foi lidar com o prazo fixo ("até sexta") associado a uma expectativa inflada ("dashboard completo"). A decisão foi explicada mostrando que o Login Seguro (Valor 5) e os Cards de KPI (Valor 4) resolvem a maior parte do problema de negócio de forma rápida, enquanto o tempo real (Esforço 4) traria alto risco técnico para o prazo estipulado.
+
+3. O backlog que você montou teria sentido para alguém de fora entender o que vem primeiro e por quê?
+Sim. Qualquer pessoa consegue olhar para a tabela de priorização e entender que a segurança do acesso e os dados principais de receita (KPIs) precisam existir de maneira estável antes que o time gaste energia programando atualizações automáticas de segundos em um gráfico.
+================================================================================
