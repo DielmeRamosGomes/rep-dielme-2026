@@ -12,9 +12,9 @@ um laço para para calcular e exibir a tabuada desse
 número de 1 a 10.
 
 3) Escreva um programa que simule o funcionamento de um 
-cronômetro digital que conta de 00:00 até 02:59 (3 minutos). 
+cronômetro digital que conta de 00:00 até 01:20. 
 Use dois laços para aninhados: o externo para controlar os 
-minutos (de 0 a 2) e o interno para controlar os segundos 
-(de 0 a 59). Exiba o tempo no formato "Minutos:Segundos".
+minutos (de 0 a 1) e o interno para controlar os segundos 
+(de 0 a 20). Exiba o tempo no formato "Minutos:Segundos".
 
 
