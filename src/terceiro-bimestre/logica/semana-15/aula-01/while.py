@@ -15,6 +15,16 @@ else:
 '''
 
 '''
+i = 0
+while i <= 10: 
+    if i % 2 != 0:
+        i += 1
+        continue
+    print(i, end=" ")
+    i += 1
+'''         
+
+'''
 lista = []
 
 while True:
