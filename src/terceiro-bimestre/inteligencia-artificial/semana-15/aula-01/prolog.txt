@@ -1,0 +1,66 @@
+% https://swish.swi-prolog.org
+% ==========================================
+% 1. FATOS (O que é verdade no nosso mundo)
+% ==========================================
+
+progenitor(joao, maria).   % João é progenitor de Maria
+progenitor(joao, pedro).   % João é progenitor de Pedro
+progenitor(maria, ana).    % Maria é progenitora de Ana
+progenitor(maria, lucas).  % Maria é progenitora de Lucas
+
+masculino(joao).
+masculino(pedro).
+masculino(lucas).
+
+feminino(maria).
+feminino(ana).
+
+% ==========================================
+% 2. REGRAS (Como deduzir novas informações)
+% ==========================================
+
+% X é pai de Y SE X for progenitor de Y E X for masculino.
+pai(X, Y) :- 
+    progenitor(X, Y), 
+    masculino(X).
+
+% X é mãe de Y SE X for progenitor de Y E X for feminino.
+mae(X, Y) :- 
+    progenitor(X, Y), 
+    feminino(X).
+
+% X é avô/avó de Z SE X for progenitor de Y E Y for progenitor de Z.
+avo(X, Z) :- 
+    progenitor(X, Y), 
+    progenitor(Y, Z).
+
+% X é irmão/irmã de Y SE ambos têm o mesmo progenitor P E X for diferente de Y.
+irmao(X, Y) :- 
+    progenitor(P, X), 
+    progenitor(P, Y), 
+    X \= Y.
+
+% João é pai de Maria?
+?- pai(joao, maria).
+true.
+
+%Quem são os netos de João? (ou seja, de quem João é avô?)
+?- avo(joao, Neto).
+Neto = ana ;
+Neto = lucas.
+
+%Quem é a mãe de Ana?
+?- mae(Mae, ana).
+Mae = maria.
+
+% X é tio de Y SE:
+% - P for progenitor de Y
+% - X for irmão de P
+% - X for do sexo masculino
+tio(X, Y) :- 
+    progenitor(P, Y), 
+    irmao(X, P), 
+    masculino(X).
+
+?- tio(Tio, ana).
+Tio = pedro.

@@ -1,0 +1,191 @@
+DOCUMENTO DE ESPECIFICAÇÃO DE REQUISITOS DE SOFTWARE (ERS)
+Projeto: Sistema de Agendamento e Gestão de Consultas Hospitalares (SISCONSULTA)
+Versão: 1.0
+Status: Aprovado
+
+===============================================================================
+1. VISÃO GERAL E ESCOPO DO PROJETO
+===============================================================================
+
+O SISCONSULTA é uma plataforma voltada à automação e gestão do fluxo de consultas
+médicas em ambiente hospitalar e ambulatorial. Seu objetivo central é reduzir
+filas presenciais, otimizar a agenda dos profissionais de saúde, diminuir a taxa
+de não comparecimento (no-show) e garantir conformidade com regulamentações
+sanitárias e de privacidade de dados (LGPD / CFM).
+
+
+===============================================================================
+2. CICLO DE VIDA DOS REQUISITOS APLICADO AO PROJETO
+===============================================================================
+
+O ciclo de vida adotado engloba as cinco fases fundamentais da Engenharia de Requisitos:
+
+  [ 1. Elicitação ] --> [ 2. Análise e Negociação ] --> [ 3. Especificação ] 
+                                                                 |
+  [ 5. Gestão e Rastreabilidade ] <--------------------- [ 4. Validação ]
+
+1. Elicitação e Descoberta: Coleta de necessidades junto aos stakeholders
+   (médicos, recepcionistas, pacientes, equipe de TI e auditoria).
+2. Análise e Negociação: Resolução de conflitos de requisitos, viabilidade
+   técnica/financeira e priorização (Método MoSCoW).
+3. Especificação: Documentação formal dos Requisitos Funcionais (RF),
+   Não-Funcionais (RNF) e Regras de Negócio (RN).
+4. Validação: Revisão técnica e formal do documento por especialistas e
+   representantes dos usuários para aprovação (Sign-off).
+5. Gestão e Rastreabilidade: Controle de versões, matriz de rastreabilidade
+   e gestão do impacto de mudanças ao longo do desenvolvimento.
+
+
+===============================================================================
+3. MAPEAMENTO DE STAKEHOLDERS
+===============================================================================
+
+- PACIENTE: Realiza agendamentos, cancelamentos, visualiza histórico e recebe
+  lembretes.
+- RECEPCIONISTA / ATENDENTE: Realiza check-in, agenda consultas presenciais/
+  telefônicas e gerencia encaixes.
+- MÉDICO / PROFISSIONAL DE SAÚDE: Consulta a agenda diária, registra prontuários
+  e confirma presença do paciente.
+- ADMINISTRADOR DO HOSPITAL: Define horários de atendimento, gerencia
+  especialidades e analisa relatórios operacionais.
+- EQUIPE DE CONFORMIDADE (DPO): Garante a adequação às normas de proteção de
+  dados (LGPD) e sigilo médico.
+
+
+===============================================================================
+4. ESPECIFICAÇÃO DE REQUISITOS
+===============================================================================
+
+4.1 REQUISITOS FUNCIONAIS (RF)
+-------------------------------------------------------------------------------
+[RF-01] Agendamento de Consultas
+  - Descrição: O sistema deve permitir que o paciente pesquise e agende consultas
+    por especialidade, médico, data e convênio.
+  - Prioridade: Must Have
+
+[RF-02] Cancelamento e Remanejamento
+  - Descrição: O sistema deve permitir o cancelamento ou reagendamento de
+    consultas com no mínimo 24h de antecedência.
+  - Prioridade: Must Have
+
+[RF-03] Gestão de Grade Médica
+  - Descrição: O administrador deve cadastrar, alterar e bloquear horários de
+    atendimento dos médicos.
+  - Prioridade: Must Have
+
+[RF-04] Check-in de Paciente
+  - Descrição: O sistema deve permitir a confirmação de presença do paciente na
+    recepção via QRCode ou identificação biométrica/documental.
+  - Prioridade: Must Have
+
+[RF-05] Notificações Automáticas
+  - Descrição: O sistema deve enviar lembretes de consulta via SMS, E-mail e
+    WhatsApp 48h e 24h antes do horário.
+  - Prioridade: Should Have
+
+[RF-06] Fila de Espera / Encaixes
+  - Descrição: O sistema deve gerenciar uma fila de espera para vagas oriundas
+    de cancelamentos de última hora.
+  - Prioridade: Should Have
+
+[RF-07] Histórico de Consultas
+  - Descrição: O paciente e o médico devem ter acesso ao histórico de consultas
+    realizadas e agendadas.
+  - Prioridade: Must Have
+
+[RF-08] Integração com Prontuário Eletrônico (PEP)
+  - Descrição: O sistema deve vincular a consulta agendada ao Prontuário Eletrônico
+    do Paciente.
+  - Prioridade: Could Have
+
+[RF-09] Telemedicina
+  - Descrição: O sistema deve fornecer link seguro para consultas remotas quando
+    a modalidade for virtual.
+  - Prioridade: Could Have
+
+
+4.2 REQUISITOS NÃO-FUNCIONAIS (RNF)
+-------------------------------------------------------------------------------
+[RNF-01] Desempenho
+  - Descrição: O tempo de resposta para buscas de horários disponíveis não deve
+    exceder 2 segundos em 95% das requisições.
+  - Prioridade: Must Have
+
+[RNF-02] Segurança / LGPD
+  - Descrição: Todos os dados sensíveis dos pacientes devem ser criptografados
+    em trânsito (TLS 1.3) e em repouso (AES-256).
+  - Prioridade: Must Have
+
+[RNF-03] Disponibilidade
+  - Descrição: O sistema deve manter alta disponibilidade (Uptime de 99,9%),
+    operando 24/7 para agendamentos online.
+  - Prioridade: Must Have
+
+[RNF-04] Usabilidade
+  - Descrição: A interface para o paciente deve cumprir as diretrizes de
+    acessibilidade WCAG 2.1 nível AA.
+  - Prioridade: Should Have
+
+[RNF-05] Escalabilidade
+  - Descrição: A arquitetura deve suportar até 5.000 acessos simultâneos nos
+    horários de pico de abertura de agenda.
+  - Prioridade: Must Have
+
+[RNF-06] Auditoria
+  - Descrição: Toda alteração de status ou acesso aos dados de consultas deve
+    gerar log imutável de auditoria.
+  - Prioridade: Must Have
+
+
+4.3 REGRAS DE NEGÓCIO (RN)
+-------------------------------------------------------------------------------
+- RN-01 (Limite de Agendamentos): Um paciente não pode ter duas consultas
+  agendadas para o mesmo horário ou com overlapping de horários em especialidades
+  diferentes.
+- RN-02 (Antecedência Mínima): Consultas online só podem ser agendadas com no
+  mínimo 2 horas de antecedência do horário de atendimento.
+- RN-03 (Bloqueio por Inadimplência de Presença): Pacientes com mais de 3 faltas
+  consecutivas sem justificativa formal terão a funcionalidade de agendamento online
+  bloqueada por 30 dias.
+- RN-04 (Cobertura de Convenio): A consulta só pode ser confirmada após validação
+  elegível em tempo real junto à operadora de saúde.
+
+
+===============================================================================
+5. VALIDAÇÃO E CRITÉRIOS DE ACEITE
+===============================================================================
+
+A validação dos requisitos será conduzida por meio dos seguintes mecanismos:
+
+1. Revisões Formais (Peer Review): Encontros semanais entre analistas de sistemas,
+   equipe médica e recepção para validação do protótipo de alta fidelidade.
+2. Critérios de Aceite (Exemplo para RF-01):
+   - Dado que o paciente está autenticado no sistema;
+   - Quando ele seleciona a especialidade "Cardiologia" e o convênio "Plano X";
+   - Então o sistema deve exibir apenas médicos credenciados a esse plano com
+     horários livres nos próximos 30 dias.
+3. Assinatura Formal (Sign-Off): Documento homologado pelos diretores clínico e
+   de TI.
+
+
+===============================================================================
+6. GESTÃO DE MUDANÇAS E MATRIZ DE RASTREABILIDADE
+===============================================================================
+
+6.1 PROCESSO DE GESTÃO DE MUDANÇAS
+Caso surjam novos requisitos ou alterações nos existentes:
+1. Solicitação: Abertura de uma Requisição de Mudança (CR - Change Request).
+2. Análise de Impacto: Avaliação do custo, tempo e dependências técnicas.
+3. Aprovação: Comitê de Controle de Mudanças (CCB - Change Control Board).
+4. Atualização: Atualização da versão deste documento e repasse à equipe de
+   desenvolvimento/testes.
+
+6.2 MATRIZ DE RASTREABILIDADE
+-------------------------------------------------------------------------------
+| ID Requisito | Origem / Necessidade                  | Módulo de Software | Casos de Teste       |
+|--------------|---------------------------------------|--------------------|----------------------|
+| RF-01        | Reduzir carga da central telefônica   | Agendamento        | TC-AG-01, TC-AG-02   |
+| RF-04        | Reduzir tempo de espera na recepção   | Recepção / Totem   | TC-REC-01            |
+| RF-05        | Reduzir taxa de no-show               | Notificação        | TC-NOT-01, TC-NOT-02 |
+| RNF-02       | Conformidade com a LGPD e CFM          | Segurança / DB     | TC-SEC-01            |
+===============================================================================
