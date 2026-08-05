@@ -1,0 +1,146 @@
+MODELO INCREMENTAL
+
+O modelo incremental é um modelo de desenvolvimento de software
+ baseado na ideia de construir um sistema em partes menores e 
+ funcionais, chamadas de incrementos. Em vez de esperar que 
+ todo o projeto esteja concluído para disponibilizá-lo aos 
+ usuários, cada incremento adiciona novas funcionalidades ao 
+ sistema até que ele esteja completo.
+
+CONCEITO FUNDAMENTAL
+
+O modelo incremental combina características do modelo em 
+cascata com uma abordagem evolutiva. Cada incremento passa 
+pelas etapas tradicionais de desenvolvimento:
+
+1. Levantamento de requisitos.
+2. Análise e projeto.
+3. Implementação.
+4. Testes.
+5. Entrega.
+
+Ao final de cada ciclo, uma versão funcional do software é 
+disponibilizada.
+
+COMO O MODELO INCREMENTAL FUNCIONA
+
+Imagine que uma empresa deseja desenvolver um sistema de 
+biblioteca.
+
+Primeira versão (Incremento 1)
+- Cadastro de livros.
+- Cadastro de usuários.
+- Consulta ao acervo.
+
+Segunda versão (Incremento 2)
+- Empréstimo de livros.
+- Devolução de livros.
+- Controle de multas.
+
+Terceira versão (Incremento 3)
+- Reserva online.
+- Relatórios gerenciais.
+- Notificações automáticas.
+
+Cada incremento amplia a capacidade do sistema sem comprometer
+ o que já foi entregue.
+
+ESTRUTURA DO MODELO INCREMENTAL
+
+Requisitos Gerais
+↓
+Incremento 1
+(Projeto + Codificação + Testes)
+↓
+Entrega 1
+↓
+Incremento 2
+(Projeto + Codificação + Testes)
+↓
+Entrega 2
+↓
+Incremento 3
+(Projeto + Codificação + Testes)
+↓
+Produto Final
+
+PRINCIPAIS CARACTERÍSTICAS
+
+- Desenvolvimento em etapas.
+- Entregas frequentes.
+- Feedback constante.
+- Evolução progressiva.
+
+VANTAGENS
+
+1. Entrega rápida de valor.
+2. Redução de riscos.
+3. Facilidade de manutenção.
+4. Melhor aproveitamento do feedback.
+5. Maior controle do projeto.
+6. Menor impacto financeiro inicial.
+
+DESVANTAGENS
+
+1. Planejamento complexo.
+2. Integração dos módulos.
+3. Possível aumento de custos.
+4. Dependência de arquitetura sólida.
+
+QUANDO UTILIZAR
+
+- Quando os requisitos gerais são conhecidos.
+- Quando o cliente deseja resultados rápidos.
+- Quando há necessidade de feedback contínuo.
+- Em projetos de grande dimensão.
+- Quando existem limitações de recursos ou orçamento.
+
+COMPARAÇÃO COM OUTROS MODELOS
+
+Modelo Cascata:
+- Desenvolvimento sequencial.
+- Uma única entrega.
+- Difícil alterar requisitos.
+
+Modelo Incremental:
+- Desenvolvimento em partes.
+- Múltiplas entregas.
+- Maior flexibilidade para mudanças.
+
+EXEMPLO PRÁTICO
+
+Aplicativo de delivery:
+
+Incremento 1
+- Cadastro de usuários.
+- Login.
+- Consulta de restaurantes.
+
+Incremento 2
+- Carrinho de compras.
+- Realização de pedidos.
+
+Incremento 3
+- Pagamento online.
+- Rastreamento de entrega.
+
+Incremento 4
+- Avaliação de restaurantes.
+- Programa de fidelidade.
+
+CONCLUSÃO
+
+O modelo incremental divide o sistema em várias entregas 
+sucessivas. Cada incremento adiciona novas funcionalidades ao 
+produto, permitindo que os usuários utilizem o sistema desde
+ as primeiras fases do projeto. Por oferecer maior 
+ flexibilidade, redução de riscos e entregas rápidas, ele é 
+ amplamente utilizado em projetos modernos de software.
+
+Resumo:
+- Desenvolve o sistema em partes.
+- Cada parte gera uma versão funcional.
+- Permite feedback constante.
+- Reduz riscos e erros.
+- Muito utilizado em metodologias ágeis e projetos de grande 
+porte.

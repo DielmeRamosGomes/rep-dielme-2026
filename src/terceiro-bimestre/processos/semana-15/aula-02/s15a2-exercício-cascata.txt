@@ -1,0 +1,142 @@
+MODELO EM CASCATA NA PRÁTICA
+
+DESAFIO 1 - IDENTIFICANDO AS FASES
+
+1. Objetivo principal de cada fase
+
+Requisitos
+- Levantar e registrar tudo o que o cliente deseja no sistema.
+
+Análise
+- Estudar os requisitos para entender como o sistema deve 
+funcionar.
+
+Projeto
+- Planejar a estrutura do sistema, telas, banco de dados e 
+funcionalidades.
+
+Implementação
+- Desenvolver o sistema por meio da programação.
+
+Testes
+- Verificar se o sistema funciona corretamente e identificar 
+erros.
+
+Manutenção
+- Corrigir problemas e realizar melhorias após a entrega.
+
+2. Por que uma fase só começa após o término da anterior?
+
+No modelo cascata, cada etapa depende da anterior. Antes de 
+programar, por exemplo, é necessário entender os requisitos e 
+planejar o projeto. Isso ajuda a manter a organização e o 
+controle do desenvolvimento.
+
+3. O que acontece se uma fase for mal executada?
+
+Se uma fase for feita incorretamente, os erros passam para as 
+próximas etapas. Por exemplo, requisitos mal definidos podem 
+gerar um sistema que não atende às necessidades do cliente, 
+causando retrabalho e aumento dos custos.
+
+DESAFIO 2 - SIMULANDO O FLUXO DO PROJETO
+
+1. O modelo cascata permite voltar facilmente à fase de 
+requisitos?
+
+Não. O modelo cascata é linear, ou seja, foi criado para 
+seguir uma sequência fixa. Voltar para etapas anteriores é 
+possível, mas costuma ser difícil e gerar muitos impactos no 
+projeto.
+
+2. Quais impactos isso pode gerar em prazo e custo?
+
+- Atraso na entrega do sistema.
+- Necessidade de refazer análises, projetos e códigos.
+- Aumento dos gastos com desenvolvimento e testes.
+
+3. Como esse problema afeta projetos rígidos?
+
+Projetos com regras muito rígidas têm dificuldade para lidar 
+com mudanças. Pequenos erros podem causar grandes atrasos e 
+exigir muito retrabalho da equipe.
+
+DESAFIO 3 - VANTAGENS DO MODELO CASCATA
+
+1. Situações em que o modelo cascata funciona bem
+
+- Projetos pequenos.
+- Sistemas com requisitos bem definidos.
+- Projetos em que o cliente não pretende fazer alterações.
+
+2. Por que projetos com requisitos estáveis se beneficiam 
+desse modelo?
+
+Porque a equipe pode planejar todas as etapas desde o início,
+ reduzindo incertezas e facilitando o controle do trabalho.
+
+3. Relação com planejamento e documentação
+
+O modelo cascata exige documentação detalhada em cada fase. 
+Isso facilita:
+- O planejamento do projeto.
+- O acompanhamento do progresso.
+- A comunicação entre os membros da equipe.
+
+DESAFIO 4 - LIMITAÇÕES DO MODELO CASCATA
+
+1. Por que o modelo cascata tem dificuldade em lidar com 
+mudanças?
+
+Porque ele foi criado para seguir uma sequência fixa. Quando 
+surgem novas necessidades, é necessário voltar a etapas já 
+concluídas.
+
+2. Como isso pode gerar retrabalho?
+
+Uma mudança pode exigir:
+- Revisão dos requisitos.
+- Alterações no projeto.
+- Modificação do código já desenvolvido.
+- Novos testes.
+
+3. Quais os riscos de insatisfação do cliente?
+
+O cliente pode ficar insatisfeito porque:
+- As mudanças demoram para ser implementadas.
+- Os custos aumentam.
+- O sistema pode não atender às novas necessidades.
+
+DESAFIO 5 - AVALIAÇÃO CRÍTICA
+
+1. O modelo cascata é indicado para projetos longos e 
+complexos?
+
+Geralmente não. Projetos grandes costumam sofrer mudanças 
+durante o desenvolvimento, o que torna o modelo cascata menos 
+eficiente.
+
+2. Qual a importância de escolher o modelo de processo 
+adequado?
+
+A escolha correta ajuda a:
+- Organizar melhor o trabalho.
+- Reduzir riscos.
+- Melhorar a qualidade do software.
+- Atender melhor as necessidades do cliente.
+
+3. Por que não existe um modelo perfeito para todos os projetos?
+
+Cada projeto possui características diferentes, como tamanho,
+prazo, orçamento e nível de mudança dos requisitos. Por isso, 
+um modelo que funciona bem em um projeto pode não ser a melhor 
+opção em outro.
+
+CONCLUSÃO SOBRE O CASCATA
+
+O modelo cascata é uma abordagem simples e organizada, ideal 
+para projetos com requisitos bem definidos e poucas alterações.
+Porém, quando há mudanças frequentes, ele pode gerar 
+retrabalho, aumento de custos e atrasos. Por isso, o mais 
+importante é escolher o modelo de desenvolvimento que melhor 
+se adapta às necessidades do projeto.
