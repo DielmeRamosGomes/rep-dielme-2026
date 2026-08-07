@@ -13,6 +13,7 @@ if idade >= 18:
 else:
     print("Menor de idade")
 
+print("ola")
 
 
 
