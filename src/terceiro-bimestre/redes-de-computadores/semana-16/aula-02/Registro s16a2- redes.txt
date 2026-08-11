@@ -1,0 +1,55 @@
+Empresa com quatro departamentos: RH, Financeiro, TI e Vendas
+
+Divisão da rede 192.168.1.0/24 em quatro sub-redes /26
+
+Máscara: /26 (255.255.255.192)
+Cada sub-rede possui 64 endereços, sendo 62 hosts utilizáveis.
+
+SUB-REDE 1 (RH)
+Rede: 192.168.1.0/26
+Primeiro host: 192.168.1.1
+Último host: 192.168.1.62
+Broadcast: 192.168.1.63
+
+SUB-REDE 2 (Financeiro)
+Rede: 192.168.1.64/26
+Primeiro host: 192.168.1.65
+Último host: 192.168.1.126
+Broadcast: 192.168.1.127
+
+SUB-REDE 3 (TI)
+Rede: 192.168.1.128/26
+Primeiro host: 192.168.1.129
+Último host: 192.168.1.190
+Broadcast: 192.168.1.191
+
+SUB-REDE 4 (Vendas)
+Rede: 192.168.1.192/26
+Primeiro host: 192.168.1.193
+Último host: 192.168.1.254
+Broadcast: 192.168.1.255
+
+BENEFÍCIOS DA IMPLEMENTAÇÃO
+
+1. Maior segurança:
+   - Isolamento lógico entre departamentos.
+   - Controle de acesso entre setores.
+
+2. Redução do tráfego de broadcast:
+   - Menos tráfego desnecessário na rede.
+
+3. Melhor desempenho:
+   - Maior eficiência na comunicação entre dispositivos.
+
+4. Facilidade de administração:
+   - Organização dos endereços IP por departamento.
+   - Simplificação do monitoramento e suporte.
+
+5. Escalabilidade:
+   - Crescimento estruturado da rede.
+
+6. Controle de acesso:
+   - Aplicação de políticas específicas para cada departamento.
+
+Conclusão:
+A divisão da rede 192.168.1.0/24 em quatro sub-redes /26 fornece melhor organização, desempenho, segurança e gerenciamento da infraestrutura de rede.
