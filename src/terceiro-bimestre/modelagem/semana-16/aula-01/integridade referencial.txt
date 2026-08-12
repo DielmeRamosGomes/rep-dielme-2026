@@ -1,0 +1,24 @@
+A integridade referencial no MySQL garante que os relacionamentos entre 
+tabelas permaneçam válidos e consistentes, impedindo a criação de 
+"registros órfãos" (como um pedido cadastrado para um cliente que não existe).
+
+Ela é implementada por meio de Chaves Estrangeiras (Foreign Keys) e exige 
+obrigatoriamente que as tabelas envolvidas utilizem a engine de armazenamento
+ InnoDB (o mecanismo padrão do MySQL).
+
+Regras de Comportamento (ON DELETE / ON UPDATE)
+
+Ao definir uma chave estrangeira, você escolhe o que acontece na tabela 
+filha quando um registro da tabela pai é alterado ou excluído:
+
+RESTRICT / NO ACTION
+Bloqueia a alteração ou exclusão no pai caso existam registros vinculados no 
+filho (comportamento padrão).
+
+CASCADE
+Aplica automaticamente no filho a mesma ação feita no pai (se deletar o pai, 
+deleta todos os filhos associados).
+
+SET NULL
+Define a coluna da chave estrangeira como NULL no filho quando o pai for 
+alterado ou excluído (requer que a coluna aceite NULL).
