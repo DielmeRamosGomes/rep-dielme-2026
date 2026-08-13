@@ -18,7 +18,7 @@ match lista:
     case _:
         print("Não é dia da semana")
 '''
-comando = "Sábado"
+comando = input("Digite um dia da semana: ")
 match comando:
     case "Domingo":
         print("Hoje é Domingo")
