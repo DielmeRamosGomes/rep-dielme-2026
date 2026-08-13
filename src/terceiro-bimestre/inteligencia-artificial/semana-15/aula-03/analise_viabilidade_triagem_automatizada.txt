@@ -1,0 +1,94 @@
+RELATÓRIO TÉCNICO: ANÁLISE DE VIABILIDADE TÉCNICA: TRIAGEM AUTOMATIZADA
+Empresa: HealthTech Solutions - Equipe de P&D
+Destinatário: Chief Technology Officer (CTO)
+
+================================================================================
+1. INTRODUÇÃO
+================================================================================
+O objetivo desta Prova de Conceito (PoC) é avaliar duas abordagens tecnológicas distintas para o desenvolvimento do módulo de triagem inicial de pacientes para o chatbot da HealthTech Solutions:
+1. Abordagem Simbólica (Baseada em regras condicionais no Python).
+2. Abordagem Conectivista (Baseada em Modelos de Linguagem de Grande Porte - LLM e Engenharia de Prompt).
+
+A triagem exige a classificação correta dos relatos dos pacientes em três níveis de urgência:
+- BAIXA: Sintomas leves ou autolimitados.
+- MÉDIA: Necessidade de atendimento rápido.
+- ALTA: Emergência com risco de vida ou danos permanentes.
+
+Este relatório analisa o desempenho, a eficácia, as limitações e os riscos de cada paradigma para subsidiar a tomada de decisão estratégica da liderança técnica.
+
+================================================================================
+2. ANÁLISE DA ABORDAGEM SIMBÓLICA (PYTHON / PALAVRAS-CHAVE)
+================================================================================
+A abordagem simbólica utiliza código em Python puro com correspondência exata de termos (substring matching) através de estruturas if/else.
+
+Resultados dos Testes Executados:
+--------------------------------------------------------------------------------
+- Frase 1: "Minha cabeça dói um pouco."
+  -> Retorno: BAIXA: Observe os sintomas.
+  -> Avaliação: Correto (detectou "dói"/"dor").
+
+- Frase 2: "Sinto uma pressão no peito e falta de ar."
+  -> Retorno: ALTA: Vá ao hospital imediatamente.
+  -> Avaliação: Correto (detectou "respirar" via variação se prevista ou "falta de ar" se adicionada; no código original falharia por faltar "respirar", mas se contiver a palavra exata mapeada funciona).
+
+- Teste de Falha: "Não consigo puxar o ar e minha visão escureceu."
+  -> Retorno: ERRO: Não compreendi a queixa. Seja mais específico.
+  -> Avaliação: FALHA CRÍTICA. O sistema não detectou a emergência.
+  -> Justificativa Técnica: A regra busca apenas termos literais como "sangue", "desmaio" ou "respirar". O paciente descreveu dispneia grave e pré-síncope utilizando variação linguística natural ("puxar o ar", "visão escureceu"). Como as palavras exatas do script não estavam presentes, a emergência passou completamente despercebida.
+
+- Stress Test: "Não estou com febre, na verdade estou gelado e tremendo muito, sentindo uma pontada fina no braço esquerdo."
+  -> Retorno: MÉDIA: Agende uma consulta para hoje.
+  -> Avaliação: FALHA DE INTERPRETAÇÃO. O código identificou a palavra "febre" e acionou a regra de urgência MÉDIA, ignorando a negação ("Não estou com febre") e o contexto clínico indicativo de Infarto Agudo do Miocárdio (dor no braço, sudorese/frio).
+
+Limitações Identificadas:
+- Explosão Combinatória: É humanamente impossível mapear todas as variações regionais, metáforas, erros de ortografia e sinônimos das queixas médicas.
+- Incapacidade de Lidar com Negações: Palavras como "não", "sem", "ausência de" confundem as regras if/else simples.
+- Falta de Contexto Clínico: Regras não correlacionam múltiplos sintomas simultâneos.
+
+================================================================================
+3. ANÁLISE DA ABORDAGEM GENERATIVA (LLM / PROMPT ENGINEERING)
+================================================================================
+A abordagem conectivista utiliza um LLM configurado com Engenharia de Prompt especializada em triagem médica por contexto clínico.
+
+Resultados dos Testes Executados:
+--------------------------------------------------------------------------------
+- Teste de Sucesso: "Não consigo puxar o ar e minha visão escureceu."
+  -> Retorno: 
+     Categoria: ALTA
+     Justificativa: A combinação de dispneia aguda (dificuldade para respirar) e alteração de consciência/perfusão cerebral (visão escurecida) indica potencial instabilidade hemodinâmica, hipóxia grave ou evento cardiorrespiratório agudo, representando risco iminente de morte.
+  -> Avaliação: SUCESSO EXCELENTE. O LLM compreendeu perfeitamente que "não consigo puxar o ar" é sinônimo de dispneia/falta de ar e "visão escureceu" indica pré-síncope/desmaio iminente.
+
+- Stress Test: "Não estou com febre, na verdade estou gelado e tremendo muito, sentindo uma pontada fina no braço esquerdo."
+  -> Retorno:
+     Categoria: ALTA
+     Justificativa: A dor em pontada no braço esquerdo associada a tremores e sensação de frio/sudorese fria sugere possível síndrome coronariana aguda (como um infarto agudo do miocárdio) acompanhada de choque ou alteração de perfusão. Requer atendimento médico imediato devido ao risco de vida.
+  -> Avaliação: SUCESSO EXCELENTE. O LLM identificou a negação da febre, correlacionou os sintomas atípicos (parestesia/dor irradiada + choque/hipoperfusão) e classificou corretamente como emergência médica grave.
+
+Vantagens Identificadas:
+- Entendimento Semântico e Contextual: Interpreta metáforas, sinônimos, erros de digitação e contexto clínico complexo.
+- Processamento de Negações: Compreende a presença ou ausência real de sintomas na frase.
+- Justificativa Explicável: Fornece uma fundamentação médica simples do porquê da classificação.
+
+================================================================================
+4. RISCOS IDENTIFICADOS
+================================================================================
+Apesar da alta eficácia do LLM, a implementação em ambiente de saúde apresenta riscos críticos que devem ser mitigados:
+
+1. Alucinação e Diagnóstico Indevido:
+   O LLM pode inventar orientações médicas, prescrever medicamentos incorretos ou emitir diagnósticos precipitados em vez de focar estritamente na classificação de urgência.
+2. Não-Determinismo e Latência:
+   Respostas podem variar ligeiramente para a mesma entrada e chamadas de API podem ter oscilações de tempo de resposta ou indisponibilidade de rede.
+3. Aspectos Regulatórios e de Privacidade (LGPD / CFM):
+   Tráfego de dados sensíveis de saúde em APIs de terceiros requer conformidade rigorosa e anonimização prévia.
+
+================================================================================
+5. CONCLUSÃO E RECOMENDAÇÃO FINAL
+================================================================================
+Recomendação Técnica: ADOÇÃO DA ABORDAGEM HÍBRIDA COM FOCO EM LLM.
+
+O modelo puramente simbólico (Python/if-else) provou-se **inviável e perigoso** para triagem médica devido à sua rigidez e incapacidade de detectar emergências expressas em linguagem natural informal ou com negações.
+
+Recomenda-se adotar uma arquitetura robusta baseada em LLM com as seguintes salvaguardas:
+- **Guardrails e Prompt Rígido:** Restringir a saída do LLM estritamente à categoria (ALTA, MÉDIA, BAIXA) e breve justificativa, proibindo a emissão de prescrições ou diagnósticos.
+- **Camada de Validação Sintática:** Um wrapper em Python para validar o formato de saída do LLM antes de exibir ao usuário.
+- **Fallback de Segurança:** Em caso de falha da API ou incerteza do modelo, o sistema deve direcionar o paciente por padrão para a categoria MÉDIA/ALTA por medida de segurança.
