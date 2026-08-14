@@ -19,3 +19,12 @@ create table if not exists db_s16a1.pedidos(
 insert into db_s16a1.clientes(nome, email, telefone)
 values("Lucas Lorenzo", "lucas@exemplo.com", "11-98343-2324");
 
+select * from db_s16a1.clientes;
+select * from db_s16a1.pedidos;
+
+insert into db_s16a1.pedidos(data_pedido, valor_total, id_cliente)
+values("2026-08-14", 3000.00, 1),
+      ("2026-08-13", 2500.00, 1);
+
+delete from db_s16a1.clientes 
+where id_cliente = 1;

@@ -1,0 +1,85 @@
+MODELOS INCREMENTAL E EVOLUTIVO
+
+Etapa 1 – Compreensão do problema
+
+O objetivo inicial do sistema é ajudar estudantes do ensino 
+médio a organizarem seus estudos. Na primeira versão, o 
+aplicativo permitirá cadastrar matérias e registrar tarefas 
+escolares.
+
+Os requisitos não estão totalmente definidos porque a equipe 
+ainda não sabe todas as necessidades dos usuários. À medida que 
+os estudantes utilizarem o aplicativo, poderão sugerir novas 
+funcionalidades.
+
+Algumas mudanças que podem surgir são a criação de lembretes 
+automáticos, gráficos de desempenho, integração com calendário, 
+notificações de provas e acompanhamento de metas de estudo.
+
+Etapa 2 – Planejamento Incremental
+
+Versão 1
+Nesta primeira versão serão entregues as funcionalidades 
+básicas:
+- Cadastro de matérias;
+- Cadastro de tarefas;
+- Visualização das tarefas registradas.
+
+Versão 2
+Após o uso inicial do aplicativo, serão adicionadas melhorias:
+- Lembretes automáticos de tarefas;
+- Organização por prioridades;
+- Melhorias na interface.
+
+Versão 3
+Serão acrescentados recursos mais avançados:
+- Gráficos de desempenho;
+- Controle de metas de estudo;
+- Integração com calendário do celular.
+
+Cada versão acrescenta novas funcionalidades sem alterar o 
+funcionamento das anteriores.
+
+Etapa 3 – Aplicação do Modelo Evolutivo
+
+No modelo evolutivo, o sistema melhora continuamente com base 
+nas opiniões dos usuários. O feedback dos estudantes ajuda a 
+identificar problemas e necessidades que não foram previstas 
+inicialmente.
+
+Se muitos usuários solicitarem novas funções, os requisitos 
+poderão ser ajustados. Por exemplo, caso os alunos desejem 
+receber notificações sobre provas, essa funcionalidade poderá 
+ser adicionada em uma nova versão.
+
+Esse modelo é adequado para contextos incertos porque permite 
+mudanças durante o desenvolvimento, tornando o sistema mais 
+útil e alinhado às necessidades reais dos usuários.
+
+Etapa 4 – Relação com as Fases do Desenvolvimento
+
+No desenvolvimento incremental e evolutivo, as fases clássicas 
+acontecem em ciclos.
+
+- Requisitos: levantamento das necessidades da versão atual.
+- Análise: estudo das funcionalidades que serão implementadas.
+- Projeto: planejamento da solução.
+- Implementação: desenvolvimento das funcionalidades.
+- Testes: verificação de erros e validação do sistema.
+- Manutenção: correções e melhorias após a entrega.
+
+Essas etapas são repetidas a cada nova versão do aplicativo, 
+permitindo evolução contínua do sistema.
+
+Etapa 5 – Justificativa da Escolha
+
+Os modelos incremental e evolutivo são mais adequados porque os 
+requisitos podem mudar com o tempo. Eles permitem entregar 
+versões funcionais rapidamente e adicionar melhorias conforme o 
+feedback dos usuários.
+
+Já um modelo linear rígido exigiria que todos os requisitos 
+fossem definidos no início do projeto, o que seria difícil 
+nesse caso. Por isso, os modelos incremental e evolutivo 
+oferecem mais flexibilidade, reduzem riscos e aumentam a 
+satisfação dos usuários.
