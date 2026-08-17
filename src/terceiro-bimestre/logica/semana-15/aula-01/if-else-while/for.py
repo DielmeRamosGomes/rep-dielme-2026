@@ -9,7 +9,7 @@ for i in range(6):
 '''
 
 '''
-for i in range(0, 12, 2):
+for i in range(0, 11, 2):
     print(i)
 '''
 
