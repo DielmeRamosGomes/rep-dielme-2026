@@ -6,14 +6,14 @@ elif (expressão):
 else:
     bloco_código
 '''
-idade = 18
+idade = 15
 
 if idade >= 18:
     print("Maior de idade")
 else:
     print("Menor de idade")
 
-print("ola")
+#print("ola")
 
 
 
