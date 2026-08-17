@@ -1,0 +1,52 @@
+===============================================================================
+                    O PROCESSO CRISP-DM
+===============================================================================
+
+O CRISP-DM (Cross-Industry Standard Process for Data Mining) é a metodologia 
+mais utilizada no mundo para guiar projetos de ciência de dados, aprendizado 
+de máquina e mineração de dados. Ele funciona como um ciclo iterativo 
+dividido em seis fases principais:
+
+-------------------------------------------------------------------------------
+AS 6 FASES DO CRISP-DM
+-------------------------------------------------------------------------------
+
+1. ENTENDIMENTO DO NEGÓCIO (Business Understanding)
+   - Define os objetivos do projeto do ponto de vista estratégico.
+   - Transforma metas de negócio (ex: "reduzir o cancelamento de clientes") 
+     em um problema técnico de dados.
+
+2. ENTENDIMENTO DOS DADOS (Data Understanding)
+   - Coleta inicial dos dados.
+   - Exploração das variáveis.
+   - Identificação de problemas de qualidade.
+   - Primeras descobertas e geração de hipóteses.
+
+3. PREPARAÇÃO DOS DADOS (Data Preparation)
+   - Limpeza e tratamento de valores nulos.
+   - Transformação e seleção de características (feature engineering).
+   - Estruturação dos dados finais que alimentarão os modelos.
+   - Costuma consumir de 70% a 80% do tempo do projeto.
+
+4. MODELAGEM (Modeling)
+   - Seleção e aplicação de algoritmos (ex: regressão, árvores de decisão, 
+     redes neurais).
+   - Ajuste fino de hiperparâmetros para otimizar os resultados.
+
+5. AVALIAÇÃO (Evaluation)
+   - Validação técnica e de negócio.
+   - Garante que o modelo atinge os objetivos definidos na Fase 1.
+   - Verifica se os critérios do negócio foram atendidos antes da implantação.
+
+6. IMPLANTAÇÃO (Deployment)
+   - Colocação do modelo em produção para consumo dos usuários ou integração 
+     com outros sistemas.
+   - Criação de planos de monitoramento e manutenção contínua.
+
+-------------------------------------------------------------------------------
+NOTA IMPORTANTE
+-------------------------------------------------------------------------------
+O processo é CÍCLICO E NÃO LINEAR: a qualquer momento é comum retornar a etapas 
+anteriores (por exemplo, voltar da Modelagem para a Preparação dos Dados para 
+criar novas variáveis ou corrigir inconformidades).
+===============================================================================

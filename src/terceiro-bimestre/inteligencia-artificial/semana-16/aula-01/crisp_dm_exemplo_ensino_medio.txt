@@ -1,0 +1,64 @@
+===============================================================================
+       EXEMPLO PRÁTICO DO CRISP-DM: PREVENDO A NOTA NO ENEM
+===============================================================================
+
+Imagine que você e seu grupo de amigos do Ensino Médio querem descobrir o que 
+realmente faz um aluno tirar uma nota alta no ENEM ou passar no vestibular, 
+para que todo mundo da turma consiga estudar melhor.
+
+Abaixo está como o CRISP-DM resolve esse problema passo a passo:
+
+-------------------------------------------------------------------------------
+1. ENTENDIMENTO DO NEGÓCIO (Entender o Objetivo)
+-------------------------------------------------------------------------------
+* O Problema: Muita gente estuda até se cansar, mas não sabe se está estudando 
+  da forma certa para tirar mais de 700 pontos no ENEM.
+* O Objetivo: Descobrir quais hábitos (horas de sono, simulados, redes sociais) 
+  têm mais impacto na nota final, para criar um "Guia de Estudos Eficiente" 
+  para a escola.
+
+-------------------------------------------------------------------------------
+2. ENTENDIMENTO DOS DADOS (Coletar e Conhecer as Informações)
+-------------------------------------------------------------------------------
+* Coleta: O grupo faz um formulário no Google Forms e envia para 200 alunos do 
+  3º ano perguntando:
+  - Horas de estudo por semana
+  - Quantidade de simulados feitos
+  - Horas no celular/redes sociais por dia
+  - Horas de sono por noite
+  - Nota no último simulado oficial
+* Exploração: Vocês olham os gráficos do formulário e percebem que quem dorme 
+  menos de 5 horas por noite parece ir pior nas provas, mesmo estudando muito.
+
+-------------------------------------------------------------------------------
+3. PREPARAÇÃO DOS DADOS (Limpar e Organizar)
+-------------------------------------------------------------------------------
+* Limpeza: Alguns alunos responderam coisas zombeteiras, como "estudo 100 horas 
+  por dia" ou deixaram a nota em branco. Essas respostas erradas são apagadas.
+* Organização: Vocês criam uma nova coluna chamada "Proporção Estudo/Tela", 
+  dividindo as horas de estudo pelas horas no celular.
+
+-------------------------------------------------------------------------------
+4. MODELAGEM (Testar as Fórmulas e Regras)
+-------------------------------------------------------------------------------
+* Experimento: Vocês usam um programa no computador para testar regras e 
+  encontrar padrões.
+* Regra Encontrada pelo Computador: 
+  - SE o aluno faz mais de 2 simulados por mês 
+  - E dorme pelo menos 7 horas por noite 
+  - ENTÃO a chance de tirar mais de 700 pontos é de 85%.
+
+-------------------------------------------------------------------------------
+5. AVALIAÇÃO (Conferir se Funciona de Verdade)
+-------------------------------------------------------------------------------
+* Teste Real: Vocês pegam os dados de 20 alunos que não tinham entrado na 
+  primeira pesquisa e aplicam a regra criada pelo computador.
+* Resultado: O modelo acertou o desempenho de 17 dos 20 alunos. A regra funciona!
+
+-------------------------------------------------------------------------------
+6. IMPLANTAÇÃO (Colocar em Prática)
+-------------------------------------------------------------------------------
+* Ação: O grupo monta uma apresentação de slides para a feira de ciências da 
+  escola e cria um aplicativo simples no celular onde o aluno digita a rotina 
+  dele e recebe uma estimativa do seu desempenho e dicas para melhorar.
+===============================================================================
