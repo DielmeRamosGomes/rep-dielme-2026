@@ -13,8 +13,18 @@ for i in range(0, 12, 2):
     print(i)
 '''
 
-'''for i in range(10, -1, -1):
+'''
+for i in range(10, -1, -1):
     print(i)
 else:
     print("Lançar!")
 '''
+
+'''
+for i in range(1, 6):
+    if i == 3:
+        continue
+    print(i)
+'''
+
+        
