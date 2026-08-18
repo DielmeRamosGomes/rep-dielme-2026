@@ -1,5 +1,4 @@
 idade = int(input("Digite uma idade: "))
-
 match idade:
     case idade if idade > 0 and idade <= 4:
         print("Bebê")
