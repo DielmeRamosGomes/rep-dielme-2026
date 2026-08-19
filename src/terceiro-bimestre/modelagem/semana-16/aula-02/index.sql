@@ -17,6 +17,9 @@ values("Carlos José", "carlosj@exemplo.com"),
 
 select * from db_index.clientes;
 
+EXPLAIN select * from db_index.clientes
+where nome = 'Carlos José';
+
 -- lista os indices de uma tabela
 show index from db_index.clientes;
 
