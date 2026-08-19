@@ -22,6 +22,8 @@ while i <= 10:
         continue
     print(i, end=" ")
     i += 1
+'''
+
 '''         
 while True:
     fruta = input("Digite o nome da fruta: ")
@@ -29,6 +31,7 @@ while True:
     continua = input("Deseja continuar executando? [s, n]: ").lower()
     if continua == "n":
         break
+'''
 
 '''
 lista = []
