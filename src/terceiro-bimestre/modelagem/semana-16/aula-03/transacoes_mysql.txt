@@ -1,0 +1,133 @@
+================================================================================
+                    TRANSAÇÕES NO MYSQL (ENGINE INNODB)
+================================================================================
+
+No MySQL, transações são suportadas principalmente pela engine InnoDB, garantindo
+as propriedades ACID (Atomicidade, Consistência, Isolamento e Durabilidade).
+
+--------------------------------------------------------------------------------
+1. COMANDOS PRINCIPAIS DE CONTROLE DE TRANSAÇÃO
+--------------------------------------------------------------------------------
+
+• START TRANSACTION (ou BEGIN)
+  Inicia explicitamente um bloco transacional. A partir deste ponto, as alterações
+  não são salvas automaticamente no banco até que se confirme a operação.
+
+• COMMIT
+  Confirma a transação. Salva de forma permanente no banco de dados todas as 
+  alterações (INSERT, UPDATE, DELETE) realizadas desde o início da transação.
+
+• ROLLBACK
+  Cancela/desfaz todas as alterações feitas durante a transação atual, voltando o 
+  banco de dados ao estado em que estava antes de executar o START TRANSACTION.
+
+• SAVEPOINT <nome_do_ponto>
+  Cria um ponto de restauração intermediário dentro da transação.
+
+• ROLLBACK TO SAVEPOINT <nome_do_ponto>
+  Reverte a transação apenas até o ponto especificado, sem cancelar as operações
+  executadas antes da criação daquele savepoint.
+
+• RELEASE SAVEPOINT <nome_do_ponto>
+  Remove um ponto de restauração criado anteriormente.
+
+• SET autocommit = 0 / 1
+  Define se cada instrução SQL deve ser confirmada automaticamente (1 = ligado)
+  ou se deve aguardar um COMMIT explícito (0 = desligado).
+
+
+--------------------------------------------------------------------------------
+2. EXEMPLOS PRÁTICOS DE USO
+--------------------------------------------------------------------------------
+
+--- EXEMPLO 1: Transação Bem-Sucedida (Sucesso / COMMIT) ---
+Transferência de dinheiro entre duas contas bancárias.
+
+START TRANSACTION;
+
+-- 1. Reduz R$ 200,00 da conta do Cliente A (id = 10)
+UPDATE contas 
+SET saldo = saldo - 200.00 
+WHERE id_conta = 10;
+
+-- 2. Adiciona R$ 200,00 na conta do Cliente B (id = 25)
+UPDATE contas 
+SET saldo = saldo + 200.00 
+WHERE id_conta = 25;
+
+-- 3. Confirma as alterações permanentemente
+COMMIT;
+
+
+--- EXEMPLO 2: Transação Com Erro ou Cancelamento (Reversão / ROLLBACK) ---
+Simulação de erro na tentativa de debitar saldo insuficiente ou falha no sistema.
+
+START TRANSACTION;
+
+-- 1. Tenta realizar o pagamento de um pedido
+UPDATE contas 
+SET saldo = saldo - 500.00 
+WHERE id_conta = 10;
+
+-- Exemplo: O sistema verifica que o saldo ficou negativo e decide cancelar
+-- Ou ocorre algum erro de chave estrangeira/restrição
+ROLLBACK; 
+-- O saldo do cliente 10 retorna ao valor original antes do comando START.
+
+
+--- EXEMPLO 3: Uso de SAVEPOINT (Reversão Parcial) ---
+Inserção de um pedido principal e múltiplos itens, revertendo apenas um item inválido.
+
+START TRANSACTION;
+
+-- 1. Insere o cabeçalho do pedido
+INSERT INTO pedidos (id_pedido, cliente_id, data_pedido) 
+VALUES (101, 10, NOW());
+
+-- 2. Insere o primeiro item
+INSERT INTO itens_pedido (id_pedido, produto_id, quantidade, preco) 
+VALUES (101, 5, 2, 50.00);
+
+-- Cria um ponto de restauração
+SAVEPOINT item_1_salvo;
+
+-- 3. Tenta inserir um segundo item que pode conter erro
+INSERT INTO itens_pedido (id_pedido, produto_id, quantidade, preco) 
+VALUES (101, 9999, 1, 120.00);
+
+-- Se detectarmos que o produto 9999 é inválido, revertemos apenas até o savepoint
+ROLLBACK TO SAVEPOINT item_1_salvo;
+
+-- O pedido e o primeiro item continuam válidos. Agora confirmamos:
+COMMIT;
+
+
+--- EXEMPLO 4: Bloco de Tratamento de Erros em Stored Procedure ---
+Exemplo de como automatizar o ROLLBACK em caso de exceção dentro do MySQL.
+
+DELIMITER //
+
+CREATE PROCEDURE ProcessarVenta(
+    IN p_cliente_id INT,
+    IN p_produto_id INT,
+    IN p_valor DECIMAL(10,2)
+)
+BEGIN
+    -- Se ocorrer qualquer erro SQLEXCEPTION, faz o ROLLBACK
+    DECLARE EXIT HANDLER FOR SQLEXCEPTION
+    BEGIN
+        ROLLBACK;
+        SELECT 'Erro na transação! Operação cancelada.' AS Mensagem;
+    END;
+
+    START TRANSACTION;
+
+    UPDATE clientes SET saldo = saldo - p_valor WHERE id = p_cliente_id;
+    UPDATE estoque SET qtd = qtd - 1 WHERE id = p_produto_id;
+    INSERT INTO vendas (cliente_id, produto_id, valor) VALUES (p_cliente_id, p_produto_id, p_valor);
+
+    COMMIT;
+    SELECT 'Transação realizada com sucesso!' AS Mensagem;
+END //
+
+DELIMITER ;
