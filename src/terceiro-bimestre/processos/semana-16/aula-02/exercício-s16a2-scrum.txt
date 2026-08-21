@@ -1,0 +1,106 @@
+RESOLUÇÃO – PAPÉIS DO SCRUM
+
+DESAFIO 1 – COMPREENDENDO OS PAPÉIS
+
+O Scrum é uma metodologia ágil utilizada para gerenciar e 
+desenvolver projetos de forma colaborativa, incremental e 
+flexível. Seu principal objetivo é entregar valor ao cliente de 
+maneira contínua, por meio de pequenas entregas chamadas Sprints.
+
+Product Owner (PO)
+Foco principal: maximizar o valor do produto para o cliente e 
+para o negócio. O PO é responsável por definir as prioridades do 
+Product Backlog e decidir quais funcionalidades devem ser 
+desenvolvidas primeiro.
+
+Scrum Master (SM)
+Foco principal: garantir que o Scrum seja aplicado corretamente e 
+remover impedimentos que atrapalhem o time. O SM atua como 
+facilitador, ajudando a equipe a trabalhar de forma eficiente.
+
+Development Team (Dev Team)
+Foco principal: desenvolver e entregar o produto. A equipe decide 
+como realizar o trabalho técnico, escolhendo ferramentas, 
+tecnologias e formas de implementação.
+
+Por que o Scrum separa responsabilidades?
+A separação evita conflitos, melhora a organização e permite que 
+cada profissional se concentre em sua especialidade. Assim, o PO 
+cuida do valor do produto, o SM do processo e o Dev Team da 
+execução técnica.
+
+O que acontece quando um papel assume decisões que não são suas?
+Podem surgir conflitos, retrabalho, perda de produtividade e 
+decisões inadequadas. Além disso, a autonomia da equipe é 
+prejudicada.
+
+DESAFIO 2 – DECISÕES SOBRE PRIORIDADES
+
+Qual papel define as prioridades?
+Product Owner (PO).
+
+Motivo
+O PO conhece as necessidades dos clientes e os objetivos do 
+negócio. Por isso, ele é a pessoa mais adequada para decidir 
+quais funcionalidades devem ser desenvolvidas primeiro.
+
+Relação com o valor ágil de entregar valor ao cliente
+Ao priorizar as funcionalidades mais importantes, o PO garante 
+que o cliente receba rapidamente recursos que geram mais 
+benefícios, aumentando a satisfação e o valor entregue em cada 
+sprint.
+
+DESAFIO 3 – IMPEDIMENTOS NO TRABALHO
+
+Quem deve atuar para remover impedimentos?
+Scrum Master (SM).
+
+Como essa atuação protege o time?
+O Scrum Master elimina obstáculos que dificultam o trabalho da 
+equipe, como problemas de comunicação, dependências externas ou 
+dificuldades organizacionais. Assim, o time pode focar no 
+desenvolvimento.
+
+Relação com um princípio ágil
+Está relacionado ao princípio de manter um ritmo sustentável de 
+desenvolvimento e promover a colaboração entre as pessoas 
+envolvidas no projeto, removendo barreiras que prejudiquem o 
+progresso.
+
+DESAFIO 4 – DECISÕES TÉCNICAS
+
+Quem toma decisões técnicas?
+Development Team (Dev Team).
+
+Por que essa responsabilidade não é do PO nem do SM?
+O PO define o que deve ser feito, mas não como será implementado. 
+O SM facilita o processo, mas não interfere nas escolhas técnicas.
+A equipe de desenvolvimento possui o conhecimento necessário para 
+decidir a melhor solução.
+
+Relação com o princípio da auto-organização
+O Scrum valoriza equipes auto-organizadas. Isso significa que os 
+próprios desenvolvedores definem a melhor forma de executar o 
+trabalho, aumentando a qualidade das soluções e a responsabilidade 
+pelos resultados.
+
+DESAFIO 5 – CONFLITOS DE PAPÉIS
+
+Por que é um problema o PO definir como o código deve ser escrito?
+Porque ele está assumindo uma responsabilidade que pertence ao 
+Dev Team. Isso reduz a autonomia dos desenvolvedores e pode gerar 
+conflitos e decisões técnicas inadequadas.
+
+Qual princípio ágil está sendo violado?
+O princípio da auto-organização das equipes, que determina que as 
+melhores soluções surgem de equipes capazes de decidir como 
+realizar seu trabalho.
+
+Como a separação correta de papéis melhora o trabalho?
+Cada membro atua dentro de sua especialidade:
+- PO: define prioridades e valor de negócio;
+- SM: facilita o processo e remove impedimentos;
+- Dev Team: decide a implementação técnica.
+
+Essa divisão aumenta a colaboração, reduz conflitos, melhora a 
+produtividade e contribui para entregas de maior qualidade.
