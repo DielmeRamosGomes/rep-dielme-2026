@@ -1,15 +1,27 @@
 PROPRIEDADES ACID EM BANCOS DE DADOS
 
-As propriedades ACID garantem que as transações em um sistema de banco de dados sejam confiáveis e processadas de forma segura:
+As propriedades ACID garantem que as transações em um sistema de 
+banco de dados sejam confiáveis e processadas de forma segura:
 
 1. ATOMICIDADE (Atomicity)
-Princípio do "tudo ou nada". A transação é tratada como uma única unidade indivisível; se qualquer parte da instrução falhar, toda a transação é abortada e o banco retorna ao estado anterior (rollback).
+Princípio do "tudo ou nada". A transação é tratada como uma única 
+unidade indivisível; se qualquer parte da instrução falhar, toda 
+a transação é abortada e o banco retorna ao estado anterior 
+(rollback).
 
 2. CONSISTÊNCIA (Consistency)
-Garante que o banco de dados passe de um estado válido a outro estado válido. Todas as regras de negócio, restrições (constraints), chaves e integridades devem ser respeitadas antes e depois da transação.
+Garante que o banco de dados passe de um estado válido a outro 
+estado válido. Todas as regras de negócio, restrições 
+(constraints), chaves e integridades devem ser respeitadas antes 
+e depois da transação.
 
 3. ISOLAMENTO (Isolation)
-Assegura que o acesso concorrente a dados ocorra de forma que transações simultâneas não interfiram umas nas outras. O resultado de transações executadas ao mesmo tempo deve ser o mesmo que se fossem executadas de forma sequencial.
+Assegura que o acesso concorrente a dados ocorra de forma que 
+transações simultâneas não interfiram umas nas outras. O 
+resultado de transações executadas ao mesmo tempo deve ser o 
+mesmo que se fossem executadas de forma sequencial.
 
 4. DURABILIDADE (Durability)
-Garante que, uma vez que a transação foi confirmada (commit), suas alterações persistirão permanentemente no sistema, mesmo em caso de falha de hardware ou queda de energia.
+Garante que, uma vez que a transação foi confirmada (commit), 
+suas alterações persistirão permanentemente no sistema, mesmo em 
+caso de falha de hardware ou queda de energia.
