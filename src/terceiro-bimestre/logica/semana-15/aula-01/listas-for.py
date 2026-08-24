@@ -1,6 +1,6 @@
-#lista  = [1, 2, 3, 4, 5]
-
 '''
+lista  = [1, 2, 3, 4, 5]
+
 for i in range(0, len(lista)):
     print(lista[i])
 '''
@@ -11,19 +11,15 @@ for i in range(len(lista)):
 '''
 
 '''
-for i in range(len(lista)-1, -1, -1):
-    print(lista[i])
-'''
-'''
 frutas = ["Maçã", "Banana", "Limão"]
 for fruta in frutas:
     print(fruta)
 '''
 
 '''
-frutas = ["maçã", "banana", "uva"]
+frutas = ["maçã", "banana", "uva", "Pera"]
 for posicao, fruta in enumerate(frutas):
-    print(posicao, fruta)
+    print(f"posição[{posicao}] = {fruta}")
 ''' 
 
 '''
