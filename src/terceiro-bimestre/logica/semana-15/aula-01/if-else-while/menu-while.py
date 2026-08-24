@@ -12,5 +12,7 @@ while True:
         num1 = int(input("Digite um numero1: "))
         num2 = int(input("Digite um numero2: "))
         print(f"{num1} - {num2} = {num1 - num2}")
-    else:
+    elif opcao == 3:
         break
+    else:
+        print("Opção inválida")
