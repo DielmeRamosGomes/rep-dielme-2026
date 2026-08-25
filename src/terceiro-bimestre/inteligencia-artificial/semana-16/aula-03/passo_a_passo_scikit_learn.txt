@@ -1,0 +1,72 @@
+===============================================================================
+PASSO A PASSO DETALHADO DO CÓDIGO SCIKIT-LEARN
+===============================================================================
+
+1. IMPORTAÇÃO DAS FERRAMENTAS
+-------------------------------------------------------------------------------
+* train_test_split: Função responsável por dividir o conjunto de dados em
+  partes separadas de treino e teste.
+* LogisticRegression: O algoritmo de aprendizado de máquina supervisionado que
+  fará a classificação dos dados.
+* accuracy_score: A métrica matemática que calcula a porcentagem de acertos
+  comparando os palpites do modelo com as respostas reais.
+
+
+2. ETAPA 1 — PREPARAÇÃO DOS DADOS
+-------------------------------------------------------------------------------
+* X (Matriz de Características / Features): São as variáveis explicativas de
+  entrada. Cada par [horas de estudo, faltas] representa um aluno.
+  Exemplo: [2, 1] significa 2 horas de estudo e 1 falta.
+* y (Vetor de Rótulos / Target): É a resposta final desejada (o resultado do
+  aluno).
+  0 = Reprovado
+  1 = Aprovado
+
+
+3. ETAPA 2 — SEPARAÇÃO EM TREINO E TESTE
+-------------------------------------------------------------------------------
+O comando:
+    X_train, X_test, y_train, y_test = train_test_split(
+        X, y, test_size=0.33, random_state=42
+    )
+
+* test_size=0.33: Reserva 33% dos dados para o teste final e usa os 67% restantes
+  para o treinamento.
+* Como tínhamos 6 alunos no total:
+  - Dados de Treino (X_train, y_train): 4 alunos para o modelo aprender.
+  - Dados de Teste (X_test, y_test): 2 alunos mantidos em segredo para testar o modelo.
+* random_state=42: Garante a reprodutibilidade do sorteio, fazendo com que a
+  divisão seja sempre idêntica toda vez que o código for executado.
+
+
+4. ETAPA 3 — CRIAÇÃO DO MODELO
+-------------------------------------------------------------------------------
+O comando:
+    modelo = LogisticRegression()
+
+* Instancia a estrutura do algoritmo na memória do Python, configurado e pronto
+  para receber as informações de treinamento.
+
+
+5. ETAPA 4 — TREINAMENTO
+-------------------------------------------------------------------------------
+O comando:
+    modelo.fit(X_train, y_train)
+
+* Faz o algoritmo analisar os 4 alunos de treino.
+* Durante o fit, a Regressão Logística calcula os pesos matemáticos internos
+  para traçar uma linha de decisão que relacione horas de estudo e faltas
+  com a chance de ser aprovado (1) ou reprovado (0).
+
+
+6. ETAPA 5 — AVALIAÇÃO
+-------------------------------------------------------------------------------
+Os comandos:
+    y_pred = modelo.predict(X_test)
+    acuracia = accuracy_score(y_test, y_pred)
+
+* predict(X_test): O modelo recebe os 2 alunos de teste (sem ver as respostas reais)
+  e gera os palpites correspondentes (y_pred).
+* accuracy_score(y_test, y_pred): Compara os palpites gerados com o gabarito real
+  (y_test). Como o modelo acertou 2 de 2 palpites, a acurácia calculada resultou
+  em 100.00%.
