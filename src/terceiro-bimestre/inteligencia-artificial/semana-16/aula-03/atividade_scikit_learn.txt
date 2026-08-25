@@ -1,0 +1,107 @@
+===============================================================================
+ROTEIRO DE ATIVIDADE PRÁTICA: SCIKIT-LEARN - FLUXO BÁSICO E REGRESSÃO LOGÍSTICA
+===============================================================================
+
+1. CÓDIGO FONTE EM PYTHON (solucao.py)
+-------------------------------------------------------------------------------
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score
+
+# ==========================================
+# ETAPA 1 — PREPARAÇÃO DOS DADOS
+# ==========================================
+# X representa a matriz de características (Features): [horas de estudo, faltas]
+X = [
+    [2, 1], [4, 0], [1, 3], [3, 1], [5, 0], [2, 2]
+]
+
+# y representa o vetor de rótulos (Labels/Target): 0 = Reprovado, 1 = Aprovado
+y = [0, 1, 0, 1, 1, 0]
+
+# ==========================================
+# ETAPA 2 — SEPARAÇÃO EM TREINO E TESTE
+# ==========================================
+# Separar em treino e teste evita o memorização dos dados (overfitting),
+# garantindo que o modelo seja testado em informações inéditas.
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.33, random_state=42
+)
+
+# ==========================================
+# ETAPA 3 — CRIAÇÃO DO MODELO
+# ==========================================
+# Instanciando a Regressão Logística, ideal para problemas de classificação binária.
+# "Treinar um modelo" significa fazer o algoritmo ajustar seus parâmetros internos
+# para encontrar padrões que relacionem as características (X) ao resultado (y).
+modelo = LogisticRegression()
+
+# ==========================================
+# ETAPA 4 — TREINAMENTO
+# ==========================================
+# Os dados de treino servem como base de aprendizado para que o modelo
+# identifique as regras de decisão entre horas de estudo, faltas e aprovação.
+modelo.fit(X_train, y_train)
+
+# ==========================================
+# ETAPA 5 — AVALIAÇÃO
+# ==========================================
+# Gerando previsões com os dados de teste inéditos
+y_pred = modelo.predict(X_test)
+
+# A acurácia mede a porcentagem de acertos totais do modelo sobre o conjunto de teste.
+acuracia = accuracy_score(y_test, y_pred)
+print(f"Acurácia do modelo: {acuracia * 100:.2f}%")
+
+
+-------------------------------------------------------------------------------
+2. RELATO EXPLICATIVO (ANÁLISE FINAL)
+-------------------------------------------------------------------------------
+O modelo desenvolvido utiliza a Regressão Logística para classificar alunos
+como aprovados (1) ou reprovados (0) com base em horas de estudo e faltas.
+A escolha da Regressão Logística justifica-se por ser um algoritmo supervisionado
+simples, altamente interpretável e perfeito para problemas de classificação
+binária em conjuntos de dados pequenos. A avaliação foi realizada comparando
+as previsões do modelo com o gabarito real dos dados de teste por meio da
+métrica de acurácia.
+
+Apesar de o modelo ter executado corretamente o fluxo, a métrica obtida neste
+cenário tem baixa confiabilidade estatística devido à extrema limitação do
+tamanho da amostra (apenas 6 alunos no total). Uma das principais limitações
+deste tipo de abordagem é que dados reduzidos não cobrem a diversidade de
+cenários reais e podem levar a divisões desproporcionais entre treino e teste.
+Portanto, este fluxo representa apenas um primeiro passo em Machine Learning,
+servindo para entender o pipeline de código, já que aplicações reais exigem
+conjuntos de dados maiores, validação cruzada, limpeza profunda e ajuste fino
+de hiperparâmetros.
+
+
+-------------------------------------------------------------------------------
+3. EXPLICAÇÃO TEÓRICA: REGRESSÃO LOGÍSTICA
+-------------------------------------------------------------------------------
+A Regressão Logística é um algoritmo de aprendizado de máquina supervisionado
+focado em resolver problemas de classificação — especialmente quando a resposta
+final é binária (duas categorias, como Sim/Não, Aprovado/Reprovado, Spam/Não Spam).
+
+Como Ela Funciona?
+Diferente da Regressão Linear (que prevê um número contínuo, como o preço de uma
+casa), a Regressão Logística estima a probabilidade de um evento pertencer a
+uma determinada classe.
+
+1. Combinação de variáveis: O algoritmo calcula uma média ponderada dos dados
+   de entrada (como horas de estudo e número de faltas).
+2. Função Sigmóide: Ele passa esse resultado por uma função matemática em
+   formato de "S" (função sigmóide), que comprime qualquer valor numérico para
+   o intervalo fixo entre 0 e 1 (0% a 100%).
+3. Ponto de Corte (Limiar): Por padrão, define-se o limiar em 0,5 (50%):
+   - Se a probabilidade for >= 0,5, o resultado é classificado como 1 (Aprovado).
+   - Se for < 0,5, o resultado é classificado como 0 (Reprovado).
+
+Principais Vantagens e Limitações:
+- Simplicidade e velocidade: É rápida de treinar e exige pouco processamento.
+- Alta interpretabilidade: É fácil entender o peso que cada variável tem na
+  decisão final.
+- Limitação em dados complexos: Funciona melhor quando a separação entre as
+  classes é aproximadamente linear. Para cenários com padrões muito complexos ou
+  não lineares, algoritmos mais avançados (como Árvores de Decisão ou Redes
+  Neurais) costumam se sair melhor.
