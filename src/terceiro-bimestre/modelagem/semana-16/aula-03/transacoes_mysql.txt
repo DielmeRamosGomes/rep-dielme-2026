@@ -1,47 +1,56 @@
 ================================================================================
-                    TRANSAÇÕES NO MYSQL (ENGINE INNODB)
+          TRANSAÇÕES NO MYSQL (ENGINE INNODB)
 ================================================================================
 
-No MySQL, transações são suportadas principalmente pela engine InnoDB, garantindo
-as propriedades ACID (Atomicidade, Consistência, Isolamento e Durabilidade).
+No MySQL, transações são suportadas principalmente 
+pela engine InnoDB, garantindo as propriedades ACID 
+(Atomicidade, Consistência, Isolamento e Durabilidade).
 
 --------------------------------------------------------------------------------
 1. COMANDOS PRINCIPAIS DE CONTROLE DE TRANSAÇÃO
 --------------------------------------------------------------------------------
 
 • START TRANSACTION (ou BEGIN)
-  Inicia explicitamente um bloco transacional. A partir deste ponto, as alterações
-  não são salvas automaticamente no banco até que se confirme a operação.
+Inicia explicitamente um bloco transacional. A partir 
+deste ponto, as alterações não são salvas 
+automaticamente no banco até que se confirme a 
+operação.
 
 • COMMIT
-  Confirma a transação. Salva de forma permanente no banco de dados todas as 
-  alterações (INSERT, UPDATE, DELETE) realizadas desde o início da transação.
+Confirma a transação. Salva de forma permanente no 
+banco de dados todas as alterações (INSERT, UPDATE, 
+DELETE) realizadas desde o início da transação.
 
 • ROLLBACK
-  Cancela/desfaz todas as alterações feitas durante a transação atual, voltando o 
-  banco de dados ao estado em que estava antes de executar o START TRANSACTION.
+Cancela/desfaz todas as alterações feitas durante a 
+transação atual, voltando o banco de dados ao estado 
+em que estava antes de executar o START TRANSACTION.
 
 • SAVEPOINT <nome_do_ponto>
-  Cria um ponto de restauração intermediário dentro da transação.
+Cria um ponto de restauração intermediário dentro da 
+transação.
 
 • ROLLBACK TO SAVEPOINT <nome_do_ponto>
-  Reverte a transação apenas até o ponto especificado, sem cancelar as operações
-  executadas antes da criação daquele savepoint.
+Reverte a transação apenas até o ponto especificado, 
+sem cancelar as operações executadas antes da criação
+daquele savepoint.
 
 • RELEASE SAVEPOINT <nome_do_ponto>
-  Remove um ponto de restauração criado anteriormente.
+Remove um ponto de restauração criado anteriormente.
 
 • SET autocommit = 0 / 1
-  Define se cada instrução SQL deve ser confirmada automaticamente (1 = ligado)
-  ou se deve aguardar um COMMIT explícito (0 = desligado).
+Define se cada instrução SQL deve ser confirmada 
+automaticamente (1 = ligado) ou se deve aguardar um 
+COMMIT explícito (0 = desligado).
 
 
 --------------------------------------------------------------------------------
 2. EXEMPLOS PRÁTICOS DE USO
 --------------------------------------------------------------------------------
 
---- EXEMPLO 1: Transação Bem-Sucedida (Sucesso / COMMIT) ---
-Transferência de dinheiro entre duas contas bancárias.
+--- EXEMPLO 1: Transação Bem-Sucedida (Sucesso / 
+COMMIT) --- Transferência de dinheiro entre duas 
+contas bancárias.
 
 START TRANSACTION;
 
