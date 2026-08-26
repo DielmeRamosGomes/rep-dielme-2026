@@ -1,0 +1,116 @@
+RELATO REFLEXIVO ESTRUTURADO
+
+ETAPA 1 - DEFINIÇÃO DO PROBLEMA
+
+• Problema: dificuldade dos leitores em encontrar um 
+único ambiente para comprar e alugar livros online.
+• Usuários: estudantes, professores, profissionais e 
+leitores em geral.
+• Relevância: facilita o acesso a livros físicos e 
+digitais, oferecendo praticidade e economia.
+• Ideia Inicial: criação de uma Biblioteca Online 
+Inteligente para venda e aluguel de livros.
+
+ETAPA 2 - IDEIAS E FUNCIONALIDADES
+
+Funcionalidades levantadas pelo grupo:
+• Cadastro de usuários.
+• Login seguro.
+• Catálogo de livros.
+• Busca por título, autor e gênero.
+• Compra de livros.
+• Aluguel de livros.
+• Avaliações e comentários.
+• Lista de favoritos.
+• Recomendações personalizadas.
+• Histórico de pedidos.
+
+Funcionalidades selecionadas para a primeira versão:
+• Cadastro e login.
+• Catálogo de livros.
+• Sistema de busca.
+• Compra de livros.
+• Aluguel de livros.
+
+ETAPA 3 - PRIORIZAÇÃO
+
+Ordem de prioridade:
+1. Cadastro e Login.
+2. Catálogo de Livros.
+3. Busca de Livros.
+4. Compra de Livros.
+5. Aluguel de Livros.
+
+Justificativa:
+• Essas funcionalidades permitem que o sistema 
+funcione de forma completa desde o início.
+• Recursos como favoritos, avaliações e recomendações 
+ficaram para versões futuras.
+• O grupo priorizou as funcionalidades que entregam 
+maior valor ao usuário.
+
+ETAPA 4 - PLANEJAMENTO INICIAL (SPRINT ZERO)
+
+O que fazer primeiro:
+• Criar cadastro e login.
+• Desenvolver o catálogo de livros.
+• Implementar sistema de busca.
+
+Distribuição das tarefas:
+• Integrante 1: levantamento de requisitos.
+• Integrante 2: desenho das telas.
+• Integrante 3: organização do backlog.
+• Integrante 4: documentação do projeto.
+
+Dúvidas em aberto:
+• Integração com meios de pagamento.
+• Regras de aluguel dos livros.
+• Prazo de devolução e renovação.
+
+ETAPA 5 - REPRESENTAÇÃO EM PAPEL
+
+Telas desenhadas:
+• Tela inicial.
+• Tela de cadastro e login.
+• Catálogo de livros.
+• Página de detalhes do livro.
+• Carrinho de compras.
+• Área de aluguel de livros.
+
+Fluxo principal:
+• Usuário acessa o sistema.
+• Realiza login.
+• Pesquisa um livro.
+• Escolhe comprar ou alugar.
+• Finaliza a transação.
+
+ETAPA 6 - REFLEXÃO FINAL
+
+• O trabalho em grupo permitiu a troca de ideias e 
+colaboração entre todos os integrantes.
+• As decisões foram tomadas em conjunto, buscando 
+atender às necessidades dos usuários.
+• A comunicação foi fundamental para definir 
+prioridades e evitar retrabalho.
+• Em uma próxima iteração, seria importante detalhar 
+melhor os requisitos e reduzir dúvidas iniciais.
+
+RELAÇÃO COM OS VALORES E PRINCÍPIOS ÁGEIS
+
+• Colaboração entre os membros da equipe.
+• Foco na entrega de valor para o usuário.
+• Adaptação às mudanças durante as discussões.
+• Planejamento incremental das funcionalidades.
+• Priorização das entregas mais importantes.
+
+BACKLOG SIMPLIFICADO
+
+1. Cadastro e Login.
+2. Catálogo de Livros.
+3. Busca por Título, Autor e Gênero.
+4. Compra de Livros.
+5. Aluguel de Livros.
+6. Histórico de Pedidos.
+7. Lista de Favoritos.
+8. Avaliações e Comentários.
+9. Recomendações Personalizadas.

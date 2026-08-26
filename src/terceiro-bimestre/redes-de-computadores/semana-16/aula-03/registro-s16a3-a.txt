@@ -1,0 +1,38 @@
+RELATO REFLEXIVO ESTRUTURADO
+
+Plataforma chamada Biblioteca 
+Online Inteligente, destinada à venda e ao aluguel de 
+livros digitais e físicos pela internet. O problema 
+identificado foi a dificuldade que muitos leitores 
+têm para encontrar livros em um único ambiente que 
+ofereça compra, aluguel e recomendações 
+personalizadas. Os principais usuários seriam 
+estudantes, profissionais e leitores em geral que 
+desejam acesso rápido e prático a obras literárias e 
+acadêmicas.
+
+Inicialmente, levantamos diversas ideias de funcionalidades, como catálogo de livros, busca por autor ou gênero, carrinho de compras, sistema de aluguel, avaliações dos usuários, lista de favoritos, recomendações automáticas e acompanhamento de pedidos. Após a discussão, percebemos que seria necessário focar apenas nas funcionalidades mais importantes para a primeira versão do produto.
+
+Na etapa de priorização, definimos como principais funcionalidades o cadastro de usuários, o catálogo de livros, a busca de obras, o sistema de compra e o sistema de aluguel. As funcionalidades de favoritos, recomendações inteligentes e avaliações ficaram para versões futuras, pois agregam valor, mas não são essenciais para o funcionamento inicial da plataforma. A decisão foi tomada considerando aquilo que entregaria maior valor ao usuário no menor tempo possível.
+
+Durante o planejamento inicial (Sprint Zero), decidimos desenvolver primeiro a estrutura básica do sistema, incluindo cadastro, login e catálogo de livros. As tarefas foram distribuídas entre os integrantes de acordo com suas habilidades. Um membro ficou responsável pelo levantamento de requisitos, outro pelo desenho das telas, outro pela organização do backlog e outro pela documentação do projeto. Algumas dúvidas permaneceram em aberto, como a forma de integração com meios de pagamento e a definição das regras de aluguel.
+
+Na representação em papel, desenhamos as principais telas do sistema: tela inicial, catálogo de livros, área de busca, página de detalhes do livro e carrinho de compras/aluguel. Os fluxos mostraram como o usuário pode pesquisar uma obra, escolher entre comprar ou alugar e finalizar a operação.
+
+O trabalho em grupo foi produtivo, pois todos contribuíram com ideias e opiniões. As decisões foram tomadas por consenso, priorizando sempre a experiência do usuário. Percebemos a importância da comunicação e da colaboração para alinhar expectativas e evitar retrabalho.
+
+A atividade demonstrou vários valores do Manifesto Ágil, como colaboração entre pessoas, adaptação às mudanças e foco na entrega contínua de valor. Em uma próxima iteração, melhoraríamos a definição dos requisitos e o detalhamento das funcionalidades para reduzir dúvidas durante o desenvolvimento.
+
+BACKLOG SIMPLIFICADO
+
+1. Cadastro e Login - Acesso seguro ao sistema
+2. Catálogo de Livros - Visualização dos livros disponíveis
+3. Busca por Título, Autor e Gênero - Encontrar livros rapidamente
+4. Compra de Livros - Aquisição de obras
+5. Aluguel de Livros - Alternativa mais econômica
+6. Histórico de Pedidos - Acompanhamento das transações
+7. Lista de Favoritos - Salvar livros de interesse
+8. Avaliações e Comentários - Compartilhar opiniões
+9. Recomendações Personalizadas - Melhor experiência de uso
+
+Assim, o projeto atende às etapas do Sprint Zero, demonstrando planejamento, priorização e aplicação dos princípios ágeis no desenvolvimento de uma biblioteca online para venda e aluguel de livros.
