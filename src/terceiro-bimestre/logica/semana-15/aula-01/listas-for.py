@@ -4,6 +4,14 @@ for i in range(0, len(lista)):
     print(lista[i])          
 '''
 
+lista_palavras = ["maçã, banana", "pera", "abacate", "uva"]
+frutas = input("digite o nome da fruta: ").lower()
+for fruta in range(0, len(lista_palavras)):
+    if frutas == fruta:
+        print(f"A fruta {fruta} está na lista")
+        break
+print("Fruta não encontrada")
+    
 '''
 for i in range(len(lista)):
     print(lista[i])
