@@ -6,7 +6,13 @@ for i in range(0, len(lista)):
 '''
 #print(lista[3])
 
+'''
 frutas = ["maçã", "banana", "pera"]
-#for fruta in frutas:
-    #print(fruta)
-print(frutas[2])
+for fruta in frutas:
+    print(fruta)
+'''
+#print(frutas[2])
+
+numeros = [i for i in range(1, 6)]
+for numero in numeros:
+    print(numero)
