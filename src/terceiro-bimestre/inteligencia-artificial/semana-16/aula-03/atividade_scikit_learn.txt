@@ -79,23 +79,31 @@ de hiperparâmetros.
 -------------------------------------------------------------------------------
 3. EXPLICAÇÃO TEÓRICA: REGRESSÃO LOGÍSTICA
 -------------------------------------------------------------------------------
-A Regressão Logística é um algoritmo de aprendizado de máquina supervisionado
-focado em resolver problemas de classificação — especialmente quando a resposta
-final é binária (duas categorias, como Sim/Não, Aprovado/Reprovado, Spam/Não Spam).
+A Regressão Logística é um algoritmo de aprendizado 
+de máquina supervisionado focado em resolver problemas 
+de classificação — especialmente quando a resposta
+final é binária (duas categorias, como Sim/Não, 
+Aprovado/Reprovado, Spam/Não Spam).
 
 Como Ela Funciona?
-Diferente da Regressão Linear (que prevê um número contínuo, como o preço de uma
-casa), a Regressão Logística estima a probabilidade de um evento pertencer a
-uma determinada classe.
+Diferente da Regressão Linear (que prevê um número 
+contínuo, como o preço de uma casa), a Regressão 
+Logística estima a probabilidade de um evento 
+pertencer a uma determinada classe.
 
-1. Combinação de variáveis: O algoritmo calcula uma média ponderada dos dados
-   de entrada (como horas de estudo e número de faltas).
-2. Função Sigmóide: Ele passa esse resultado por uma função matemática em
-   formato de "S" (função sigmóide), que comprime qualquer valor numérico para
-   o intervalo fixo entre 0 e 1 (0% a 100%).
-3. Ponto de Corte (Limiar): Por padrão, define-se o limiar em 0,5 (50%):
-   - Se a probabilidade for >= 0,5, o resultado é classificado como 1 (Aprovado).
-   - Se for < 0,5, o resultado é classificado como 0 (Reprovado).
+1. Combinação de variáveis: O algoritmo calcula uma 
+média ponderada dos dados de entrada (como horas de 
+estudo e número de faltas).
+2. Função Sigmóide: Ele passa esse resultado por uma 
+função matemática em formato de "S" (função sigmóide),
+que comprime qualquer valor numérico para o intervalo 
+fixo entre 0 e 1 (0% a 100%).
+3. Ponto de Corte (Limiar): Por padrão, define-se o 
+limiar em 0,5 (50%):
+- Se a probabilidade for >= 0,5, o resultado é 
+classificado como 1 (Aprovado).
+- Se for < 0,5, o resultado é classificado como 0 
+(Reprovado).
 
 Principais Vantagens e Limitações:
 - Simplicidade e velocidade: É rápida de treinar e exige pouco processamento.

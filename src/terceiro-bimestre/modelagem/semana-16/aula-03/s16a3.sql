@@ -31,7 +31,7 @@ COMMIT;
 
 START TRANSACTION;
 
-INSERT INTO pedidos (cliente, produto, quantidade, valor) 
+INSERT INTO db_s16a3.pedidos (cliente, produto, quantidade, valor) 
 VALUES ('Carlos Lima', 'Tablet', 1, 1500.00);
 
 -- Simular erro que exige ROLLBACK
