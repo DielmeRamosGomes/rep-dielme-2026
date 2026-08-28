@@ -1,0 +1,74 @@
+================================================================================
+                        GUIA DE VIEWS NO MYSQL / MARIADB
+================================================================================
+
+1. O QUE É UMA VIEW?
+--------------------------------------------------------------------------------
+Uma View (ou visão) é uma tabela virtual baseada no resultado de uma consulta 
+SELECT. Ela não armazena os dados fisicamente no disco (com exceção dos metadados). 
+Em vez disso, funciona como uma consulta salva que é executada dinamicamente 
+toda vez que a view é consultada.
+
+
+2. PRINCIPAIS BENEFÍCIOS
+--------------------------------------------------------------------------------
+* Simplificação de Queries: Transforma consultas complexas (com múltiplos JOINs, 
+  agrupamentos ou subqueries) em um SELECT simples sobre a View.
+* Segurança e Controle de Acesso: Permite expor apenas colunas específicas 
+  para determinados usuários, ocultando dados sensíveis (senhas, CPF, etc.).
+* Reutilização e Padronização: Centraliza regras de negócio em um único local no 
+  banco de dados. Se a regra mudar, altera-se apenas a View.
+
+
+3. SINTAXE E EXEMPLOS PRÁTICOS (Contexto: db_vendas)
+--------------------------------------------------------------------------------
+
+3.1 Criando uma View:
+---------------------
+CREATE VIEW v_detalhes_vendas AS
+SELECT 
+    v.id AS venda_id,
+    c.nome AS cliente,
+    p.nome AS produto,
+    v.quantidade,
+    v.data_venda
+FROM db_vendas.vendas v
+JOIN db_vendas.clientes c ON v.id_cliente = c.id
+JOIN db_vendas.produtos p ON v.id_produto = p.id;
+
+3.2 Consultando uma View:
+-------------------------
+-- A View é consultada exatamente como uma tabela normal
+SELECT * FROM v_detalhes_vendas;
+
+-- É possível aplicar filtros adicionais e ordenação:
+SELECT * FROM v_detalhes_vendas 
+WHERE quantidade > 5 
+ORDER BY data_venda DESC;
+
+3.3 Atualizando/Modificando uma View:
+------------------------------------
+CREATE OR REPLACE VIEW v_detalhes_vendas AS
+SELECT 
+    v.id AS venda_id,
+    c.nome AS cliente,
+    p.nome AS produto,
+    v.quantidade,
+    (v.quantidade * p.preco) AS valor_total,
+    v.data_venda
+FROM db_vendas.vendas v
+JOIN db_vendas.clientes c ON v.id_cliente = c.id
+JOIN db_vendas.produtos p ON v.id_produto = p.id;
+
+3.4 Excluindo uma View:
+-----------------------
+DROP VIEW IF EXISTS v_detalhes_vendas;
+
+
+4. LIMITAÇÕES E RECOMENDAÇÕES DE USO
+--------------------------------------------------------------------------------
+* Desempenho: Como a query base é executada em tempo real, garanta que as 
+  tabelas de origem possuam os devidos ÍNDICES (PRIMARY KEY, FOREIGN KEY).
+* Alteração de Dados (INSERT / UPDATE): Views que envolvem JOIN, GROUP BY, 
+  DISTINCT ou funções de agregação (SUM, COUNT, AVG) são SOMENTE LEITURA.
+================================================================================
