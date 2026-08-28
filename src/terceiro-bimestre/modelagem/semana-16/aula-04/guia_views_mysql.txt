@@ -9,7 +9,6 @@ SELECT. Ela não armazena os dados fisicamente no disco (com exceção dos metad
 Em vez disso, funciona como uma consulta salva que é executada dinamicamente 
 toda vez que a view é consultada.
 
-
 2. PRINCIPAIS BENEFÍCIOS
 --------------------------------------------------------------------------------
 * Simplificação de Queries: Transforma consultas complexas (com múltiplos JOINs, 

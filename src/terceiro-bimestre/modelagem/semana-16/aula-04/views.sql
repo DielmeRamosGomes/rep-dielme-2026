@@ -40,7 +40,7 @@ VALUES (1, 1, '2026-08-27', 2),
        (1, 2, '2026-08-26', 1),
        (2, 1, '2026-08-25', 3);
 
-CREATE VIEW relatorio_vendas AS
+CREATE VIEW db_vendas.relatorio_vendas AS
 SELECT 
   c.nome AS cliente, 
   p.nome AS produto, 
@@ -50,4 +50,4 @@ FROM db_vendas.vendas v
 JOIN db_vendas.clientes c ON v.id_cliente = c.id
 JOIN db_vendas.produtos p ON v.id_produto = p.id;
 
-SELECT * FROM relatorio_vendas;
+SELECT * FROM db_vendas.relatorio_vendas;
