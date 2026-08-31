@@ -129,6 +129,11 @@ PADRONIZAÇÃO
 5. INTRODUÇÃO AO PCA
 ==================================================
 
+A multicolinearidade ocorre em modelos lineares quando duas ou mais 
+variáveis independentes (preditores) estão altamente correlacionadas entre 
+si. Isso dificulta que o modelo isole o efeito individual de cada variável 
+na resposta.
+
 Problema
 
 Considere as notas:
