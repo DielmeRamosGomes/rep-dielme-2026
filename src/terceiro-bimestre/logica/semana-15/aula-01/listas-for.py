@@ -1,10 +1,11 @@
+
 '''
 lista  = [1, 2, 3, 4, 5]
 for i in range(0, len(lista)):
-    print(lista[i])          
+    print(f"{i} = {lista[i]}")          
 '''
 
-
+'''
 lista_palavras = ["maçã", "banana", "pera", "abacate", "uva"]
 fruta = input("digite o nome da fruta: ").lower()
 for i in range(0, len(lista_palavras)):
@@ -13,7 +14,7 @@ for i in range(0, len(lista_palavras)):
         break
 else:
     print(f"A fruta {fruta} não está na lista")
-
+'''
     
 '''
 for i in range(len(lista)):
