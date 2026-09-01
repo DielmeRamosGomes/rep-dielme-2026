@@ -1123,5 +1123,6 @@
         "Xnorm",
         "ylabel",
         "zombeteiras"
-    ]
+    ],
+    "python-envs.defaultEnvManager": "ms-python.python:system"
 }
