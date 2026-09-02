@@ -1,10 +1,8 @@
 import random
 
 def imprime_matriz(matriz):
-    dim_linha = len(matriz)
-    dim_coluna = len(matriz[0])
-    for linha in range(dim_linha):
-        for coluna in range(dim_coluna):
+    for linha in range(1):
+        for coluna in range(3):
             print(matriz[linha][coluna], end=" ")
     print()
     
