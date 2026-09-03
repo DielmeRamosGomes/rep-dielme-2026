@@ -57,4 +57,4 @@ FROM db_s17a3.clientes c
 left JOIN db_s17a3.compras co on c.cliente_id = co.cliente_id
 ORDER BY c.nome;
 
-SELECT * FROM db_s17a3.mostra_compra_do_cliente_left;
+

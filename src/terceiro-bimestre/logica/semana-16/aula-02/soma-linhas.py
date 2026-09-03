@@ -10,25 +10,23 @@ def imprime_matriz(matriz):
 
 matriz = [[random.randint(1, 10) for coluna in range(3)] for linha in range(3)]
 imprime_matriz(matriz)
-
-opcao = int(input("\nDigite 0, 1 ou 2 para somar uma linha específica: "))
 soma = 0
+opcao = int(input("Digita a linha [0, 1, 2]: "))
 match opcao:
     case 0:
         linha = matriz[0]
         for elemento in linha:
             soma += elemento
-        print(f"A soma da linha 0 é: {soma}")
+        print(f"Soma da linha 0 = {soma}")
     case 1:
         linha = matriz[1]
         for elemento in linha:
             soma += elemento
-        print(f"A soma da linha 1 é: {soma}")
+        print(f"Soma da linha 1 = {soma}")
     case 2:
         linha = matriz[2]
         for elemento in linha:
             soma += elemento
-        print(f"A soma da linha 2 é: {soma}")
+        print(f"Soma da linha 2 = {soma}")
     case _:
-        print("Opção inválida. Digite 0, 1 ou 2.")
-
+        print("Opção inválida")  
