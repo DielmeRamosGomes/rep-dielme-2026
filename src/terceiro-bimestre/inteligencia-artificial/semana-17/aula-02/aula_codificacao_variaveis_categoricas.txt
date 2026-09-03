@@ -146,18 +146,11 @@ quantitativo maior que a outra, gerando viés indevido.
 
 7. RESUMO DA AULA
 --------------------------------------------------------------------------------
-1. Algoritmos de Machine Learning exigem dados numéricos para processar informações.
-2. Label Encoding é indicado para dados ordinais, mas cria ordem artificial em dados nominais.
-3. One-Hot Encoding resolve o viés de ordem, mas pode causar inflação de dimensionalidade.
-4. Análise de correlação e agrupamentos são fundamentais para otimizar os atributos (features) 
-   e manter os modelos eficientes e precisos.
-
-
-8. REFERÊNCIAS BIBLIOGRÁFICAS
---------------------------------------------------------------------------------
-- GÉRON, Aurélien. Mãos à obra: aprendizado de máquina com Scikit-Learn, Keras & TensorFlow. 
-  São Paulo: Alta Books, 2021.
-- JAMES, Gareth et al. An Introduction to Statistical Learning: with Applications in R. 
-  EUA: Springer, 2013.
-- HOGG, Greg. Codificações de variáveis para aprendizado de máquina. YouTube, 2022.
-================================================================================
+1. Algoritmos de Machine Learning exigem dados numéricos para processar 
+informações.
+2. Label Encoding é indicado para dados ordinais, mas cria ordem artificial 
+em dados nominais.
+3. One-Hot Encoding resolve o viés de ordem, mas pode causar inflação de 
+dimensionalidade.
+4. Análise de correlação e agrupamentos são fundamentais para otimizar os 
+atributos (features) e manter os modelos eficientes e precisos.

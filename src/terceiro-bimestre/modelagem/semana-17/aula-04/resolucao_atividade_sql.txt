@@ -1,0 +1,109 @@
+
+ATIVIDADE: Uso de subconsultas em consultas SQL em uma empresa de e-commerce
+ESTRUTURA DAS TABELAS:
+- clientes (cliente_id, nome, email)
+- compras  (compra_id, cliente_id, valor_total, data_compra)
+
+--------------------------------------------------------------------------------
+EXPLICAÇÃO CONCEITUAL DAS SUBCONSULTAS
+--------------------------------------------------------------------------------
+Uma subconsulta (ou inner query / subquery) é uma consulta SQL inserida dentro 
+de outra consulta principal (outer query). Elas são utilizadas para calcular 
+valores dinâmicos, filtrar resultados com base em agregados ou estruturar 
+tabelas temporárias/derivadas.
+
+1. Subconsulta na cláusula SELECT:
+   Executada para cada linha retornada pela consulta principal. É útil para 
+   adicionar colunas calculadas dinamicamente para cada registro individual.
+
+2. Subconsulta na cláusula WHERE:
+   Utilizada para filtrar os registros da consulta principal com base em um 
+   valor retornado pela subconsulta (como uma média, valor máximo, ou lista).
+
+3. Subconsulta na cláusula FROM (Derived Table / Tabela Derivada):
+   Gera um conjunto de resultados temporário que atua como se fosse uma tabela 
+   real na consulta externa, permitindo reagrupar ou filtrar dados já agregados.
+
+--------------------------------------------------------------------------------
+DESAFIO 1: Subconsulta em SELECT
+Pergunta: Qual o total de compras por cliente?
+--------------------------------------------------------------------------------
+
+CÓDIGO SQL:
+SELECT 
+    c.nome,
+    (
+        SELECT COUNT(*) 
+        FROM compras co 
+        WHERE co.cliente_id = c.cliente_id
+    ) AS total_compras
+FROM 
+    clientes c;
+
+Explicação:
+- Para cada cliente listado na tabela 'clientes', a subconsulta no SELECT conta
+  quantas compras (COUNT(*)) estão registradas para aquele 'cliente_id' específico.
+- *Nota:* Caso o objetivo seja calcular a soma financeira total das compras 
+  por cliente, substitui-se `COUNT(*)` por `COALESCE(SUM(co.valor_total), 0)`.
+
+--------------------------------------------------------------------------------
+DESAFIO 2: Subconsulta em WHERE
+Pergunta: Quais clientes gastaram acima da média?
+--------------------------------------------------------------------------------
+
+CÓDIGO SQL:
+SELECT DISTINCT 
+    c.cliente_id,
+    c.nome,
+    c.email
+FROM 
+    clientes c
+JOIN 
+    compras co ON c.cliente_id = co.cliente_id
+WHERE 
+    co.valor_total > (
+        SELECT AVG(valor_total) 
+        FROM compras
+    );
+
+Explicação:
+- A subconsulta `(SELECT AVG(valor_total) FROM compras)` calcula a média geral 
+  do valor de todas as compras individuais cadastradas na base.
+- A consulta externa compara o 'valor_total' de cada compra com essa média.
+- O `DISTINCT` garante que clientes que fizeram mais de uma compra acima da 
+  média não apareçam duplicados na listagem.
+
+--------------------------------------------------------------------------------
+DESAFIO 3: Subconsulta em FROM
+Pergunta: Relatório com total de compras por cliente acima da média geral
+--------------------------------------------------------------------------------
+
+CÓDIGO SQL:
+SELECT 
+    resumo.nome,
+    resumo.total_gasto
+FROM 
+    (
+        SELECT 
+            c.nome,
+            SUM(co.valor_total) AS total_gasto
+        FROM 
+            clientes c
+        JOIN 
+            compras co ON c.cliente_id = co.cliente_id
+        GROUP BY 
+            c.cliente_id, c.nome
+    ) AS resumo
+WHERE 
+    resumo.total_gasto > (
+        SELECT AVG(valor_total) 
+        FROM compras
+    );
+
+Explicação:
+- A subconsulta dentro do `FROM` cria uma tabela derivada chamada `resumo`, 
+  contendo o nome do cliente e a soma total gasta por ele (`total_gasto`).
+- A consulta principal lê dessa tabela `resumo` e filtra apenas os clientes 
+  cujo gasto acumulado (`total_gasto`) é maior que a média geral individual 
+  de vendas (`SELECT AVG(valor_total) FROM compras`).
+================================================================================
