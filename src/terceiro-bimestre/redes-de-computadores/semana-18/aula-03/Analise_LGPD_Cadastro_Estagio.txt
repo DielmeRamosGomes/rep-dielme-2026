@@ -1,0 +1,45 @@
+Roteiro de Atividade Prática
+
+Análise de conformidade de um cadastro com a LGPD
+
+Contextualização & Objetivo:
+Uma empresa criou uma plataforma para inscrição de estudantes em um programa de estágio com a finalidade de selecionar candidatos, entrar em contato com eles e organizar as inscrições de forma segura. Abaixo apresenta-se a análise técnica de adequação dos dados solicitados aos princípios da Lei Geral de Proteção de Dados (LGPD - Lei nº 13.709/2018).
+
+Resumo da Proposta de Adequação LGPD:
+1. Princípio da Minimização e Necessidade (Art. 6º, III): Eliminar a coleta prévia de dados não essenciais à seleção inicial (ex: Foto, Nome da Mãe, Endereço completo).
+2. Proteção de Dados Sensíveis (Art. 5º, II): Excluir imediatamente dados sobre Religião e Histórico de Doenças, que não possuem base legal nem justificativa para a seleção de estagiários.
+3. Transparência e Livre Acesso (Art. 6º, IV e VI): Adicionar um Termo de Privacidade claro informando aos candidatos como os seus dados (Nome, CPF, E-mail, Curso) serão processados e por quanto tempo serão armazenados.
+
+
+================================================================================
+
+TABELA DE ANÁLISE DE CONFORMIDADE LGPD
+
+================================================================================
+
+
+Campo analisado | Qual é a relação desse campo com a finalidade do sistema? | É necessário para essa finalidade? | Parece adequado ou excessivo? | O que a equipe poderia ajustar?
+
+Nome completo | Permite identificar individualmente o candidato e personalizar o contato. | Sim | Adequado | Manter o campo. É indispensável para identificação primária do titular.
+
+CPF | Serve para validação única da inscrição, evitando duplicidade de cadastros e permitindo checagem oficial. | Sim | Adequado | Manter o campo, garantindo que o armazenamento e transmissão sejam protegidos por criptografia.
+
+E-mail | Canal principal de comunicação para envio de confirmação, etapas do processo e convocações. | Sim | Adequado | Manter o campo como item obrigatório para comunicação digital.
+
+Telefone | Canal secundário/de emergência para contato direto com o candidato selecionado. | Sim | Adequado | Manter como campo opcional ou preferencial para avisos urgentes.
+
+Endereço completo | Serve para verificar logística de deslocamento e proximidade com o local de trabalho/estágio. | Parcialmente | Excessivo (na fase inicial) | Coletar apenas CEP, Bairro e Cidade na inscrição inicial. O endereço completo só deve ser solicitado no momento da contratação.
+
+Foto do rosto | Não possui finalidade técnica para a triagem inicial de candidatos. | Não | Excessivo e Desnecessário | Remover do cadastro inicial. Solicitar apenas em fases avançadas (ex.: emissão de crachá) para evitar vieses de seleção e coleta desnecessária de dado biométrico.
+
+Religião | Sem qualquer relação com as competências profissionais ou com o processo seletivo. | Não | Excessivo e Inadequado (Dado Sensível) | Remover imediatamente o campo do formulário de inscrição, em conformidade com os artigos 5º, II e 6º, I da LGPD.
+
+Histórico de doenças | Não possui relação direta com a seleção inicial de estagiários. | Não | Excessivo e Inadequado (Dado Sensível) | Remover do cadastro inicial. Apenas exames admissionais pós-seleção cumprem exigências legais trabalhistas.
+
+Curso atual | Crucial para verificar se a formação acadêmica é compatível com as vagas de estágio ofertadas. | Sim | Adequado | Manter o campo no formulário.
+
+Rendimento escolar | Pode ser utilizado como critério de avaliação acadêmica prévia do estudante. | Parcialmente | Dúvida de conformidade / Potencialmente excessivo | Tornar o campo opcional ou solicitar apenas o comprovante de matrícula/histórico em fase adiantada de entrevista.
+
+Nome da mãe | Utilizado tradicionalmente para confirmação de identidade (desambiguação). | Não | Excessivo | Remover do formulário inicial, pois o CPF já cumpre com precisão a função de identificação única sem coletar dados de terceiros.
+
+Perfil em rede social | Pode ser relevante se a vaga exigir análise de portfólio (ex.: Design, Marketing, Comunicação). | Parcialmente | Excessivo (se genérico) | Tornar o campo totalmente opcional e restringir a links profissionais (ex.: LinkedIn, GitHub), esclarecendo a finalidade no formulário.
