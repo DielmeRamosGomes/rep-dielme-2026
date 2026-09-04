@@ -1,0 +1,82 @@
+================================================================================
+          RESOLUÇÃO DA ATIVIDADE PRÁTICA: SELEÇÃO E CRIAÇÃO DE FEATURES
+================================================================================
+
+--------------------------------------------------------------------------------
+2. RELATÓRIO DE DECISÕES (15 A 20 LINHAS)
+--------------------------------------------------------------------------------
+
+A análise da matriz de correlação revelou uma forte correlação linear entre as
+variáveis 'horas_estudo' e 'nota_anterior' (r ≈ 0,84). Esse comportamento ocorre
+porque a nota anterior foi gerada diretamente como função das horas de estudo,
+caracterizando colinearidade. A permanência de ambas no modelo traria redundância
+e aumentaria a instabilidade dos coeficientes numéricos. Optou-se por manter
+'horas_estudo', pois representa uma métrica direta de esforço contínuo do aluno.
+Para consolidar a assiduidade e o envolvimento ativo, foi criada a feature
+combinada 'engajamento_total', que agrega 'frequencia' e 'participacao', reduzindo
+a complexidade de interpretação comportamental. Na etapa de redução de
+dimensionalidade, aplicou-se o PCA após a padronização dos dados com StandardScaler.
+Os dois primeiros componentes principais conseguiram capturar aproximadamente 60%
+da variância total dos dados originais. Embora o PCA reduza o número de variáveis,
+houve uma leve perda no poder de explicação do modelo (redução do R² de ~0,98 para
+~0,59), demonstrando o tradeoff entre simplicidade estrutural e capacidade preditiva.
+Essa perda ocorre porque a eliminação de dimensões descartou variâncias que eram
+relevantes para prever a nota final. Por fim, as decisões tomadas priorizaram a
+simplificação do espaço de atributos e a prevenção de overfitting em cenários de
+generalização.
+
+--------------------------------------------------------------------------------
+3. ANÁLISE FINAL E RESPOSTAS ÀS QUESTÕES
+--------------------------------------------------------------------------------
+
+a) Como a seleção de features ajuda na generalização?
+   A seleção de features remove ruídos, dados irrelevantes e redundâncias. Ao
+   simplificar o modelo, reduz-se o risco de overfitting (sobreajuste), permitindo
+   que o algoritmo aprenda padrões reais e generalize melhor para novos alunos.
+
+b) Por que colinearidade pode prejudicar modelos?
+   A colinearidade aumenta a variância dos estimadores dos coeficientes (no caso
+   de modelos lineares), tornando-os instáveis e sensíveis a pequenas variações
+   nos dados. Isso prejudica a interpretabilidade do modelo e sua estabilidade.
+
+c) Quando usar PCA?
+   O PCA deve ser usado quando há um grande número de variáveis explicativas
+   altamente correlacionadas (alta dimensionalidade), para reduzir o custo
+   computacional, mitigar a maldição da dimensionalidade ou visualização de dados.
+
+d) O modelo apresentou melhora após a seleção ou a transformação das variáveis? Por quê?
+   Em termos puramente preditivos (R² no conjunto de treino), houve redução no
+   desempenho ao usar apenas 2 componentes no PCA, pois descartaram-se dimensões
+   que continham informação útil. No entanto, o modelo tornou-se menos complexo
+   e menos propenso ao sobreajuste.
+
+e) Quais variáveis pareciam trazer informações redundantes?
+   'horas_estudo' e 'nota_anterior' trouxeram informações redundantes devido à
+   alta correlação provocada pela forma como a base de dados foi gerada.
+
+f) A redução de dimensionalidade alterou a interpretação dos dados?
+   Sim. Os componentes principais do PCA são combinações lineares não auditáveis
+   das variáveis originais. Perde-se a interpretabilidade direta de métricas
+   como "horas de estudo" ou "frequência".
+
+g) Houve impacto no desempenho do modelo após aplicar PCA ou remover variáveis correlacionadas?
+   Sim, ao reduzir para 2 componentes via PCA, o R² caiu de aproximadamente 0.98
+   para 0.59, evidenciando uma perda de informação preditiva em troca da redução
+   de dimensionalidade.
+
+--------------------------------------------------------------------------------
+4. CONCLUSÃO SOBRE O IMPACTO DAS FEATURES
+--------------------------------------------------------------------------------
+
+A engenharia e seleção de atributos provaram ser etapas indispensáveis no ciclo
+de desenvolvimento de modelos de Machine Learning. A eliminação da colinearidade
+entre 'horas_estudo' e 'nota_anterior' garantiu maior estabilidade ao modelo,
+evitando coeficientes inflacionados. A criação da feature 'engajamento_total'
+demonstrou como a combinação de domínio de negócio (frequência e participação)
+pode gerar indicadores sintéticos expressivos. Por fim, o uso do PCA evidenciou o
+trade-off clássico do aprendizado de máquina: a redução da dimensionalidade simplifica
+a estrutura de dados e previne overfitting, porém pode custar perda de acurácia
+caso componentes com informação preditiva relevante sejam descartados. A escolha
+da melhor abordagem dependerá da prioridade do projeto entre interpretabilidade,
+desempenho e capacidade de generalização.
+================================================================================
