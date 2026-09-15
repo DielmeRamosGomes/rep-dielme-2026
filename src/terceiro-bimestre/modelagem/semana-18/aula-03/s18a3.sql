@@ -25,14 +25,14 @@ VALUES("João Silva", "São Paulo", "joao@fornece.com"),
 ("Carlos Nunes", "Recife", "carlos@fornece.com");
 
 -- 1) 
-SELECT nome FROM clientes
+SELECT nome FROM s18a3.clientes
 UNION
-SELECT nome FROM fornecedores;
+SELECT nome FROM s18a3.fornecedores;
 
 -- 2) 
-SELECT nome FROM clientes
+SELECT nome FROM s18a3.clientes
 UNION ALL
-SELECT nome FROM fornecedores;
+SELECT nome FROM s18a3.fornecedores;
 
 --3) 
 SELECT nome, e-mail FROM clientes
