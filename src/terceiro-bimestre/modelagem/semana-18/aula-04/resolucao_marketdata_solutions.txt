@@ -1,0 +1,70 @@
+Roteiro de Atividade Prática - MarketData Solutions
+Atividade: Análise de desempenho de vendas com condicionais SQL
+
+======================================================================
+1. Classificação de Vendas por Valor
+======================================================================
+Enunciado:
+Criar uma consulta SQL que mostre o nome do cliente, o valor da venda e uma categoria que indique se a venda foi de valor "Alta" (acima de 1000), "Média" (entre 500 e 1000) ou "Baixa" (abaixo de 500).
+
+Consulta SQL:
+SELECT 
+    nome_cliente, 
+    valor_venda,
+    CASE 
+        WHEN valor_venda > 1000 THEN 'Alta'
+        WHEN valor_venda BETWEEN 500 AND 1000 THEN 'Média'
+        ELSE 'Baixa'
+    END AS categoria_venda
+FROM vendas;
+
+Explicação:
+A consulta avalia o campo `valor_venda`. Caso o valor seja estritamente maior que 1000, é classificado como 'Alta'. Se estiver no intervalo de 500 a 1000 (inclusive), é categorizado como 'Média'. Valores abaixo de 500 caem no bloco `ELSE`, recebendo a classificação 'Baixa'.
+
+
+======================================================================
+2. Avaliação de Desempenho dos Vendedores
+======================================================================
+Enunciado:
+Criar uma consulta SQL que mostre o nome do vendedor, o total de vendas realizadas por ele e uma avaliação de desempenho, com as categorias:
+- "Excelente" para vendas acima de 10.000.
+- "Bom" para vendas entre 5.000 e 10.000.
+- "Regular" para vendas abaixo de 5.000.
+
+Consulta SQL:
+SELECT 
+    nome_vendedor, 
+    total_vendas,
+    CASE 
+        WHEN total_vendas > 10000 THEN 'Excelente'
+        WHEN total_vendas BETWEEN 5000 AND 10000 THEN 'Bom'
+        ELSE 'Regular'
+    END AS desempenho
+FROM vendedores;
+
+Explicação:
+A estrutura `CASE` analisa a coluna `total_vendas`. Se o montante for superior a 10.000, retorna 'Excelente'. Se estiver contido na faixa de 5.000 a 10.000, retorna 'Bom'. Se for inferior a 5.000, recai no `ELSE` atribuindo 'Regular'.
+
+
+======================================================================
+3. Classificação de Produtos por Preço
+======================================================================
+Enunciado:
+Criar uma consulta SQL para a tabela de produtos que exiba o nome do produto, o preço e a categoria de preço:
+- "Caro" para preços acima de 100.
+- "Moderado" para preços entre 50 e 100.
+- "Barato" para preços abaixo de 50.
+
+Consulta SQL:
+SELECT 
+    nome_produto, 
+    preco,
+    CASE 
+        WHEN preco > 100 THEN 'Caro'
+        WHEN preco BETWEEN 50 AND 100 THEN 'Moderado'
+        ELSE 'Barato'
+    END AS categoria_preco
+FROM produtos;
+
+Explicação:
+Verifica-se o atributo `preco` de cada produto. Valores maiores que 100 recebem a etiqueta 'Caro'. Valores entre 50 e 100 se enquadram como 'Moderado'. Preços abaixo de 50 caem no fluxo padrão (`ELSE`), classificando-se como 'Barato'.

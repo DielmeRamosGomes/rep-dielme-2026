@@ -1,0 +1,80 @@
+Roteiro de Atividade Prática - CorpData Solutions
+Resolução e Explicação das Consultas SQL
+
+======================================================================
+1. Consulta SQL com UNION (Nomes sem duplicatas)
+======================================================================
+Consulta:
+SELECT nome FROM clientes
+UNION
+SELECT nome FROM fornecedores;
+
+Resultado Esperado:
+- João Silva
+- Maria Santos
+- Pedro Lima
+- Ana Costa
+- Carlos Nunes
+(Total: 5 linhas)
+
+Explicação:
+O operador UNION junta os resultados de ambas as consultas e automaticamente remove linhas duplicadas. Como o nome "João Silva" está presente em ambas as tabelas, ele é retornado apenas uma vez.
+
+
+======================================================================
+2. Consulta SQL com UNION ALL (Nomes com duplicatas)
+======================================================================
+Consulta:
+SELECT nome FROM clientes
+UNION ALL
+SELECT nome FROM fornecedores;
+
+Resultado Esperado:
+- João Silva
+- Maria Santos
+- Pedro Lima
+- João Silva
+- Ana Costa
+- Carlos Nunes
+(Total: 6 linhas)
+
+Explicação:
+O operador UNION ALL junta todos os registros de ambas as tabelas sem realizar a checagem ou remoção de duplicatas. Por isso, "João Silva" aparece duas vezes.
+
+
+======================================================================
+3. Consulta com UNION ALL (Nomes e E-mails) e Análise de Duplicados
+======================================================================
+Consulta:
+SELECT nome, e-mail FROM clientes
+UNION ALL
+SELECT nome, email FROM fornecedores;
+
+Total de linhas retornadas: 6 linhas.
+
+Verificação e Explicação:
+Não há registros duplicados na combinação de nome e e-mail. Embora o nome "João Silva" apareça nas duas tabelas, o endereço de e-mail é diferente em cada registro:
+- Na tabela 'clientes': joao@email.com
+- Na tabela 'fornecedores': joao@fornece.com
+
+Como os operadores de união comparam a linha inteira (a combinação de todas as colunas selecionadas), a presença de e-mails diferentes torna as duas linhas distintas.
+
+
+======================================================================
+4. Nomes que aparecem em ambas as tabelas mais de uma vez (COUNT)
+======================================================================
+Consulta:
+SELECT nome, COUNT(*) AS total
+FROM (
+    SELECT nome FROM clientes
+    UNION ALL
+    SELECT nome FROM fornecedores
+) AS nomes_combinados
+GROUP BY nome
+HAVING COUNT(*) > 1;
+
+Resultado Esperado:
+- nome: João Silva | total: 2
+
+Explicação:
+Primeiro, a subconsulta combina a lista de nomes mantendo todas as ocorrências através do UNION ALL. Em seguida, a consulta principal agrupa os registros por 'nome' e calcula o total com COUNT(*). A cláusula HAVING garante que apenas os nomes com frequência maior que 1 (presentes em ambas as tabelas ou repetidos) sejam exibidos.
