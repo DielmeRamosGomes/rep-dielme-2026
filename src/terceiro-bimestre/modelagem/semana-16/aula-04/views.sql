@@ -51,3 +51,9 @@ JOIN db_vendas.clientes c ON v.id_cliente = c.id
 JOIN db_vendas.produtos p ON v.id_produto = p.id;
 
 SELECT * FROM db_vendas.relatorio_vendas;
+
+create view db_vendas.rel_cliente as
+SELECT nome, email FROM db_vendas.clientes;
+
+SELECT * FROM db_vendas.rel_cliente;
+

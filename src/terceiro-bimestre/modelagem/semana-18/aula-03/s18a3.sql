@@ -25,9 +25,9 @@ VALUES("João Silva", "São Paulo", "joao@fornece.com"),
 ("Carlos Nunes", "Recife", "carlos@fornece.com");
 
 -- 1) 
-SELECT nome FROM s18a3.clientes
+SELECT nome, cidade FROM s18a3.clientes
 UNION
-SELECT nome FROM s18a3.fornecedores;
+SELECT nome, cidade  FROM s18a3.fornecedores;
 
 -- 2) 
 SELECT nome FROM s18a3.clientes
@@ -35,16 +35,16 @@ UNION ALL
 SELECT nome FROM s18a3.fornecedores;
 
 --3) 
-SELECT nome, e-mail FROM clientes
+SELECT nome, email FROM s18a3.clientes
 UNION ALL
-SELECT nome, email FROM fornecedores;
+SELECT nome, email FROM s18a3.fornecedores;
 
 --4)
 SELECT nome, COUNT(*) AS total
 FROM (
-    SELECT nome FROM clientes
+    SELECT c.nome FROM s18a3.clientes c
     UNION ALL
-    SELECT nome FROM fornecedores
+    SELECT f.nome FROM s18a3.fornecedores f
 ) AS nomes_combinados
 GROUP BY nome
 HAVING COUNT(*) > 1;
