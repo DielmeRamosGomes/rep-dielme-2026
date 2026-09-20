@@ -1,0 +1,37 @@
+--- EXPLICAÇÃO DA SITUAÇÃO ---
+
+A equipe enfrenta dois problemas principais no seu fluxo de trabalho:
+1. Retrabalho e Falta de Qualidade: Tarefas avançam para a coluna 
+   "Feito" sem testes e acabam retornando para "Em execução".
+2. Falta de Priorização: Interrupções constantes por supostas 
+   "urgências" impedem o progresso do trabalho padrão.
+
+-------------------------------------------------------------------
+
+--- RESOLUÇÃO DA ATIVIDADE ---
+
+1. DUAS POLÍTICAS EXPLÍCITAS PARA A COLUNA "FEITO":
+   - Política 1 (Validação de Testes): A tarefa só pode ser movida 
+     para "Feito" se todos os testes (unitários/funcionais) forem 
+     executados e aprovados.
+   - Política 2 (Revisão de Código / Code Review): A tarefa precisa 
+     ter o código revisado e aprovado por pelo menos outro membro 
+     da equipe antes de ser concluída.
+
+2. TRÊS CLASSES DE SERVIÇO:
+   - Urgente (Expedite): Para bugs críticos de produção ou falhas 
+     de segurança. Possui prioridade máxima e fura a fila do WIP.
+   - Data Fixa: Para entregas com prazos inegociáveis (ex.: leis, 
+     eventos). Deve ser priorizada conforme o prazo se aproxima.
+   - Padrão: Para melhorias e novas funcionalidades do dia a dia. 
+     Segue o fluxo normal do backlog priorizado.
+
+3. IMPACTO NO LEAD TIME:
+   - Eliminação do Retrabalho: Evita que tarefas fiquem voltando de 
+     fase, tornando a estimativa de tempo de entrega mais precisa.
+   - Controle de Interrupções: Define o que realmente é urgente, 
+     impedindo paradas desnecessárias no trabalho em andamento.
+   - Estabilização do Fluxo: A combinação de qualidade de saída e 
+     priorização clara gera um Lead Time constante e previsível.
+
+===================================================================
