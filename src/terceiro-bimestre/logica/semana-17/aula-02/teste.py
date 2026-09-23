@@ -1,16 +1,10 @@
-carros = []
+dia = int(input())
 
-while True:
-    
-    carros.append(input("\nDigite o nome do carro: "))
-    
-    
-    print("\n--- Lista Atualizada ---")
-    for i, carro in enumerate(carros, 1):
-        print(f"{i}º - {carro}")
-        
-
-    if input("\nQuer continuar? (s/n): ").lower() != 's':
-        break
-
-print("\nFim do programa!")
+if dia == 1:
+    print("Sexta-feira ir jogar bola")
+elif dia == 2:
+    print("Sábado ir ao cinema")
+elif dia == 3:
+    print("Domingo ir ao zoológico")
+else:
+    print("Escolha inválida")
