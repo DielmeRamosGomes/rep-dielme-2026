@@ -20,4 +20,4 @@ jobs:
         python-version: '3.10'
 
     - name: Executa os testes unitários
-      run: python -m unittest test_calculadora.py
+      run: python -m unittest src/terceiro-bimestre/processos/semana-20/aula-01/test_calculadora.py
