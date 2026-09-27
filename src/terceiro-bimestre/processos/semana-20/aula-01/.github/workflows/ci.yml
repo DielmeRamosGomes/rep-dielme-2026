@@ -1,0 +1,23 @@
+name: Executar Testes de CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  testes:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Baixa o código do repositório
+      uses: actions/checkout@v4
+
+    - name: Configurar o Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+
+    - name: Executa os testes unitários
+      run: python -m unittest test_calculadora.py
