@@ -1,0 +1,80 @@
+use("db_teste");
+
+
+db.Clientes.insertOne(
+    {
+        "nome": "Maria Silva",
+        "email": "maria@example.com",
+        "telefone": "123456789",
+        "pedidos": [1, 2] // IDs dos pedidos relacionados ao cliente
+    }
+);
+
+
+/*
+db.Clientes.insertMany(
+    [
+        {
+
+            "nome": "Daniel",
+            "email": "daniel@example.com",
+            "telefone": "123456789",
+            "pedidos": [1, 2] // IDs dos pedidos relacionados ao cliente
+        },
+        {
+
+            "nome": "Henrique",
+            "email": "henrique@example.com",
+            "telefone": "123456789",
+            "pedidos": [1, 2] // IDs dos pedidos relacionados ao cliente
+        }
+    ]
+);
+*/
+
+/*
+db.Produtos.insertMany(
+    [
+        {
+            "nome": "Notebook",
+            "preco": 3500.00,
+            "categoria": "Eletrônicos"
+        },
+        {
+            "nome": "Smartphone",
+            "preco": 1500.00,
+            "categoria": "Eletrônicos"
+        },
+        {
+            "nome": "Fone de Ouvido",
+            "preco": 300.00,
+            "categoria": "Acessórios"
+        }
+    ]
+);
+*/
+
+db.Clientes.find();
+
+/*
+db.Pedidos.insertOne({
+    "pedido_id": 1,
+    "data": new Date("2024-11-15"),
+    "cliente_id": 1,
+    "status": "Processando",
+    "itens": [
+        {
+            "produto_id": 101,
+            "quantidade": 2,
+            "preco_unitario": 3500.00
+        },
+        {
+            "produto_id": 102,
+            "quantidade": 1,
+            "preco_unitario": 1500.00
+        }
+    ]
+});
+*/
+
+
