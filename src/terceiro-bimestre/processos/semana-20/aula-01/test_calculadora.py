@@ -1,6 +1,6 @@
 import unittest
 from calculadora import soma
-
+# testando pipeline
 class TestSomar(unittest.TestCase):
     def test_soma_positivos(self):
         self.assertEqual(soma(2, 3), 5)
