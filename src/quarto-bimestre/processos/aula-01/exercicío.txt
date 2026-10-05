@@ -1,0 +1,17 @@
+Dois gargalos e um risco grave
+Gargalo 1 — Testes 100% Manuais: A validação do código depende do esforço e 
+do tempo humano, tornando o ciclo de entrega lento, repetitivo e sujeito a 
+falhas de cobertura à medida que o projeto cresce.
+
+Gargalo 2 — Implantação/Subida Direta sem Automação de CI/CD: A publicação 
+manual ou direta do código para produção cria dependência de processos 
+operacionais manuais e gera atrasos ou inconsistências na entrega do 
+software.
+
+Risco Grave — Falta de Monitorização em Produção: Sem monitorização, 
+eventuais bugs, falhas de sistema ou quedas de serviço após a subida para 
+produção não são detetados proativamente, resultando em downtime prolongado 
+e impacto direto na experiência do utilizador final sem que a equipa se 
+aperceba a tempo.
+
+
