@@ -1,0 +1,97 @@
+# ================================================================================
+ROTEIRO DE ATIVIDADE PRÁTICA: REDE VIRTUAL NA NUVEM (VPC/VNET)
+
+## PARTE 1 E 2: MAPEAMENTO DOS COMPONENTES LÓGICOS (TOPOLOGIA)
+
++-------------------------------------------------------------------------------------------------+
+|                                 VPC / VNet (TechNova)                                           |
+|                                10.0.0.0/16                                                      |
+|                                                                                                 |
+|   +-----------------------------------------------------------------------------------------+   |
+|   |                                  INTERNET                                               |   |
+|   +-----------------------------------------------------------------------------------------+   |
+|                                               ^                                                 |
+|                                               |                                                 |
+|                                  \[ Internet Gateway (IGW) \]                                     |
+|                                               ^                                                 |
+|                                               |                                                 |
+|   +-------------------------------------------v---------------------------------------------+   |
+|   | SUB-REDE PÚBLICA (10.0.1.0/24)                                                          |   |
+|   |                                                                                         |   |
+|   |   +----------------------------------+                                                  |   |
+|   |   |   Servidor Web (Web Server)      |                                                  |   |
+|   |   |   IP Público: 54.x.x.x           |                                                  |   |
+|   |   |   IP Privado: 10.0.1.10          |                                                  |   |
+|   |   +----------------------------------+                                                  |   |
+|   |                    |                                                                    |   |
+|   +--------------------|--------------------------------------------------------------------+   |
+|                        |                                                                        |
+|                 \[ vRouter / Tabela de Roteamento \]                                              |
+|                        |                                                                        |
+|   +--------------------|--------------------------------------------------------------------+   |
+|   | SUB-REDE PRIVADA (10.0.2.0/24)                                                          |   |
+|   |                    v                                                                    |   |
+|   |   +----------------------------------+                                                  |   |
+|   |   |   Banco de Dados (DB Server)     |                                                  |   |
+|   |   |   IP Privado: 10.0.2.20          |                                                  |   |
+|   |   |   (Sem IP Público)               |                                                  |   |
+|   |   +----------------------------------+                                                  |   |
+|   |                                                                                         |   |
+|   +-----------------------------------------------------------------------------------------+   |
+|                                                                                                 |
++-------------------------------------------------------------------------------------------------+
+
+## PARTE 3: DEFININDO AS REGRAS DE FLUXO (DATA PLANE)
+
+1. REGRAS DO SERVIDOR WEB (Sub-rede Pública):
+
+   * Entradas (Inbound):
+
+     * Permite tráfego com Origem da Internet (0.0.0.0/0) nas portas HTTP 
+     (80) e HTTPS (443).
+
+   * Saídas (Outbound):
+
+     * Permite tráfego em direção à Sub-rede Privada (10.0.2.0/24) e à 
+     Internet para atualização.
+
+2. REGRAS DO BANCO DE DADOS (Sub-rede Privada):
+
+   * Entradas (Inbound):
+
+     * Bloqueia TODO o tráfego vindo da Internet (0.0.0.0/0).
+
+     * Permite tráfego vindo APENAS do IP do Servidor Web (10.0.1.10/32) nas 
+     portas 3306 (MySQL) ou 5432 (PostgreSQL).
+
+   * Saídas (Outbound):
+
+     * Permite tráfego de resposta apenas para o Servidor Web (10.0.1.10/32).
+
+## PARTE 4: REFLEXÃO E CONSOLIDAÇÃO
+
+1. Se o servidor físico onde o banco de dados está hospedado falhar, a nuvem move o banco de dados para outro servidor físico. O endereço IP lógico do banco de dados muda? Por que a SDN permite isso?
+Resposta: NÃO, o endereço IP lógico NÃO muda.
+A SDN (Rede Definida por Software) separa o Plano de Controle do Plano de 
+Dados. Como a identidade de rede é gerenciada logicamente por software, 
+quando a máquina virtual migra para outro servidor físico, o controlador SDN 
+simplesmente remapeia as tabelas de fluxo e rotas para direcionar os pacotes 
+do mesmo IP virtual para o novo hardware, de maneira 100% transparente.
+
+2. Como o isolamento criado pela sua VPC/VNet protege a TechNova de outras empresas que usam a mesma nuvem pública?
+Resposta: O isolamento é mantido através de técnicas de encapsulamento de 
+rede (como VXLAN, GRE ou Geneve) gerenciadas pela SDN. Cada cliente (Tenant) 
+recebe identificadores virtuais exclusivos. Mesmo que empresas concorrentes 
+usem a mesma faixa de IP interno (ex: 10.0.0.0/16), os pacotes trafegam pela 
+infraestrutura física envelopados com tags separadas, impossibilitando o 
+cruzamento de tráfego.
+
+3. Qual é a principal vantagem de definir toda essa rede por software (desenho lógico) em vez de comprar cabos e roteadores físicos?
+Resposta:
+Agilidade e Automação: A rede é criada e modificada em segundos via código 
+ou interface web, sem necessidade de intervenção física em data center.
+Escalabilidade e Menor Custo: Elasticidade para expandir ou diminuir 
+recursos instantaneamente, pagando apenas pelo uso, sem custos iniciais 
+elevados em hardware (CAPEX).
+Alta Disponibilidade: Redundância nativa gerenciada pelo provedor de nuvem, 
+reduzindo os pontos únicos de falha física.
