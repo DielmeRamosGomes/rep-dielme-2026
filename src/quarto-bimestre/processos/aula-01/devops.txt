@@ -1,0 +1,18 @@
+O DevOps nasceu para resolver um problema clássico do mundo da tecnologia: 
+a "guerra" entre quem desenvolve os sistemas e quem cuida da infraestrutura 
+onde eles rodam.
+
+Dev (Desenvolvimento): Quer lançar novidades e criar recursos o mais rápido 
+possível.
+
+Ops (Operações/Infraestrutura): Quer manter o sistema estável, seguro e sem 
+quedas.
+
+Historicamente, esses dois times trabalhavam isolados. O Dev criava o código 
+e "jogava por cima do muro" para o Ops instalar. Se o sistema caía, um 
+culpava o outro.
+
+O DevOps é a união dessas duas áreas. Não é apenas uma ferramenta ou um 
+cargo, mas uma cultura onde desenvolvedores e especialistas em infraestrutura 
+trabalham juntos desde o primeiro dia para entregar softwares com rapidez, 
+qualidade e segurança
