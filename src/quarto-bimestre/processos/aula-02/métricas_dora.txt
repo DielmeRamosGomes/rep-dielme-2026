@@ -1,0 +1,68 @@
+# Métricas DORA (DevOps Research and Assessment)
+
+As métricas DORA (criadas pelo grupo DevOps Research and Assessment, braço de
+pesquisa do Google Cloud) formam o principal framework do mercado para 
+mensurar a eficiência, a estabilidade e a maturidade de equipes de 
+engenharia de software e práticas DevOps.
+
+Elas são divididas entre velocidade/produtividade (throughput) e 
+estabilidade/qualidade.
+
+---
+
+## As 4 Métricas Principais (DORA Core)
+
+1. Frequência de Implantação (Deployment Frequency - DF)
+   - O que mede: Com que frequência o código é implantado em produção (ou 
+   liberado para o usuário final).
+   - Objetivo: Aumentar a frequência fazendo entregas menores, contínuas e 
+   de menor risco.
+
+2. Tempo de Entrega para Mudanças (Lead Time for Changes - LTC)
+   - O que mede: O tempo que leva desde o momento em que o código é commitado
+    (ou PR aberto) até ser executado com sucesso em produção.
+   - Objetivo: Reduzir o tempo de ciclo eliminando gargalos de aprovação e 
+   automatizando testes/CI-CD.
+
+3. Taxa de Falhas em Mudanças (Change Failure Rate - CFR)
+   - O que mede: A porcentagem de implantações em produção que resultam em 
+   falha (degradação do serviço, bugs críticos) e exigem remediação (hotfix, 
+   rollback ou patch).
+   - Cálculo: CFR = (Número de deploys com falha / Total de deploys) * 100%
+   - Objetivo: Manter a taxa baixa, garantindo a qualidade do processo de 
+   entrega.
+
+4. Tempo para Restauração do Serviço (Time to Restore Service / MTTR)
+   - O que mede: Quanto tempo leva para restabelecer o serviço após o 
+   aparecimento de uma falha ou incidente em produção.
+   - Objetivo: Minimizar o tempo de indisponibilidade com boa 
+   observabilidade, alertas eficientes e mecanismos rápidos de 
+   conversão/rollback.
+
+(Nota: Nos relatórios recentes do DORA, a 5ª métrica experimental 
+introduzida para análise foi a Deployment Rework Rate, que avalia o 
+retrabalho gerado após entregas).
+
+---
+
+## Níveis de Desempenho (Benchmarks)
+
+O DORA categoriza os times de engenharia em quatro faixas de maturidade:
+
+| Métrica                 | Elite                 | Alto (High)            | Médio (Medium)         | Baixo (Low)        | 
+|---                      |---                    |---                     |---                     |---                 |
+| Frequência de Deploy    | Múltiplos deploys/dia | 1 vez/semana a 1/dia   | 1 vez/mês a 1/semana   | Menos de 1 vez/mês |
+| Lead Time for Changes   | Menor que 1 hora      | Entre 1 dia e 1 semana | Entre 1 semana e 1 mês | Mais de 1 mês      |
+| Time to Restore Service | Menor que 1 hora      | Menor que 1 dia        | Entre 1 dia e 1 semana | Mais de 1 semana   |
+| Change Failure Rate     | 0% – 15% | 15% – 30%  | 30% – 45%              | Mais de 45%            |                    |
+
+## Benefícios da Adoção
+
+- Foco no Sistema, não nas Pessoas: Mede a eficácia dos pipelines de 
+automação e processos da empresa, promovendo segurança psicológica sem uso 
+punitivo.
+- Equilíbrio Agilidade vs. Estabilidade: Evita que o time foque apenas em 
+velocidade (gerando bugs) ou apenas em estabilidade (travando novas 
+funcionalidades).
+- Redução de Gargalos: Torna visíveis as etapas manuais demoradas (como code 
+reviews parados ou testes manuais).
