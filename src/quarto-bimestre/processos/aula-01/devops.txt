@@ -15,4 +15,35 @@ culpava o outro.
 O DevOps é a união dessas duas áreas. Não é apenas uma ferramenta ou um 
 cargo, mas uma cultura onde desenvolvedores e especialistas em infraestrutura 
 trabalham juntos desde o primeiro dia para entregar softwares com rapidez, 
-qualidade e segurança
+qualidade e segurança.
+
+
+CALMS
+O que representa na prática
+
+C - Culture 
+Quebrar as barreiras entre os times. Em vez de culpar pessoas quando algo dá 
+errado, o foco passa a ser aprender com as falhas e resolver o problema 
+juntos.
+
+A - Automation
+Automatizar testes de código, compilações e entregas. Se um computador pode 
+fazer uma tarefa manual sem errar, a máquina deve fazê-la.
+
+L - Lean (Mentalidade Enxuta)
+Em vez de lançar uma atualização gigante uma vez por ano, o time faz 
+pequenas entregas contínuas. Isso reduz riscos e permite corrigir rumos 
+rapidamente.
+
+M - Measurement (Medição)
+Acompanhar métricas reais: quanto tempo leva para uma novidade chegar ao 
+cliente? Com que frequência o sistema falha? Quanto tempo leva para restaurar
+um erro?
+
+S - Sharing (Compartilhamento)
+Compartilhar aprendizados, sucessos, falhas e ferramentas entre todas as 
+equipes da empresa, evitando "ilhas de conhecimento".
+
+Resumindo
+DevOps é o objetivo (entregar software rápido e seguro unindo times) 
+e o CALMS é a bússola que guia essa transformação cultural.
