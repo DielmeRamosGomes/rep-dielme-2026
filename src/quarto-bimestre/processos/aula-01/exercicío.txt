@@ -10,8 +10,8 @@ software.
 
 Risco Grave — Falta de Monitorização em Produção: Sem monitorização, 
 eventuais bugs, falhas de sistema ou quedas de serviço após a subida para 
-produção não são detectados proativamente, resultando em downtime prolongado 
-e impacto direto na experiência do usuário final sem que a equipe perceba 
-a tempo.
+produção não são detectados proativamente, resultando em downtime (tempo de 
+inatividade) prolongado e impacto direto na experiência do usuário final sem 
+que a equipe perceba a tempo.
 
 
