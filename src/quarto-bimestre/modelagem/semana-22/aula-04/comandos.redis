@@ -1,0 +1,14 @@
+# Usando hashe
+hset cliente:"1" id:"1" nome:"Maria da Silva"
+hgetall cliente:1
+
+# Usando Strings com Json
+# Salvar o cliente em JSON
+SET cliente:1001 '{"id": 1001, "nome": "Maria Silva"}'
+
+# Buscar o cliente completo
+GET cliente:1001
+
+# Usando RedisJSON (Módulo oficial JSON)
+JSON.SET cliente:1001 $ '{"id": 1001, "nome": "Maria Silva"}'
+JSON.GET cliente:1001 $.nome

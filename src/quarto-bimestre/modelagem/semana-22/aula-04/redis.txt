@@ -1,0 +1,5 @@
+O projeto oficial do Redis não tem suporte nativo para 
+Windows, mas a própria Microsoft mantém a distribuição 
+recomendada via WSL2 (Linux).
+
+wsl --install
