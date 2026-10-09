@@ -1,3 +1,4 @@
+-- Active: 1787874905270@@127.0.0.1@3306
 create database if not exists db_tech;
 
 CREATE TABLE
