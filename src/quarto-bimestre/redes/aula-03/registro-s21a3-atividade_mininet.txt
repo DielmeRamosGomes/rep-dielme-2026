@@ -1,0 +1,94 @@
+==============================================================================
+                    ROTEIRO DE ATIVIDADE PRÁTICA: SDN & MININET
+==============================================================================
+
+------------------------------------------------------------------------------
+PARTE 2 – DESENHANDO A TOPOLOGIA MININET
+------------------------------------------------------------------------------
+Orientação para o desenho em papel:
+
+1. COMPONENTES:
+   - Controlador (Control Plane):
+     * Desenhe um círculo no topo rotulado como c0.
+
+   - Switches (Data Plane):
+     * Desenhe um retângulo no meio rotulado como s1 (Switch Central).
+     * Desenhe dois retângulos abaixo de s1: s2 (esquerda) e s3 (direita).
+
+   - Hosts (Dispositivos):
+     * Abaixo de s2: desenhe h1 e h2 (Laboratório A).
+     * Abaixo de s3: desenhe h3 e h4 (Laboratório B).
+
+2. CONEXÕES:
+   - Plano de Dados (Linhas Contínuas - Cabos de Rede):
+     * h1 <---> s2
+     * h2 <---> s2
+     * s2 <---> s1
+     * s1 <---> s3
+     * s3 <---> h3
+     * s3 <---> h4
+
+   - Plano de Controle (Linhas Tracejadas - Protocolo OpenFlow):
+     * c0 - - - s1
+     * c0 - - - s2
+     * c0 - - - s3
+
+
+------------------------------------------------------------------------------
+PARTE 3 – SIMULANDO O PING (h1 ping h4)
+------------------------------------------------------------------------------
+1. Envio inicial:
+   O pacote de teste (ICMP Echo Request) sai de h1 e chega à porta do switch s2.
+
+2. Consulta ao controlador:
+   Como é o primeiro pacote, o switch s2 não possui regras na sua tabela de
+   fluxos para esse destino. Ele encasula/pausa o pacote e envia uma mensagem
+   de consulta (Packet-In) ao controlador c0 através da linha tracejada
+   (canal OpenFlow).
+
+3. Decisão e envio de regras:
+   O controlador c0 possui a visão global da topologia. Ele calcula a melhor
+   rota (h1 -> s2 -> s1 -> s3 -> h4) e envia mensagens de instalação de fluxo
+   (Flow-Mod) via OpenFlow para cada switch do caminho:
+   - s2 aprende a enviar pacotes com destino a h4 em direção a s1.
+   - s1 aprende a enviar pacotes com destino a h4 em direção a s3.
+   - s3 aprende a enviar pacotes com destino a h4 em direção a h4.
+
+4. Encaminhamento e entrega:
+   Com as regras aplicadas, o pacote atravessa s2, s1 e s3 até chegar ao
+   host h4.
+
+5. Resposta (pong):
+   O host h4 responde (ICMP Echo Reply). O caminho de volta é percorrido
+   (h4 -> s3 -> s1 -> s2 -> h1), com o controlador definindo as regras do
+   sentido inverso caso ainda não estejam gravadas nos switches.
+
+
+------------------------------------------------------------------------------
+PARTE 4 – REFLEXÃO E CONSOLIDAÇÃO
+------------------------------------------------------------------------------
+1. Se o controlador (c0) falhar e desligar, o que acontece se h1 tentar
+   enviar uma mensagem para h2 pela primeira vez?
+
+   Resposta: A comunicação falhará. Como é a primeira comunicação, o switch s2
+   não tem nenhuma regra para esse destino. Ele tentará consultar o controlador
+   c0 via protocolo OpenFlow, mas como o c0 está inativo, nenhuma regra será
+   recebida. Sem instruções, s2 descarta o pacote e a mensagem não é entregue.
+
+2. No Mininet, todos esses componentes (h1, s1, c0) rodam dentro do mesmo
+   computador físico. Como isso ajuda estudantes e pesquisadores de redes?
+
+   Resposta: O Mininet reduz os custos e a complexidade ao dispensar a
+   compra de hardware físico dedicado (como switches OpenFlow caros e
+   múltiplos computadores/servidores). Ele permite criar, simular e validar
+   topologias complexas de redes SDN de forma rápida e acessível diretamente
+   em um único computador pessoal.
+
+3. Qual é a função da linha tracejada (protocolo OpenFlow) que você desenhou
+   entre os switches e o controlador?
+
+   Resposta: Representa o canal de controle (control plane). É por essa
+   conexão lógica que o protocolo OpenFlow trafega, permitindo ao controlador
+   enviar regras de encaminhamento (tabelas de fluxo) para os switches e
+   receber consultas sobre pacotes desconhecidos.
+==============================================================================
