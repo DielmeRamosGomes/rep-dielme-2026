@@ -1,0 +1,81 @@
+====================================================================
+  AULAS DE TECNOLOGIA: O QUE É INFRAESTRUTURA COMO CÓDIGO (IaC)?
+====================================================================
+
+1. O PROBLEMA: A NUVEM ANTES DO IaC
+--------------------------------------------------------------------
+Imagine que você precise montar uma sala de informática inteira na
+sua escola:
+  - Ligar computadores
+  - Passar cabos de rede
+  - Instalar programas um por um
+
+Na nuvem (AWS, Google Cloud, Azure), antigamente as empresas faziam
+isso clicando em botões em sites. Se precisassem de 50 servidores,
+uma pessoa tinha que clicar dezenas de vezes para cada um!
+Isso gerava dois grandes problemas:
+  - Demorava muito tempo.
+  - A chance de errar ou esquecer um clique era enorme.
+
+
+2. A SOLUÇÃO: INFRAESTRUTURA COMO CÓDIGO (IaC)
+--------------------------------------------------------------------
+Em vez de clicar na tela, nós escrevemos uma "receita de bolo" ou uma
+"lista de compras" em um arquivo de texto.
+
+Esse arquivo diz exatamente o que queremos que a nuvem crie. Uma
+ferramenta automatizada lê esse texto e constrói tudo sozinha!
+
+Analogia para entender fácil:
+  - Sem IaC: Construir uma casa colocando tijolo por tijolo manualmente.
+  - Com IaC: Usar uma impressora 3D gigantesca que lê uma planta digital
+    e constrói a casa sozinha.
+
+
+3. VANTAGENS DO IaC
+--------------------------------------------------------------------
+  - Rápido: Cria ambientes inteiros em minutos.
+  - Seguro: Menos erros humanos, pois a máquina segue a receita sem esquecer nada.
+  - Reutilizável: Você pode usar o mesmo arquivo para criar 1, 10 ou 100 servidores.
+  - Versionável: Como é apenas texto, você pode salvar no GitHub, ver quem alterou e quando.
+
+
+4. O QUE É O TERRAFORM?
+--------------------------------------------------------------------
+O Terraform é uma das ferramentas de IaC mais conhecidas do mundo.
+
+Como ele funciona?
+  1. Você escreve um arquivo com a extensão `.tf`.
+  2. Você fala qual nuvem quer usar (AWS, Google Cloud, Azure).
+  3. Você descreve o que quer (ex: "Quero 1 servidor Linux").
+  4. O Terraform lê esse arquivo, conecta na nuvem e cria tudo para você.
+
+
+5. EXEMPLO PRÁTICO DE CÓDIGO TERRAFORM
+--------------------------------------------------------------------
+Veja como é simples criar um servidor na nuvem com Terraform:
+
+  # 1. Escolhemos onde criar (AWS)
+  provider "aws" {
+    region = "us-east-1"
+  }
+
+  # 2. Pedimos um servidor (Instância EC2)
+  resource "aws_instance" "meu_servidor" {
+    ami           = "ami-0c7217cdde317cfec" # Sistema operacional (Linux)
+    instance_type = "t2.micro"              # Tamanho do computador
+  }
+
+
+6. OS 3 COMANDOS PRINCIPAIS DO TERRAFORM
+--------------------------------------------------------------------
+  1. terraform init   -> Prepara a pasta e baixa os plugins necessários.
+  2. terraform plan   -> Faz uma simulação e mostra o que SERÁ criado (sem criar ainda).
+  3. terraform apply  -> Executa e cria tudo de verdade na nuvem!
+
+
+7. RESUMO
+--------------------------------------------------------------------
+IaC com Terraform é transformar a criação de computadores e redes na
+nuvem em um simples arquivo de texto configurável!
+====================================================================
