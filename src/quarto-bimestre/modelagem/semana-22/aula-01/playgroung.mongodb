@@ -1,6 +1,6 @@
 use("db_teste");
 
-/*
+
 db.Clientes.insertOne(
     {
         "nome": "Maria Silva",
@@ -9,7 +9,7 @@ db.Clientes.insertOne(
         "pedidos": [1, 2] // IDs dos pedidos relacionados ao cliente
     }
 );
-*/
+
 
 /*
 db.Clientes.insertMany(
