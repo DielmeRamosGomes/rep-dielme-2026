@@ -7,4 +7,4 @@ match escolha:
         print("Bem-vindo")
     case "2":
         print("Encerrando...")
-        
+     # teste   

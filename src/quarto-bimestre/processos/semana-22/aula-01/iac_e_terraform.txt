@@ -79,3 +79,56 @@ Veja como é simples criar um servidor na nuvem com Terraform:
 IaC com Terraform é transformar a criação de computadores e redes na
 nuvem em um simples arquivo de texto configurável!
 ====================================================================
+
+# Instalar o terraform via chocolatey
+choco install terraform
+
+# definindo comando no terminal aws
+
+
+
++-----------------------------------------------------------------------+
+| VPC (minha-vpc-terraform) - 10.0.0.0/16                               |
+|                                                                       |
+|   +---------------------------------------------------------------+   |
+|   | Subnet Pública (subnet-publica-1a) - 10.0.1.0/24             |   |
+|   | Zone: us-east-1a                                              |   |
+|   |                                                               |   |
+|   |   [Recursos / Instâncias EC2]                                |   |
+|   |   (Atribui IP Público automaticamente)                        |   |
+|   +-------------------------------+-------------------------------+   |
+|                                   |                                   |
+|                         [Tabela de Roteamento]                        |
+|                         (0.0.0.0/0 -> IGW)                            |
+|                                   |                                   |
+|                         [Internet Gateway]                            |
++-----------------------------------|-----------------------------------+
+                                    |
+                           (( INTERNET ))
+
+O que cada componente faz
+VPC (aws_vpc.main_vpc)
+
+Faixa de IPs: 10.0.0.0/16 (disponibiliza 65.536 endereços IP privados).
+
+Função: É o seu ecossistema isolado e privado na nuvem AWS.
+
+DNS Habilitado: enable_dns_hostnames e enable_dns_support permitem que as instâncias recebam nomes de domínio públicos (URLs).
+
+Subnet Pública (aws_subnet.public_subnet)
+
+Faixa de IPs: 10.0.1.0/24 (disponibiliza 251 IPs utilizáveis).
+
+Localização: Fica na Zona de Disponibilidade us-east-1a.
+
+map_public_ip_on_launch = true: Qualquer servidor/instância criado nesta subnet receberá automaticamente um IP público da AWS.
+
+Internet Gateway (aws_internet_gateway.igw)
+
+Função: É a "porta de saída e entrada" da VPC para a internet. Sem ele, nenhum recurso dentro da VPC consegue se comunicar com o mundo externo.
+
+Tabela de Roteamento (aws_route_table.public_rt) & Associação
+
+Rota Padrão: Contém a regra 0.0.0.0/0 -> igw.id. Isso indica que todo tráfego destinado a endereços fora da rede local deve ser encaminhado para o Internet Gateway.
+
+Associação: Como esta tabela está associada à subnet 10.0.1.0/24, ela torna a subnet oficialmente pública.
