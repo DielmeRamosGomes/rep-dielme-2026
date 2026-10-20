@@ -37,9 +37,8 @@ passo.
 • Problema 1: "O sistema não lembra o que o usuário disse nas 
 mensagens anteriores."
   - Componente que resolve: Módulo de Memória (Memory), 
-  especificamente a 
-    memória de curto prazo (histórico da conversa/buffer) e/ou 
-    memória de 
+  especificamente a memória de curto prazo (histórico da 
+  conversa/buffer) e/ou memória de 
     longo prazo (banco de dados vetorial).
   - Necessidade de múltiplos agentes: Não. A adição de um 
   componente de memória 
