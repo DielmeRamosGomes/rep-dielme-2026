@@ -2,17 +2,23 @@ def menu():
     print("=== Menu ===")
     print("1 - Ver mensagem")
     print("2 - Sair")
-    
+
+def mostrar_mensagem():
+    print("\nBem-vindo \n")
+
+def mostrar_sair():
+    print("\nEncerrando... \n")
+
 def menu_escolha(escolha):
     match escolha:
         case "1":
-            print("Bem-vindo")
+            mostrar_mensagem()
         case "2":
-            print("Encerrando...")
+            mostrar_sair()
   
 while True:
     menu()      
-    escolha = input("Escolha: ")
+    escolha = input("\nEscolha: ")
     menu_escolha(escolha)
     if escolha == "2":
         break      
