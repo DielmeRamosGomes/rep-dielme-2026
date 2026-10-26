@@ -16,12 +16,14 @@ def cadastrar_produto():
     produtos.append(produto)
 
 def busca_id(id):
+    encontrado = False
     for produto in produtos:
         if produto["id"] == id:
+            encontrado = True
             print("\nProduto encontrado")
             print(produto)
-        else:
-            print("\nProduto não encontrado")
+    if encontrado == False:
+        print("\nProduto não encontrado")
             
 def menu_escolha(escolha):
     match escolha:
@@ -35,7 +37,7 @@ while True:
     mostrar_menu()
     escolha = input("\nDigite a escolha ou [s] para sair: ")
     menu_escolha(escolha)
-    if escolha == "s":
+    if escolha.lower() == "s":
         break
 
 
