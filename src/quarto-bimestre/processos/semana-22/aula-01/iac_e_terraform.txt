@@ -85,6 +85,8 @@ choco install terraform
 
 # definindo comando no terminal aws
 
+Uma VPC (Virtual Private Cloud, ou Nuvem Privada Virtual) é um ambiente de 
+rede logicamente isolado dentro de uma infraestrutura de nuvem pública
 
 
 +-----------------------------------------------------------------------+
@@ -113,7 +115,8 @@ Faixa de IPs: 10.0.0.0/16 (disponibiliza 65.536 endereços IP privados).
 
 Função: É o seu ecossistema isolado e privado na nuvem AWS.
 
-DNS Habilitado: enable_dns_hostnames e enable_dns_support permitem que as instâncias recebam nomes de domínio públicos (URLs).
+DNS Habilitado: enable_dns_hostnames e enable_dns_support permitem que as 
+instâncias recebam nomes de domínio públicos (URLs).
 
 Subnet Pública (aws_subnet.public_subnet)
 
@@ -121,14 +124,38 @@ Faixa de IPs: 10.0.1.0/24 (disponibiliza 251 IPs utilizáveis).
 
 Localização: Fica na Zona de Disponibilidade us-east-1a.
 
-map_public_ip_on_launch = true: Qualquer servidor/instância criado nesta subnet receberá automaticamente um IP público da AWS.
+map_public_ip_on_launch = true: Qualquer servidor/instância criado nesta 
+subnet receberá automaticamente um IP público da AWS.
 
 Internet Gateway (aws_internet_gateway.igw)
 
-Função: É a "porta de saída e entrada" da VPC para a internet. Sem ele, nenhum recurso dentro da VPC consegue se comunicar com o mundo externo.
+Função: É a "porta de saída e entrada" da VPC para a internet. Sem ele, 
+nenhum recurso dentro da VPC consegue se comunicar com o mundo externo.
 
 Tabela de Roteamento (aws_route_table.public_rt) & Associação
 
-Rota Padrão: Contém a regra 0.0.0.0/0 -> igw.id. Isso indica que todo tráfego destinado a endereços fora da rede local deve ser encaminhado para o Internet Gateway.
+Rota Padrão: Contém a regra 0.0.0.0/0 -> igw.id. Isso indica que todo tráfego
+destinado a endereços fora da rede local deve ser encaminhado para o Internet 
+Gateway.
 
-Associação: Como esta tabela está associada à subnet 10.0.1.0/24, ela torna a subnet oficialmente pública.
+Associação: Como esta tabela está associada à subnet 10.0.1.0/24, ela torna a
+subnet oficialmente pública.
+
+Fluxo de execução:
+
+Provider AWS (us-east-1)
+          │
+          ▼
+     Cria VPC
+          │
+          ▼
+    Cria Subnet
+          │
+          ▼
+ Cria Internet Gateway
+          │
+          ▼
+ Cria Route Table
+          │
+          ▼
+ Associa Subnet à Route Table
