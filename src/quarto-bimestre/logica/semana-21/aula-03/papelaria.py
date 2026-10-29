@@ -14,7 +14,8 @@ def cadastrar_produto():
         "preco": preco   
     }
     produtos.append(produto)
-
+    print("\nProduto cadastrado com sucesso!")
+    
 def busca_id(id):
     encontrado = False
     for produto in produtos:
