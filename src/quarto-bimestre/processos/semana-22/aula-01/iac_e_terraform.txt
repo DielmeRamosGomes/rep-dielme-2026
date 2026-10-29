@@ -103,7 +103,26 @@ rede logicamente isolado dentro de uma infraestrutura de nuvem pública
 |                         [Tabela de Roteamento]                        |
 |                         (0.0.0.0/0 -> IGW)                            |
 |                                   |                                   |
-|                         [Internet Gateway]                            |
+|      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                             [Internet Gateway]                            |
 +-----------------------------------|-----------------------------------+
                                     |
                            (( INTERNET ))
