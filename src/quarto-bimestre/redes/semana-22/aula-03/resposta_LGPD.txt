@@ -1,0 +1,81 @@
+RESPOSTA - ROTEIRO DE ATIVIDADE PRÁTICA
+
+Análise de conformidade de um cadastro com a LGPD
+
+Elemento analisado: Texto pequeno: “Ao continuar, seus dados poderão ser usados pela plataforma.”
+Está presente?
+Sim.
+
+Está claro para o titular?
+Não.
+
+O que esse elemento informa?
+Informa de forma genérica que os dados poderão ser utilizados pela plataforma.
+Não explica a finalidade do uso dos dados.
+
+O que precisa melhorar?
+Explicar exatamente para que os dados serão utilizados.
+Informar quem é o responsável pelo tratamento dos dados.
+
+--------------------------------------------------
+
+Elemento analisado: Checkbox “Li e concordo”
+Está presente?
+Sim.
+
+Está claro para o titular?
+Parcialmente.
+
+O que esse elemento informa?
+Indica uma manifestação de concordância do usuário.
+Não informa claramente com o que o usuário está concordando.
+
+O que precisa melhorar?
+Vincular o checkbox a um termo de consentimento claro.
+Permitir que o usuário leia as informações antes de concordar.
+
+--------------------------------------------------
+
+Elemento analisado: Link no rodapé “Política”
+Está presente?
+Sim.
+
+Está claro para o titular?
+Não totalmente.
+
+O que esse elemento informa?
+Sugere a existência de uma política relacionada aos dados.
+O título é muito genérico.
+
+O que precisa melhorar?
+Alterar para “Política de Privacidade”.
+Garantir que o documento explique coleta, armazenamento, compartilhamento e direitos do titular.
+
+--------------------------------------------------
+
+Elemento analisado: Campos de coleta de dados
+Está presente?
+Sim.
+
+Está claro para o titular?
+Parcialmente.
+
+O que esse elemento informa?
+Mostra quais dados pessoais serão coletados: nome, e-mail, telefone, escola, curso de interesse e cidade.
+Não explica por que cada dado é necessário.
+
+O que precisa melhorar?
+Justificar a necessidade de cada dado solicitado.
+Coletar apenas os dados estritamente necessários para a inscrição.
+
+--------------------------------------------------
+
+Três melhorias concretas para o formulário
+
+1. Incluir uma Política de Privacidade completa e acessível.
+2. Explicar claramente a finalidade do uso de cada dado coletado.
+3. Utilizar um termo de consentimento específico e detalhado antes do envio da inscrição.
+
+Justificativa
+
+Essas melhorias aumentam a transparência, permitem que o titular compreenda como seus dados serão tratados e garantem o exercício dos direitos previstos na LGPD, como informação, acesso e controle sobre os próprios dados.
