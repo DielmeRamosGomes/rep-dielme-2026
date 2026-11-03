@@ -1,4 +1,61 @@
 biblioteca = []
+usuarios = []
+usuario_logado = {
+    "email": "",
+    "senha": ""
+}
+
+def busca_usuario(email, senha):
+    for usuario in usuarios:
+        if usuario['email'] == email and usuario['senha'] == senha:
+            return usuario
+    return None
+
+def menu_usuario():
+    print("\n1 - Login: ")
+    print("2 - Cadastrar de usuário: ")
+    print("3 - Sair do programa")
+
+def login():
+    email = input("\nDigite o e-mail: ")
+    senha = input("Digite a senha: ")
+    for usuario in usuarios:
+        if usuario['email'] == email and usuario['senha'] == senha:
+            usuario_logado = busca_usuario(email, senha)
+            return True
+    return False
+
+def cadastro_usuario():
+    email = input("\nDigite o e-mail: ")
+    senha = input("Digite a senha: ")
+    usuario = {
+        "email": email,
+        "senha": senha
+    }
+    usuarios.append(usuario)
+    print("\nCadastro realizado com sucesso!")
+
+def loop_cadastro():
+    while True:
+        menu()
+        escolha = input("Digite a escolha: ")
+        menu_usuario(escolha)
+        if escolha == "4":
+            print("\nSaindo do programa!")
+            break
+
+def menu_usuario_escolha(escolha):
+    match escolha:
+        case "1":
+            confirma = login()
+            if confirma:
+                print("\nBem-vindo usuário!")
+                loop_cadastro()
+            else:
+                print("Usuário não encontrado!")
+        case "2":
+            cadastro_usuario()
+
 def menu():
     print("\n1 - Cadastrar livro: ")
     print("2 - Buscar livro por ID: ")
@@ -52,10 +109,11 @@ def menu_escolha(escolha):
 
 def principal():
     while True:
-        menu()
+        menu_usuario()
         escolha = input("Digite a escolha: ")
-        menu_escolha(escolha)
-        if escolha == "4":
+        menu_usuario_escolha(escolha)
+        if escolha == "3":
+            print("\nSaindo do programa!")
             break
 
 principal()
