@@ -43,3 +43,48 @@ Contrato Tradicional (Escopo Fechado / Waterfall): Assume que
 
 Contrato Ágil (Agile Contract): Assume que requisitos mudam à 
 medida que o projeto evolui.
+
+Redes de Computadores
+1) Quais são algumas das melhores práticas de segurança em 
+aplicações na nuvem?
+R.: As melhores práticas de segurança em nuvem baseiam-se no 
+modelo de responsabilidade compartilhada — onde o provedor 
+garante a segurança da nuvem e você garante a segurança na 
+nuvem.
+Aplique o Princípio do Menor Privilégio (PoLP): conceda aos 
+usuários e serviços apenas as permissões estritamente 
+necessárias.
+Exija Autenticação Multi-Fator (MFA) para todas as contas, 
+especialmente acessos administrativos.
+
+Mitigar (reduzir): Implementar controles que diminuam a 
+probabilidade ou o impacto do risco.
+Evitar: Eliminar a atividade ou o processo que gera o risco.
+Transferir: Compartilhar parte das consequências financeiras 
+do risco com terceiros.
+Aceitar: Decidir formalmente conviver com o risco, quando o 
+custo de tratá-lo supera o benefício.
+
+2) O que é uma nuvem híbrida?
+R.: Uma nuvem híbrida é um modelo de computação que combina 
+pelo menos uma nuvem privada (infraestrutura local ou dedicada 
+da própria empresa) com pelo menos uma nuvem pública (como AWS,
+Microsoft Azure ou Google Cloud), permitindo que dados e 
+aplicações sejam compartilhados e orquestrados entre elas.
+Em vez de isolar os ambientes, a nuvem híbrida cria uma 
+arquitetura unificada por meio de redes seguras (como VPNs ou 
+conexões dedicadas) e ferramentas de gerenciamento centralizado.
+
+Trabalho Crítico no Local (On-Premises): Dados sensíveis, 
+sistemas legados ou cargas de trabalho que exigem baixa 
+latência permanecem no datacenter privado por questões de 
+segurança, conformidade ou performance.
+
+Elasticidade na Nuvem Pública: Cargas de trabalho sazonais, 
+testes de desenvolvimento e serviços de análise avançada usam a
+nuvem pública para aproveitar o poder computacional sob demanda.
+
+Orquestração e Integração: Plataformas como Kubernetes ou 
+sistemas de gestão de nuvem garantem que as aplicações possam 
+rodar ou se mover dinamicamente entre os dois ambientes.
+
