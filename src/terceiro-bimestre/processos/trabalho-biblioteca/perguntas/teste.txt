@@ -1,0 +1,45 @@
+1) O que caracteriza o mindset ágil em um ambiente de trabalho?
+
+O mindset ágil em um ambiente de trabalho é, acima de tudo, 
+uma atitude mental orientada à adaptação contínua, colaboração 
+e entrega de valor constante. Em vez de focar apenas em seguir
+regras ou planos rígidos, as equipes que adotam essa 
+mentalidade enxergam a mudança como uma oportunidade de 
+aprendizado.
+R.:
+Os Pilares do Mindset Ágil
+Foco em Entrega de Valor: Priorização de tarefas que geram 
+resultados concretos e úteis para o cliente ou para a 
+organização em ciclos curtos.
+
+Flexibilidade e Adaptação: Capacidade de reorientar estratégias
+rapidamente quando novos cenários, dados ou necessidades 
+surgem, sem encarar imprevistos como falhas.
+
+Cultura de Feedback Constante: Validação contínua do trabalho 
+realizado por meio do diálogo entre a equipe e os stakeholders,
+garantindo melhorias graduais.
+
+Segurança Psicológica e Aprendizado: O erro é encarado como 
+fonte de aprendizado rápido (fail fast, learn faster), 
+estimulando a inovação sem medo de punições.
+
+Colaboração sobre Silos: Incentivo à cooperação 
+multidisciplinar e comunicação transparente em vez de trabalho
+isolado por departamentos.
+
+2) Qual é a principal diferença entre contratos tradicionais e 
+contratos ágeis? 
+
+A principal diferença entre contratos tradicionais e 
+contratos ágeis está na definição do escopo e no gerenciamento 
+de mudanças: enquanto os contratos tradicionais travam o escopo
+e o preço no início para garantir previsibilidade, os 
+contratos ágeis fixam os recursos e o tempo, mantendo o escopo 
+flexível para maximizar o valor entregue.
+
+Contrato Tradicional (Escopo Fechado / Waterfall): Assume que 
+é possível prever todas as necessidades no início.
+
+Contrato Ágil (Agile Contract): Assume que requisitos mudam à 
+medida que o projeto evolui.
