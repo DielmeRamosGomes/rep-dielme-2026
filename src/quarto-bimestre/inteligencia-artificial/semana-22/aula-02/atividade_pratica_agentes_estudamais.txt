@@ -1,0 +1,101 @@
+================================================================================
+                       ROTEIRO DE ATIVIDADE PRÁTICA
+================================================================================
+
+Nome: [Aluno]
+Turma: [Turma]
+Título da atividade: Montando a equipe de agentes da EstudaMais
+
+--------------------------------------------------------------------------------
+1. DECOMPOSIÇÃO DO PROBLEMA DO ASSISTENTE DA ESTUDAMAIS EM SUBTAREFAS
+--------------------------------------------------------------------------------
+- Atendimento e esclarecimento de dúvidas sobre o conteúdo dos cursos.
+- Recomendação de novos materiais e conteúdos de estudo com base no histórico 
+  e progresso do aluno.
+- Geração de exercícios práticos e de fixação personalizados para revisão.
+- Consulta, acompanhamento e informação sobre o progresso atual do estudante 
+  na plataforma.
+
+--------------------------------------------------------------------------------
+2. DEFINIÇÃO DOS AGENTES ESPECIALISTAS DO ASSISTENTE
+--------------------------------------------------------------------------------
+
+Agente 1 – Nome: Agente Tira-Dúvidas (ou Agente Pedagógico)
+- Responsabilidade principal: Responder a dúvidas conceituais e explicativas
+dos alunos sobre os conteúdos dos cursos da plataforma.
+- Ferramentas que utiliza: Base de Conhecimento dos Cursos (RAG / busca vetorial 
+  em materiais didáticos, apostilas e transcrições de aulas).
+- O que entrega como resultado: Explicações didáticas, esclarecimentos de 
+  dúvidas e exemplificações dos tópicos consultados.
+
+Agente 2 – Nome: Agente Recomendador de Conteúdo
+- Responsabilidade principal: Analisar o histórico acadêmico do estudante e 
+  recomendar a próxima etapa ou material ideal de estudo.
+- Ferramentas que utiliza: Sistema de Análise de Progresso / Banco de Dados 
+de Alunos e Mapeamento da Trilha de Aprendizagem (Matriz de Pré-requisitos).
+- O que entrega como resultado: Lista personalizada de recomendações de 
+  materiais (aulas, artigos, módulos) a serem estudados a seguir.
+
+Agente 3 – Nome: Agente Gerador de Exercícios
+- Responsabilidade principal: Criar listas de exercícios e atividades 
+práticas personalizadas de acordo com a necessidade de revisão do aluno.
+- Ferramentas que utiliza: Gerador de Questões / Banco de Questões e 
+Gabaritos / Avaliador de Nível de Dificuldade.
+- O que entrega como resultado: Conjuntos de exercícios práticos, questões 
+com gabarito e feedback explicativo para revisão.
+
+Agente 4 – Nome: Agente de Progresso do Aluno (Opcional)
+- Responsabilidade principal: Consultar e formatar relatórios sobre o 
+progresso atual, desempenho e carga horária concluída pelo aluno.
+- Ferramentas que utiliza: API de Consulta ao Banco de Dados de Aprendizado 
+  (LMS / Dashboard de Métricas).
+- O que entrega como resultado: Resumo e status do progresso atual do aluno 
+nos cursos matriculados.
+
+--------------------------------------------------------------------------------
+3. DEFINIÇÃO DO AGENTE ORQUESTRADOR
+--------------------------------------------------------------------------------
+- Papel do Orquestrador: Atuar como ponto central de contato (Roteador 
+Central). Recebe a mensagem do aluno, interpreta a intenção (Intent 
+Recognition), direciona a solicitação para o agente especializado 
+correspondente e consolida a resposta final em uma linguagem fluida e coesa.
+
+- Como decide para qual agente encaminhar: Analisa a entrada do usuário 
+usando classificação de intenções. Se for uma dúvida de conteúdo, aciona o 
+Agente Tira-Dúvidas; se pedir a recomendação de um curso/módulo, aciona o 
+Agente Recomendador; se pedir questões de treino, chama o Agente Gerador de 
+Exercícios; se perguntar seu status/desempenho, consulta o Agente de 
+Progresso.
+
+- Como consolida a resposta final: Recebe as saídas produzidas pelos agentes 
+  especialistas (que podem ser múltiplos, caso o aluno peça uma dúvida e 
+  exercícios ao mesmo tempo), formata e unifica as respostas em uma mensagem 
+  final clara, harmoniosa e amigável para o estudante.
+
+--------------------------------------------------------------------------------
+4. REFLEXÃO
+--------------------------------------------------------------------------------
+Opinião: Não concordo com a junção dos agentes. É mais vantajoso mantê-los 
+separados.
+
+Justificativa:
+- Vantagens da Especialização (Agentes Separados):
+1. Manutenibilidade e Escalabilidade: Fica muito mais fácil atualizar ou 
+ajustar o alinhamento do gerador de exercícios (ex.: mudar formato de 
+múltipla escolha) sem afetar a precisão das explicações conceituais do 
+assistente tira-dúvidas.
+2. Uso de Ferramentas Específicas: O agente de dúvidas exige integração 
+avançada com a base de conhecimento do curso (RAG), enquanto o gerador 
+de exercícios precisa interagir com parâmetros de nivelamento e gabarito.
+3. Redução de Alucinações e Menor Complexidade de Prompt: Prompts 
+específicos para uma única função reduzem ambiguidades e tornam as respostas
+do agente mais precisas e previsíveis.
+
+- Desvantagens do Agente Unificado:
+  1. Maior Risco de Confusão/Alucinação: Um único agente com instruções 
+     complexas pode misturar o papel explicativo com a estrutura formatada 
+     de um exercício.
+  2. Dificuldade de Depuração (Debug): Quando houver uma falha, será mais 
+fácil e rápido identificar se o erro ocorreu no entendimento conceitual ou na 
+estruturação da questão caso os agentes estejam separados.
+================================================================================
