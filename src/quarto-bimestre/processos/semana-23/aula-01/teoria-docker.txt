@@ -1,0 +1,35 @@
+1. Conceitos Fundamentais
+Imagem: É a "receita" ou a planta baixa da sua aplicação. É 
+estática e contém o código, sistema operacional base e 
+dependências.
+
+Container: É a receita em execução. Um ambiente isolado e 
+leve rodando na sua máquina a partir de uma Imagem.
+
+Dockerfile: O arquivo de texto onde você escreve as 
+instruções para construir a sua Imagem.
+
+2. Gerando e Rodando o Container
+Construir a Imagem Python
+Executar no terminal da pasta do projeto
+Crie a imagem da aplicação a partir do Dockerfile com a tag
+meu-app:
+docker build -t meu-app-python .
+
+3. Rodar o Container
+Conectando a porta 5000 da máquina com a do container
+Suba o container em segundo plano (modo detached com -d):
+docker run -d -p 5000:5000 --name container-python meu-app-python
+
+3.Testar no Navegador
+Testando a resposta JSON.Acesse no seu navegador: 
+http://localhost:5000.
+Você receberá o retorno JSON enviado diretamente pelo Flask 
+rodando no container.
+
+Ver os logs do Flask em tempo real: 
+docker logs -f container-python
+
+Parar o container: docker stop container-python
+
+Remover o container: docker rm container-python
