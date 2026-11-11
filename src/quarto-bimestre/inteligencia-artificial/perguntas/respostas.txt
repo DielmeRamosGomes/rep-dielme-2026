@@ -1,0 +1,79 @@
+1) Qual é a principal diferença entre Function Calling (chamada 
+de função) e simplesmente pedir para o modelo de IA gerar um 
+objeto JSON com base no texto?
+R.: 
+
+Chamada de Função (Function Calling)
+O que é: O modelo reconhece quando uma ação externa é 
+necessária, seleciona a ferramenta correta entre as que você 
+disponibilizou e extrai os parâmetros exatos da conversa para 
+invocá-la.
+
+Fluxo: O modelo não executa o código, mas devolve uma 
+estrutura determinística que a sua aplicação usa para chamar 
+uma API, consultar um banco de dados ou rodar um script. Em 
+seguida, a sua aplicação devolve o resultado da execução para 
+o modelo, que sintetiza a resposta final para o usuário.
+
+Uso ideal: Integração dinâmica de agentes com sistemas 
+externos, bancos de dados e APIs em tempo real.
+
+Geração de JSON Simples (JSON Mode)
+O que é: O modelo apenas formata a sua resposta em texto 
+estruturado (JSON) em vez de linguagem natural.
+
+Fluxo: É uma saída de texto passiva. A IA apenas organiza a 
+informação que ela já possui dentro do schema JSON solicitado.
+
+Uso ideal: Estruturação de dados extraídos de textos, 
+classificação de sentimentos ou geração de dados legíveis por 
+máquinas sem interação com sistemas externos.
+
+2) Em um framework de orquestração,um agente recebe a tarefa 
+“Pesquise sobre energia solar e escreva um resumo”. Qual 
+sequência descreve corretamente seu fluxo de execução?
+R.: 
+
+Em um framework de orquestração de agentes (como LangChain, 
+AutoGen, CrewAI ou Semantic Kernel), a sequência correta para esse tipo de 
+tarefa é o ciclo Planejamento/Decisão → Uso de Ferramenta (Function Calling)
+ → Execução Externa → Síntese/Geração.
+
+Sequência Detalhada do Fluxo de Execução
+Recepção e Interpretação do Prompt
+O agente analisa a instrução principal e identifica que a tarefa é composta 
+por duas etapas encadeadas: busca de dados externos (pesquisa) e geração de 
+texto (resumo).
+
+Planejamento e Seleção da Ferramenta (Function Calling)
+O modelo decide qual ferramenta utilizar e gera uma chamada estruturada 
+(JSON/Schema) contendo a função de busca e a instrução de pesquisa adequada 
+(ex: pesquisar_web(query="energia solar")).
+
+Execução Externa pelo Orquestrador
+O framework captura a solicitação de função enviada pelo agente, executa a 
+busca real na web ou base de dados externa e recupera os resultados 
+informativos.
+
+Retorno do Contexto para a IA
+O framework injeta o resultado bruto da pesquisa de volta na conversa ou no 
+contexto do agente como uma mensagem do sistema/ferramenta.
+
+Processamento e Geração do Resumo
+Com os dados atualizados no contexto, o agente processa os fatos recuperados 
+e gera o resumo em linguagem natural.
+
+Entrega da Resposta Final
+O fluxo de execução é finalizado e o resultado final é entregue ao usuário.
+
+[Usuário] → Prompt
+   ↓
+[Agente IA] → Decide chamar a função: pesquisar_web("energia solar")
+   ↓
+[Orquestrador] → Executa a API de busca externa
+   ↓
+[Orquestrador] → Devolve os dados da busca para o Agente
+   ↓
+[Agente IA] → Escreve o resumo com base nos dados recebidos
+   ↓
+[Usuário] ← Resposta final enviada
