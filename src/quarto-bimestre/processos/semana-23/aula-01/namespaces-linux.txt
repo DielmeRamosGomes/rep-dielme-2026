@@ -1,0 +1,25 @@
+Principais tipos de namespaces no Linux:
+
+PID (Process ID): Isola a árvore de processos. Permite que o processo 
+principal dentro de um contêiner tenha o PID 1, mesmo que no sistema 
+hospedeiro ele tenha um PID diferente (como 4821).
+
+NET (Network): Fornece uma pilha de rede própria — interfaces de rede 
+virtuais, endereços IP, tabelas de roteamento e portas independentes.
+
+MNT (Mount): Isola os pontos de montagem de sistemas de arquivos, 
+permitindo que cada contêiner tenha sua própria estrutura de diretórios 
+raiz (/).
+
+UTS (Unix Timesharing System): Permite que o contêiner tenha seu próprio 
+hostname e nome de domínio NIS independentes do host.
+
+IPC (Inter-Process Communication): Isola recursos de comunicação entre 
+processos, como filas de mensagens e segmentos de memória compartilhada.
+
+USER: Mapeia usuários e grupos. Permite que um processo seja root (UID 0) 
+dentro do namespace do contêiner, mas seja mapeado para um usuário comum 
+sem privilégios no sistema hospedeiro.
+
+Cgroup: Oculta a estrutura real de cgroups do host, mostrando apenas a 
+hierarquia relativa ao próprio contêiner.

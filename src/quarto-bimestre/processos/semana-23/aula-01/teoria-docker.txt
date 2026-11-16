@@ -33,3 +33,26 @@ docker logs -f container-python
 Parar o container: docker stop container-python
 
 Remover o container: docker rm container-python
+
+---------------------------------------------------------------------------
+O que acontece "por baixo dos panos" (Namespaces e cgroups)
+O Docker aciona o runtime (containerd/runc) para executar estas etapas no 
+kernel Linux:
+
+MNT: Monta as camadas da imagem meu-app-python como o sistema de arquivos 
+raiz (/) exclusivo deste contêiner.
+
+PID: Inicia a aplicação Python como PID 1 dentro do contêiner (isolada dos 
+processos da sua máquina).
+
+NET: Cria uma interface de rede virtual (veth) com um IP interno próprio e 
+configura regras de redirecionamento (iptables/nftables) para que todo 
+tráfego que chegar na porta 5000 do seu host seja encaminhado para a 
+porta 5000 desse namespace de rede.
+
+Como a aplicação não passou flags de limite (como --memory ou --cpus), o 
+Docker cria um cgroup para o container-python sem teto de recursos (max no 
+cgroups v2), permitindo que a aplicação Python utilize toda a CPU e RAM 
+disponíveis no host, se precisar.
+
+
