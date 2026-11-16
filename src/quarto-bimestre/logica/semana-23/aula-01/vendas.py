@@ -1,48 +1,62 @@
 vendas = []
+resultados = []
 
-venda1 = {
+item1 = {
     "Nome": "Caderno",
     "quantidade": 10,
     "Data": "2026-01-15" 
 } 
 
-venda2 = {
+item2 = {
     "Nome": "Caderno",
     "quantidade": 12,
     "Data": "2026-02-10" 
 } 
 
-venda3 = {
-    "Nome": "Caderno",
+item3 = {
+    "Nome": "Lápis",
     "quantidade": 8,
     "Data": "2026-03-05" 
 } 
 
-vendas.append(venda1)
-vendas.append(venda2)
-vendas.append(venda3)
+item4 = {
+    "Nome": "Lápis",
+    "quantidade": 5,
+    "Data": "2026-03-05"
+}
 
-def media_venda():
+vendas.append([item1, item2]) #venda1
+vendas.append([item3, item4]) #venda2
+
+def media_venda(venda):
     soma = 0
-    media = 0
-    for venda in vendas:
-        soma += venda['quantidade']
-    media = soma / len(vendas)
-    return media
+    for item in venda:
+        soma += item['quantidade']
+
+    return soma / len(venda)
 
 def classificacao_venda():
-    media = media_venda()
-    if media >= 30:
-        print(f"\nProduto: {venda1['Nome']}")
-        print(f"Média: {media}")
-        print("Desempenho de venda Alto")
-    elif media >= 10:
-        print(f"\nProduto: {venda1['Nome']}")
-        print(f"Média: {media}")
-        print("Desempenho de venda Médio")
-    else:
-        print(f"\nProduto: {venda1['Nome']}")
-        print(f"Média: {media}")
-        print("Desenpenho de venda baixo")
+    for venda in vendas:  
+        media = media_venda(venda)  
+        if media >= 30:
+            print(f"\nProduto: {venda[0]['Nome']}")
+            print(f"Média: {media}")
+            desempenho = "Alto"
+            print(f"Desempenho de venda {desempenho}")
+            resultados.append([venda[0]['Nome'], media, desempenho])
+        elif media >= 10:
+            print(f"\nProduto: {venda[0]['Nome']}")
+            print(f"Média: {media}")
+            desempenho = "Médio"
+            print(f"Desempenho de venda {desempenho}")
+            resultados.append([venda[0]['Nome'], media, desempenho])
+        else:
+            print(f"\nProduto: {venda[0]['Nome']}")
+            print(f"Média: {media}")
+            desempenho = "Baixo"
+            print(f"Desenpenho de venda {desempenho}")
+            resultados.append([venda[0]['Nome'], media, desempenho])
 
 classificacao_venda()
+
+

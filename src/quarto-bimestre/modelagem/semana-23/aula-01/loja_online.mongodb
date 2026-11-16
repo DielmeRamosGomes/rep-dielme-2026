@@ -1,4 +1,6 @@
 use("estoque");
+
+/*
 db.produtos.insertMany([
     { 
         nome: "Notebook",
@@ -13,4 +15,20 @@ db.produtos.insertMany([
         fornecedor_id: 102, estoque: 25 
     }
   ]);
-  
+*/
+
+//db.produtos.find({ estoque: { $gt: 15 } });
+
+/*
+db.produtos.insertOne({
+    "nome": "Laptop Gamer",
+    "categoria": "Computadores",
+    "preco": 5000,
+    "estoque": 10,
+    "fornecedor": {
+        "nome": "Tech Distribuidora",
+        "contato": "tech@distribuidora.com"
+    }
+});
+*/
+db.Produtos.find({ "categoria": "Computadores" }); 

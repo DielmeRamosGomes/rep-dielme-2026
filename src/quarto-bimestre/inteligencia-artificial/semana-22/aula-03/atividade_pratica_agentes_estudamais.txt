@@ -15,7 +15,7 @@ Título da atividade: Montando a equipe de agentes da EstudaMais
 - Geração de exercícios práticos e de fixação personalizados para revisão.
 - Consulta, acompanhamento e informação sobre o progresso atual do estudante 
   na plataforma.
-
+  
 --------------------------------------------------------------------------------
 2. DEFINIÇÃO DOS AGENTES ESPECIALISTAS DO ASSISTENTE
 --------------------------------------------------------------------------------
