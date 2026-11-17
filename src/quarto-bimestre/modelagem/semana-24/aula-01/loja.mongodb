@@ -1,0 +1,112 @@
+use('loja');
+
+// adicionar produtos à coleção "produtos"
+/*
+db.produtos.insertOne(
+    {
+        "nome": "Laptop Gamer",
+        "categoria": "Computadores",
+        "preco": 5000,
+        "estoque": 10,
+        "fornecedor": {
+            "nome": "Tech Distribuidora",
+            "contato": "tech@distribuidora.com"
+        }
+    }
+);
+*/
+
+/*
+db.produtos.insertOne(
+    {
+        "nome": "PC Gamer",
+        "categoria": "Computadores",
+        "preco": 4000,
+        "estoque": 9,
+        "fornecedor": {
+            "nome": "Tech Distribuidora",
+            "contato": "tech@distribuidora.com"
+        }
+    }
+);
+*/
+
+/*
+db.produtos.insertOne(
+    {
+        "nome": "Mesa Gamer",
+        "categoria": "Móveis",
+        "preco": 2000,
+        "estoque": 5,
+        "fornecedor": {
+            "nome": "Tech Distribuidora",
+            "contato": "tech@distribuidora.com"
+        }
+    }
+);
+*/
+
+// Retorna todos os produtos
+//db.produtos.find();
+
+
+// Retorna todos os produtos da categoria "Computadores"
+//db.produtos.find({ "categoria": "Computadores" });
+//db.produtos.find({ "categoria": "Móveis" });
+
+
+// inserir um novo atributo id no fornecedor
+/*
+db.produtos.updateOne(
+    {
+        "fornecedor.id": { $exists: false },
+        "_id": ObjectId("6913755e8ae74c4b511c7d89")
+    },
+    {
+        $set: { "fornecedor.id": 1 }
+    }
+); 
+*/
+
+
+// atualizar o preço do produto "Mesa Gamer" para 2000
+/*
+db.produtos.updateOne(
+    {
+        "_id": ObjectId("691375b226e0dcaa58f99a39")
+    },
+    {
+        $set: { "estoque": 100 }
+    }
+);
+*/
+
+// Deletar um produto da coleção "produtos"
+/*
+db.produtos.deleteOne(
+    {
+        "_id": ObjectId("691375b226e0dcaa58f99a39")
+    }
+);
+*/
+
+
+// encontrar um produto que o preco seja maior que 3000 (Greater Than)
+/*
+db.produtos.find(
+    {
+        "preco": {
+            $gt: 3000
+        }
+    }
+);
+*/
+
+
+// Atualizar vários documentos ao mesmo tempo, dimunuindo o estoque de todos os produtos da categoria "Computadores"
+/*
+db.produtos.updateMany(
+    { "categoria": "Computadores" },
+    { $inc: { "estoque": -2 } }
+);
+*/
