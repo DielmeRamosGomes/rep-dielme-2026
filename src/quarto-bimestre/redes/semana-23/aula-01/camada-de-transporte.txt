@@ -1,0 +1,56 @@
+A Camada de Transporte (Camada 4 no modelo OSI) é o sistema de logística da 
+rede. Enquanto as camadas inferiores (Física, Enlace e Rede) garantem que um
+ pacote de dados saia de um computador e encontre o caminho até outro 
+ computador através de endereços IP, a Camada de Transporte garante que os 
+ dados cheguem ao aplicativo certo dentro daquele computador, na ordem 
+ correta e sem erros.
+
+Analogia prática. Imagine um prédio comercial grande. A Camada de Rede (IP) 
+entrega a carta na portaria do endereço correto. A Camada de Transporte leva 
+a carta até o andar e a sala exata do destinatário, conferindo se todas as 
+páginas chegaram intactas.
+
+Para realizar esse trabalho de entrega ponta a ponta entre aplicações, a 
+Camada de Transporte executa quatro tarefas essenciais:
+
+• Multiplexação e Demultiplexação (Portas). Permite que você use o navegador,
+o Spotify e o WhatsApp ao mesmo tempo na mesma conexão de internet. Ela 
+separa o tráfego de cada programa usando números de porta (ex: porta 443 para
+sites seguros, porta 25 para e-mails).
+
+• Segmentação e Remontagem. Arquivos grandes não viajam inteiros pela rede. 
+Essa camada fatia os dados em pedaços menores chamados segmentos (ou 
+datagramas) no envio e os cola novamente na ordem certa no destino.
+
+• Controle de Fluxo. Garante que um servidor muito rápido não envie dados 
+depressa demais para um celular ou computador mais lento, evitando que a 
+memória do receptor transborde.
+
+• Controle de Erros e Confiabilidade. Verifica se algum pacote se perdeu ou 
+chegou corrompido pelo caminho, solicitando o reenvio automático quando 
+necessário.
+
+
+Como isso se conecta aos Load Balancers?
+
+• Visão limitada e ágil. O balanceador L4 olha apenas para o IP de destino e 
+a Porta TCP/UDP. Ele não gasta tempo abrindo o conteúdo da mensagem.
+• Roteamento de conexão. Quando um cliente inicia aquele Three-Way Handshake 
+do TCP, o balanceador L4 escolhe um servidor livre e encaminha o aperto de 
+mãos para lá. A partir desse momento, todos os segmentos daquela conversa 
+vão direto para o mesmo servidor.
+
+Um Load Balancer na Camada 7 (L7)
+distribui o tráfego de rede na camada de 
+aplicação do modelo OSI, tomando decisões inteligentes com base no conteúdo 
+real das requisições. Diferente da Camada 4 (que olha apenas para endereços 
+IP e portas TCP/UDP), o L7 inspeciona cabeçalhos HTTP, URLs, cookies e
+métodos da mensagem.
+
+O balanceador L7 atua como um proxy reverso completo. Ele encerra a conexão 
+TCP que vem do usuário, descriptografa o tráfego se necessário, lê os dados 
+da requisição e abre uma nova conexão com o servidor de destino mais adequado.
+
+Roteamento baseado em conteúdo. Direciona o tráfego para servidores 
+diferentes conforme o caminho da URL (ex: /api vai para microsserviços e 
+/imagens vai para um servidor de arquivos estáticos).
