@@ -1,0 +1,232 @@
+AULA COMPLETA DE KUBERNETES: ARQUITETURA E COMPONENTES
+1. O QUE É KUBERNETES?
+
+Kubernetes (K8s) é uma plataforma de orquestração de containers 
+criada pela Google e atualmente mantida pela Cloud Native 
+Computing Foundation (CNCF).
+
+Seu principal objetivo é:
+- Automatizar a implantação (deploy)
+- Escalonamento (scaling)
+- Gerenciamento de containers
+- Recuperação de falhas
+
+Imagine que você possui dezenas ou centenas de containers Docker. 
+Gerenciar tudo manualmente seria inviável.
+
+O Kubernetes resolve esse problema.
+
+2. ARQUITETURA DO KUBERNETES
+
+Um cluster Kubernetes é composto por:
+
+                 Kubernetes Cluster
+        ┌──────────────────────────┐
+        │      Control Plane       │
+        └────────────┬─────────────┘
+                     │
+     ┌───────────────┼───────────────┐
+     │               │               │
+┌────▼────┐    ┌────▼────┐    ┌────▼────┐
+│ Worker  │    │ Worker  │    │ Worker  │
+│  Node   │    │  Node   │    │  Node   │
+└─────────┘    └─────────┘    └─────────┘
+
+O cluster é dividido em:
+
+- Control Plane (Master): responsável por controlar todo o cluster.
+- Worker Nodes: máquinas onde os containers efetivamente executam.
+
+3. COMPONENTES DO CONTROL PLANE
+
+API Server (kube-apiserver)
+- Recebe requisições
+- Valida comandos
+- Atualiza o estado do cluster
+- Serve como porta de entrada do Kubernetes
+
+etcd
+- Banco de dados distribuído do Kubernetes
+- Armazena configurações, estados dos Pods, Deployments, Secrets e ConfigMaps
+
+Scheduler (kube-scheduler)
+- Decide em qual Node um Pod será executado
+- Considera CPU, memória, afinidade e restrições
+
+Controller Manager (kube-controller-manager)
+- Monitora o estado do cluster
+- Garante que o estado atual corresponda ao estado desejado
+- Implementa o processo de reconciliação
+
+4. COMPONENTES DOS WORKER NODES
+
+Kubelet
+- Agente executado em cada Node
+- Cria Pods
+- Monitora containers
+- Reporta status ao API Server
+
+Container Runtime
+- Executa containers
+- Exemplos: containerd, CRI-O e Docker
+
+Kube Proxy
+- Gerencia comunicação de rede
+- Realiza roteamento e balanceamento interno
+
+5. O QUE É UM POD?
+
+O menor objeto executável do Kubernetes.
+
+Exemplo:
+apiVersion: v1
+kind: Pod
+metadata:
+  name: meu-pod
+spec:
+  containers:
+    - name: nginx
+      image: nginx
+
+6. DEPLOYMENT
+
+Gerencia Pods de forma declarativa.
+Benefícios:
+- Escalabilidade
+- Atualizações automáticas
+- Rollback
+
+Fluxo:
+Deployment -> ReplicaSet -> Pods
+
+7. REPLICASET
+
+Garante a quantidade desejada de Pods em execução.
+Se um Pod falhar, outro será criado automaticamente.
+
+8. SERVICE
+
+Fornece acesso estável aos Pods.
+
+Tipos:
+- ClusterIP
+- NodePort
+- LoadBalancer
+
+9. CONFIGMAP
+
+Armazena configurações não sensíveis.
+Exemplos:
+- APP_ENV=PRODUCAO
+- LOG_LEVEL=INFO
+
+10. SECRET
+
+Armazena dados sensíveis.
+Exemplos:
+- Senhas
+- Tokens
+- Chaves de API
+
+11. NAMESPACE
+
+Permite dividir recursos logicamente.
+
+Exemplo:
+- dev
+- homologacao
+- producao
+
+12. INGRESS
+
+Gerencia acesso HTTP/HTTPS às aplicações.
+
+Exemplo:
+app.com -> frontend
+api.app.com -> backend
+admin.app.com -> admin
+
+13. FLUXO COMPLETO DE UMA REQUISIÇÃO
+
+Usuário -> Ingress -> Service -> Pod -> Container
+
+14. CICLO DE VIDA DE UM DEPLOY
+
+1. kubectl apply -f deploy.yaml
+2. API Server recebe a solicitação
+3. etcd salva a configuração
+4. Controller detecta o Deployment
+5. Scheduler escolhe um Node
+6. Kubelet recebe a instrução
+7. Container Runtime cria os containers
+8. Pod inicia
+9. Service expõe a aplicação
+
+MAPA MENTAL
+
+Kubernetes
+├── Control Plane
+│   ├── API Server
+│   ├── etcd
+│   ├── Scheduler
+│   └── Controller Manager
+├── Worker Node
+│   ├── Kubelet
+│   ├── Kube Proxy
+│   └── Container Runtime
+├── Objetos
+│   ├── Pod
+│   ├── Deployment
+│   ├── ReplicaSet
+│   ├── Service
+│   ├── ConfigMap
+│   ├── Secret
+│   ├── Namespace
+│   └── Ingress
+└── Aplicações
+    └── Containers
+
+EXERCÍCIOS DE FIXAÇÃO
+
+1. Qual componente armazena o estado do cluster?
+Resposta: etcd
+
+2. Quem decide em qual node um Pod será executado?
+Resposta: Scheduler
+
+3. Qual é a menor unidade executável do Kubernetes?
+Resposta: Pod
+
+4. Qual objeto garante múltiplas réplicas de Pods?
+Resposta: ReplicaSet
+
+5. Qual objeto fornece acesso estável aos Pods?
+Resposta: Service
+
+6. Qual componente monitora os Pods em cada Node?
+Resposta: Kubelet
+
+RESUMO
+
+Control Plane:
+- API Server
+- etcd
+- Scheduler
+- Controller Manager
+
+Worker Nodes:
+- Kubelet
+- Kube Proxy
+- Container Runtime
+
+Principais objetos:
+- Pod
+- Deployment
+- ReplicaSet
+- Service
+- Ingress
+- ConfigMap
+- Secret
+- Namespace
+
+A ideia central do Kubernetes é manter continuamente o estado desejado da aplicação, criando, removendo ou recriando recursos automaticamente quando necessário.
