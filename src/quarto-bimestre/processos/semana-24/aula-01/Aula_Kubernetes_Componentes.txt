@@ -229,4 +229,6 @@ Principais objetos:
 - Secret
 - Namespace
 
-A ideia central do Kubernetes é manter continuamente o estado desejado da aplicação, criando, removendo ou recriando recursos automaticamente quando necessário.
+A ideia central do Kubernetes é manter continuamente o estado 
+desejado da aplicação, criando, removendo ou recriando recursos 
+automaticamente quando necessário.

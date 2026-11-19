@@ -1,0 +1,142 @@
+EXEMPLO DE EXECUÇÃO LOCAL DO KUBERNETES COM MINIKUBE
+
+A forma mais simples de executar Kubernetes localmente é usando 
+Minikube.
+
+PRÉ-REQUISITOS
+
+Instale:
+- Docker Desktop
+- kubectl
+- Minikube
+
+WINDOWS (POWERSHELL)
+
+Instalar Minikube:
+winget install Kubernetes.minikube
+
+Instalar kubectl:
+winget install Kubernetes.kubectl
+
+INICIAR O CLUSTER
+
+minikube start
+
+Verificar:
+
+kubectl get nodes
+
+Saída esperada:
+
+NAME       STATUS   ROLES           AGE
+minikube   Ready    control-plane   2m
+
+CRIANDO O AMBIENTE PYTHON
+
+mkdir k8s-python
+cd k8s-python
+
+Criar ambiente virtual:
+
+python -m venv venv
+
+Linux/Mac:
+
+source venv/bin/activate
+
+Windows:
+
+venv\Scriptsctivate
+
+Instalar dependências:
+
+pip install kubernetes
+
+TESTANDO CONEXÃO COM O CLUSTER
+
+Arquivo exemplo.py
+
+Execute:
+
+python teste.py
+
+Resultado:
+
+Conectado ao cluster!
+minikube
+
+CRIANDO UM POD
+
+Execute:
+
+python criar_pod.py
+
+VERIFICAR O RESULTADO
+
+kubectl get pods
+
+Saída:
+
+NAME         READY   STATUS
+meu-nginx    1/1     Running
+
+EXPOR O POD
+
+kubectl expose pod meu-nginx --port=80 --type=NodePort
+
+Verificar:
+
+kubectl get svc
+
+ABRIR NO NAVEGADOR
+
+minikube service meu-nginx
+
+O minikube abrirá uma url 
+http://127.0.0.1:52941 
+
+Ao acessar essa URL, você verá a página padrão do
+Nginx.
+
++--------------------------------------------------+
+|                                                  |
+|              Welcome to nginx!                   |
+|                                                  |
+| If you see this page, the nginx web server       |
+| is successfully installed and working.           |
+|                                                  |
+| For online documentation and support please      |
+| refer to nginx.org.                              |
+|                                                  |
+| Thank you for using nginx.                       |
+|                                                  |
++--------------------------------------------------+
+
+
+
+Fluxo:
+
+Python Script
+   ↓
+Kubernetes API
+   ↓
+Minikube Cluster Local
+   ↓
+Pod Nginx
+   ↓
+Service
+   ↓
+Navegador
+
+COMANDOS ÚTEIS
+
+kubectl get pods
+kubectl get svc
+kubectl logs meu-nginx
+kubectl exec -it meu-nginx -- bash
+kubectl delete pod meu-nginx
+minikube stop
+minikube delete
+
+Esse laboratório pode ser executado totalmente no computador 
+local usando Docker + Minikube.
