@@ -1,0 +1,74 @@
+========================================================================
+MONGODB REPLICA SET - GUIA CONCEITUAL E PRÁTICO (PT-BR)
+========================================================================
+
+Um Replica Set no MongoDB é um grupo de instâncias (processos `mongod`) que mantêm o mesmo conjunto de dados, fornecendo alta disponibilidade, tolerância a falhas e redundância de dados. Em vez de depender de um único servidor de banco de dados, as operações de escrita vão para um nó principal e são replicadas de forma assíncrona para os outros. Se esse nó principal cair, os nós restantes elegem automaticamente um substituto.
+
+------------------------------------------------------------------------
+1. PAPÉIS PRINCIPAIS EM UM REPLICA SET
+------------------------------------------------------------------------
+
+* Primary (Primário):
+  Recebe todas as operações de escrita (e, por padrão, também as de leitura). Toda escrita é registrada no "oplog" (operations log) do primário, que é uma coleção especial de tamanho fixo (capped collection) que rastreia todas as alterações nos dados.
+
+* Secondary (Secundário):
+  Mantém uma cópia exata dos dados lendo e aplicando continuamente as entradas do oplog do nó primário. Nós secundários não podem receber escritas diretamente, embora você possa configurar sua aplicação para ler dados deles através das "Read Preferences" (preferências de leitura, como `secondaryPreferred`).
+
+* Arbiter (Árbitro - Opcional):
+  Participa apenas das eleições para desempatar votações, sem armazenar nenhuma cópia dos dados. Como não guarda dados, deve ser usado com cautela; adicionar um nó secundário real com dados costuma ser uma escolha muito mais segura para a redundância.
+
+------------------------------------------------------------------------
+2. COMO FUNCIONAM A REPLICAÇÃO E O FAILOVER (TOLERÂNCIA A FALHAS)
+------------------------------------------------------------------------
+
+1. Replicação via Oplog:
+   Os nós secundários puxam continuamente as operações do oplog do primário e as reproduzem localmente para se manterem sincronizados.
+
+2. Heartbeats (Batimentos Cardíacos):
+   Os membros do conjunto enviam sinais uns aos outros a cada 2 segundos (por padrão) para verificar a saúde e a conectividade da rede.
+
+3. Eleições e Quórum:
+   Se o primário ficar inacessível (o que geralmente é detectado em cerca de 10 segundos), os secundários elegíveis realizam uma eleição. Um candidato precisa obter a maioria dos votos dos membros votantes do conjunto para se tornar o novo primário.
+
+Por que usar um número ÍMPAR de nós votantes?
+* 3 membros votantes (mínimo recomendado):
+  A maioria é 2. Tolera a falha de 1 nó e ainda consegue eleger um primário.
+* 4 membros votantes:
+  A maioria passa a ser 3. Continua tolerando a falha de apenas 1 nó — não oferece tolerância a falhas extra em relação a 3 nós.
+* 5 membros votantes:
+  A maioria é 3. Tolera até 2 falhas simultâneas de nós.
+
+------------------------------------------------------------------------
+3. CONCEITOS OPERACIONAIS IMPORTANTES
+------------------------------------------------------------------------
+
+* Write Concern (`w`):
+  Controla quantos nós precisam confirmar uma operação de escrita antes que o MongoDB retorne sucesso para a aplicação. Usar `w: "majority"` garante durabilidade na maioria dos membros que armazenam dados, evitando que escritas confirmadas sejam perdidas (rollback) durante uma troca de primário.
+
+* Read Concern (`readConcern`):
+  Controla a consistência e o isolamento dos dados nas leituras. Por exemplo, o nível `majority` garante que a leitura retorne apenas dados que já foram confirmados pela maioria dos nós do cluster.
+
+* Nós Ocultos (Hidden) e Atrasados (Delayed):
+  São nós secundários especializados. Nós ocultos ficam invisíveis para as aplicações (úteis para relatórios pesados ou backups sem afetar a performance). Nós atrasados mantêm uma cópia dos dados com um atraso proposital (ex: 1 hora atrás), servindo como proteção contra exclusões acidentais ou deploys defeituosos.
+
+------------------------------------------------------------------------
+4. EXEMPLO RÁPIDO DE CONFIGURAÇÃO (`mongosh`)
+------------------------------------------------------------------------
+
+Inicie três instâncias `mongod` configuradas com o parâmetro `--replSet rs0` (em portas e diretórios de dados distintos). Em seguida, conecte-se a uma delas via `mongosh` e inicie o conjunto:
+
+rs.initiate({
+  _id: "rs0",
+  members: [
+    { _id: 0, host: "localhost:27017" },
+    { _id: 1, host: "localhost:27018" },
+    { _id: 2, host: "localhost:27019" }
+  ]
+});
+
+// Para verificar o status do replica set e os papéis atuais de cada nó:
+rs.status();
+
+Nota de Produção:
+Em ambientes de produção, utilize nomes de domínio DNS completos ou IPs fixos, habilite autenticação (Keyfile/x.509) e criptografia TLS, e configure a string de conexão da sua aplicação listando todos os hosts membros:
+mongodb://host1:27017,host2:27018,host3:27019/?replicaSet=rs0
