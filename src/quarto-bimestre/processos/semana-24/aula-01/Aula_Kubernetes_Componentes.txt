@@ -47,7 +47,8 @@ API Server (kube-apiserver)
 
 etcd
 - Banco de dados distribuído do Kubernetes
-- Armazena configurações, estados dos Pods, Deployments, Secrets e ConfigMaps
+- Armazena configurações, estados dos Pods, Deployments, Secrets e
+ConfigMaps
 
 Scheduler (kube-scheduler)
 - Decide em qual Node um Pod será executado

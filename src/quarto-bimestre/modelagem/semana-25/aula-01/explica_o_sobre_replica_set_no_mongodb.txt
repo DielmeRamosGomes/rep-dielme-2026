@@ -2,17 +2,31 @@
 MONGODB REPLICA SET - GUIA CONCEITUAL E PRÁTICO (PT-BR)
 ========================================================================
 
-Um Replica Set no MongoDB é um grupo de instâncias (processos `mongod`) que mantêm o mesmo conjunto de dados, fornecendo alta disponibilidade, tolerância a falhas e redundância de dados. Em vez de depender de um único servidor de banco de dados, as operações de escrita vão para um nó principal e são replicadas de forma assíncrona para os outros. Se esse nó principal cair, os nós restantes elegem automaticamente um substituto.
+Um Replica Set no MongoDB é um grupo de instâncias (processos 
+`mongod`) que mantêm o mesmo conjunto de dados, fornecendo alta 
+disponibilidade, tolerância a falhas e redundância de dados. Em 
+vez de depender de um único servidor de banco de dados, as 
+operações de escrita vão para um nó principal e são replicadas de 
+forma assíncrona para os outros. Se esse nó principal cair, os 
+nós restantes elegem automaticamente um substituto.
 
 ------------------------------------------------------------------------
 1. PAPÉIS PRINCIPAIS EM UM REPLICA SET
 ------------------------------------------------------------------------
 
 * Primary (Primário):
-  Recebe todas as operações de escrita (e, por padrão, também as de leitura). Toda escrita é registrada no "oplog" (operations log) do primário, que é uma coleção especial de tamanho fixo (capped collection) que rastreia todas as alterações nos dados.
+  Recebe todas as operações de escrita (e, por padrão, também as 
+  de leitura). Toda escrita é registrada no "oplog" (operations 
+  log) do primário, que é uma coleção especial de tamanho fixo 
+  (capped collection) que rastreia todas as alterações nos dados.
 
 * Secondary (Secundário):
-  Mantém uma cópia exata dos dados lendo e aplicando continuamente as entradas do oplog do nó primário. Nós secundários não podem receber escritas diretamente, embora você possa configurar sua aplicação para ler dados deles através das "Read Preferences" (preferências de leitura, como `secondaryPreferred`).
+  Mantém uma cópia exata dos dados lendo e aplicando 
+  continuamente as entradas do oplog do nó primário. Nós 
+  secundários não podem receber escritas diretamente, embora você 
+  possa configurar sua aplicação para ler dados deles através das
+   "Read Preferences" (preferências de leitura, como 
+   `secondaryPreferred`).
 
 * Arbiter (Árbitro - Opcional):
   Participa apenas das eleições para desempatar votações, sem armazenar nenhuma cópia dos dados. Como não guarda dados, deve ser usado com cautela; adicionar um nó secundário real com dados costuma ser uma escolha muito mais segura para a redundância.
